@@ -1,0 +1,18 @@
+@mixin no-scrollbar () {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin no-select() {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+@mixin pseudo() {
+  content: '';
+  display: block;
+  position: absolute;
+}

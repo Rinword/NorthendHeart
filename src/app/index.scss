@@ -1,0 +1,21 @@
+.app {
+  text-align: center;
+
+  &__header {
+    height: 40px;
+    color: white;
+    background-color: #222;
+    display: flex;
+
+  }
+  &__logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

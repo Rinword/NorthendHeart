@@ -1,0 +1,27 @@
+.icon {
+  width: 32px;
+  height: 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+
+@mixin bg-size($size) {
+  &_bg-size_#{$size} {
+    background-size: (#{$size}px);
+  }
+}
+
+@mixin size($size) {
+  &_size_#{$size} {
+    width: (#{$size}px);
+    height: (#{$size}px);
+  }
+}
+
+@for $i from 8 to 64 {
+  .icon {
+    @include size($i);
+    @include bg-size($i);
+  }
+}
