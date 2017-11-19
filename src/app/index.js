@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
 
-import { Row, Column } from './uxComponent/UxBox';
-import Content from './main';
+import { Row } from './uxComponent/UxBox';
+import Main from './main';
 import HeaderMenu from './headerMenu';
 
-import logo from '../static/img/logo.svg'; //TODO set absolute path
 import './index.css';
 
+//routing here
 class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <Row cls="app__header" jc="space-between">
-          <img src={logo} className="app__logo" alt="logo" />
-          <HeaderMenu/>
-        </Row>
-        <Row cls="app__body">
-            <Content/>
-        </Row>
-        <Row cls="app__footer">
-            footer
-        </Row>
-      </div>
-    );
+    render() {
+        return (
+            <div className="app">
+                <HeaderMenu cls="app__header"/>
+                <Row cls="app__body">
+                    <Main/>
+                </Row>
+                {/*<Row cls="app__footer">*/}
+                    {/*footer*/}
+                {/*</Row>*/}
+            </div>
+        );
   }
 }
 

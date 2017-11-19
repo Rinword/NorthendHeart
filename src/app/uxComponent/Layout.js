@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 
 class Layout extends React.PureComponent {

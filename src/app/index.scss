@@ -2,7 +2,11 @@
   text-align: center;
 
   &__header {
-    height: 40px;
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    height: 40px !important; //TODO css vars
+    width: 100vw;
     color: white;
     background-color: #222;
     display: flex;
@@ -12,6 +16,10 @@
     animation: App-logo-spin infinite 20s linear;
     height: 40px;
     width: 40px;
+  }
+
+  &__body {
+    max-width: 1440px;
   }
 }
 

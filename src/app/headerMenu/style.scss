@@ -1,0 +1,14 @@
+.header-menu {
+  position: relative;
+  background-color: black;
+
+  &__options-container {
+    > * {
+      margin-right: 6px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
