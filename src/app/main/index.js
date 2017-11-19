@@ -11,18 +11,19 @@ import './style.css';
 
 class Main extends React.PureComponent {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            activePage: 0,
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //
+    //     // this.state = {
+    //     //     activePage: 0,
+    //     // }
+    // }
 
     render() {
         return (
             <div className="main-content">
                 <PageSlider
+                    activePage={this.props.activePage}
                     pages={[
                         <Home key="home-slide" prop="dsdas"/>,
                         <Features key="feature-slide" prop="123123"/>,

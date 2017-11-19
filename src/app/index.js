@@ -8,12 +8,22 @@ import './index.css';
 
 //routing here
 class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            activePage: 0,
+        };
+
+        this.onSelectItem = item => this.setState({ activePage: item })
+    }
+
     render() {
         return (
             <div className="app">
-                <HeaderMenu cls="app__header"/>
+                <HeaderMenu onSelectItem={this.onSelectItem} cls="app__header"/>
                 <Row cls="app__body">
-                    <Main/>
+                    <Main activePage={this.state.activePage} />
                 </Row>
                 {/*<Row cls="app__footer">*/}
                     {/*footer*/}
