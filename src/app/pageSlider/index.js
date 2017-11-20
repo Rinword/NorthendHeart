@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import cx from 'classnames';
-import { animatedScrollTo } from '../../utils';
+import Scroll from 'react-scroll';
+import { scroller, Events, scrollSpy } from 'react-scroll';
 
 import './style.css';
 
@@ -11,7 +11,7 @@ class PageSlider extends React.PureComponent {
         activePage: PropTypes.number,
     };
     static defaultProps = {
-        activePage: 0,
+        activePageId: 'slide0',
     };
 
     constructor(props) {
@@ -19,18 +19,42 @@ class PageSlider extends React.PureComponent {
 
         this.state = {
             pageHeight: 0,
+            isScrollNow: false,
+        };
+
+        Events.scrollEvent.register('begin', ()=> {
+            this.setState({ isScrollNow: true });
+        });
+        Events.scrollEvent.register('end', ()=> {
+            this.setState({ isScrollNow: false });
+        });
+
+        // window.onscroll = () => {
+        //     let scrolled = window.pageYOffset || document.documentElement.scrollTop;
+        //     console.log(scrolled, this.state.pageHeight);
+        //     if(scrolled%this.state.pageHeight > 20 && !this.state.isScrollNow) {
+        //         console.log(Math.ceil(scrolled/this.state.pageHeight));
+        //         this.scrollTo('slide' + Math.ceil(scrolled/this.state.pageHeight))
+        //     }
+        // };
+
+        this.scrollTo = (id) => {
+            scroller.scrollTo(id, {
+                duration: 600,
+                delay: 0,
+                smooth: 'easeInOut'
+            })
         }
     }
 
     componentDidMount() {
-        const height = this.refs.content.clientHeight;
+        const height = window.innerHeight;
         this.setState({pageHeight: height});
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.activePage !==this.props.activePage) {
-            // animatedScrollTo(0, nextProps.activePage * this.state.pageHeight) //TODO not works
-            window.scrollTo(0, nextProps.activePage * this.state.pageHeight);
+        if(nextProps.activePage !== this.props.activePage) {
+            this.scrollTo('slide' + nextProps.activePage);
         }
     }
 

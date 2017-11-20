@@ -6,18 +6,12 @@ import PageSlider from '../pageSlider';
 
 import Home from './pages/home';
 import Features from './pages/features';
+import Projects from './pages/projects';
+import Lifestyle from './pages/lifeStyle';
 
 import './style.css';
 
 class Main extends React.PureComponent {
-
-    // constructor(props) {
-    //     super(props);
-    //
-    //     // this.state = {
-    //     //     activePage: 0,
-    //     // }
-    // }
 
     render() {
         return (
@@ -25,8 +19,10 @@ class Main extends React.PureComponent {
                 <PageSlider
                     activePage={this.props.activePage}
                     pages={[
-                        <Home key="home-slide" prop="dsdas"/>,
-                        <Features key="feature-slide" prop="123123"/>,
+                        <Home key="home-slide" id="slide0"/>,
+                        <Features key="feature-slide" id="slide1"/>,
+                        <Projects key="projects" id="slide2"/>,
+                        <Lifestyle key="lifestyle" id="slide3"/>,
                     ]}
                 />
             </div>

@@ -8,7 +8,7 @@ class Features extends React.PureComponent {
 
     render() {
         return (
-            <div className="features">
+            <div id={this.props.id} className="features">
                 Features
             </div>
         );

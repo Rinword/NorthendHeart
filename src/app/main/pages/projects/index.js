@@ -4,15 +4,15 @@ import React from 'react';
 
 import './style.css';
 
-class Home extends React.PureComponent {
+class Projects extends React.PureComponent {
 
     render() {
         return (
-            <div id={this.props.id} className="home">
-                Home slide
+            <div id={this.props.id} className="projects">
+                Projects
             </div>
         );
     }
 }
 
-export default Home;
+export default Projects;
