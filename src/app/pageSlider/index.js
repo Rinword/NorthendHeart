@@ -29,14 +29,29 @@ class PageSlider extends React.PureComponent {
             this.setState({ isScrollNow: false });
         });
 
-        // window.onscroll = () => {
-        //     let scrolled = window.pageYOffset || document.documentElement.scrollTop;
-        //     console.log(scrolled, this.state.pageHeight);
-        //     if(scrolled%this.state.pageHeight > 20 && !this.state.isScrollNow) {
-        //         console.log(Math.ceil(scrolled/this.state.pageHeight));
-        //         this.scrollTo('slide' + Math.ceil(scrolled/this.state.pageHeight))
-        //     }
-        // };
+        window.onwheel = (evt) => {
+            this.isUp = evt.wheelDelta >= 0;
+            if(this.state.isScrollNow) {
+                console.log('shit')
+                // evt.returnValue = false;
+                // evt.wheelDelta = 0;
+                // evt.preventDefault();
+                return false;
+            }
+        };
+
+        window.onscroll = (evt) => {
+            console.log('scroll');
+            if(this.state.isScrollNow) return false;
+            console.log('--scroll');
+            let scrolled = window.pageYOffset || document.documentElement.scrollTop;
+            if(this.isUp) {
+                this.scrollTo('slide' + (Math.floor(scrolled/this.state.pageHeight)))
+            }
+            if(!this.isUp) {
+                this.scrollTo('slide' + Math.ceil(scrolled/this.state.pageHeight))
+            }
+        };
 
         this.scrollTo = (id) => {
             scroller.scrollTo(id, {
@@ -68,3 +83,19 @@ class PageSlider extends React.PureComponent {
 }
 
 export default PageSlider;
+
+// document.onmousewheel = function(){ stopWheel(); } /* IE7, IE8 */
+// if(document.addEventListener){ /* Chrome, Safari, Firefox */
+//     document.addEventListener('DOMMouseScroll', stopWheel, false);
+// }
+//
+// function stopWheel(e){
+//     if(!e){ e = window.event; } /* IE7, IE8, Chrome, Safari */
+//     if(e.preventDefault) { e.preventDefault(); } /* Chrome, Safari, Firefox */
+//     e.returnValue = false; /* IE7, IE8 */
+// }
+// //Re-enabling the Wheel
+// document.onmousewheel = null;  /* IE7, IE8 */
+// if(document.addEventListener){ /* Chrome, Safari, Firefox */
+//     document.removeEventListener('DOMMouseScroll', stopWheel, false);
+// }
