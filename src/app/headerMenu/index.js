@@ -8,14 +8,20 @@ import './style.css';
 
 class HeaderMenu extends React.PureComponent {
     render() {
+        const activePage = this.props.activePage;
         return (
-            <Row jc="space-between" ai="center" cls={cx([this.props.cls], 'header-menu')}>
+            <Row jc="space-between" ai="center" cls={cx([this.props.cls], 'header-menu', {'header-menu_transparent': activePage === 'slide0'})}>
                 <img src={logo} className="app__logo" alt="logo" />
                 <Row flexGrow="0" jc="flex-end" ai="center" cls="header-menu__options-container">
-                    <span onClick={()=> this.props.onSelectItem(0)} >Home</span>
-                    <span onClick={()=> this.props.onSelectItem(1)} >Features</span>
-                    <span onClick={()=> this.props.onSelectItem(2)} >Projects</span>
-                    <span onClick={()=> this.props.onSelectItem(3)} >Lifestyle</span>
+                    {menuConfig.map(item =>
+                        <span
+                            key={item.id}
+                            className={cx('header-menu__item', {'header-menu__item_active' : activePage === item.id})}
+                            onClick={() => this.props.onSelectItem(item.id)}
+                        >
+                            {item.name}
+                        </span>)
+                    }
                 </Row>
 
 
@@ -25,3 +31,26 @@ class HeaderMenu extends React.PureComponent {
 }
 
 export default HeaderMenu;
+
+const menuConfig = [
+    {
+        order: 0,
+        id: 'slide0',
+        name: 'Home',
+    },
+    {
+        order: 1,
+        id: 'slide1',
+        name: 'Features',
+    },
+    {
+        order: 2,
+        id: 'slide2',
+        name: 'Projects',
+    },
+    {
+        order: 3,
+        id: 'slide3',
+        name: 'Lifestyle',
+    },
+]

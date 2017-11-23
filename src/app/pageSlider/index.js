@@ -42,10 +42,14 @@ class PageSlider extends React.PureComponent {
             if(this.state.isScrollNow) return false;
             let scrolled = window.pageYOffset || document.documentElement.scrollTop;
             if(this.isUp) {
-                this.scrollTo('slide' + (Math.floor(scrolled/this.state.pageHeight)))
+                const currSlide = 'slide' + (Math.floor(scrolled/this.state.pageHeight));
+                this.scrollTo(currSlide)
+                this.props.onSelectPage(currSlide)
             }
             if(!this.isUp) {
-                this.scrollTo('slide' + Math.ceil(scrolled/this.state.pageHeight))
+                const currSlide = 'slide' + (Math.ceil(scrolled/this.state.pageHeight));
+                this.scrollTo(currSlide)
+                this.props.onSelectPage(currSlide)
             }
         };
 
@@ -72,7 +76,7 @@ class PageSlider extends React.PureComponent {
 
     componentWillReceiveProps(nextProps) {
         if(nextProps.activePage !== this.props.activePage) {
-            this.scrollTo('slide' + nextProps.activePage);
+            this.scrollTo(nextProps.activePage);
         }
     }
 

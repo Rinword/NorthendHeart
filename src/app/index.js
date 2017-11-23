@@ -12,18 +12,26 @@ class App extends Component {
         super(props);
 
         this.state = {
-            activePage: 0,
+            currentActiveSlide: 'slide0',
         };
 
-        this.onSelectItem = item => this.setState({ activePage: item })
+        this.oneMenuSelect = item => {
+            console.log('menu', item);
+            this.setState({ activePage: item })
+        };
+        this.onMouseSelect = item => {
+            console.log('scroll', item);
+            this.setState({ activePage: item });
+        }
+
     }
 
     render() {
         return (
             <div className="app" id="app">
-                <HeaderMenu onSelectItem={this.onSelectItem} cls="app__header"/>
+                <HeaderMenu activePage={this.state.activePage} onSelectItem={this.oneMenuSelect} cls="app__header"/>
                 <Row cls="app__body">
-                    <Main activePage={this.state.activePage} />
+                    <Main activePage={this.state.activePage} onSelectPage={this.onMouseSelect} />
                 </Row>
                 {/*<Row cls="app__footer">*/}
                     {/*footer*/}

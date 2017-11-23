@@ -18,6 +18,7 @@ class Main extends React.PureComponent {
             <div className="main-content">
                 <PageSlider
                     activePage={this.props.activePage}
+                    onSelectPage={this.props.onSelectPage}
                     pages={[
                         <Home key="home-slide" id="slide0"/>,
                         <Features key="feature-slide" id="slide1"/>,
