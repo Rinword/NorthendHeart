@@ -3,11 +3,47 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: teal;
-  font-size: 22px;
+  background-color: black;
 
-  background: url('../../../../static/img/slide0.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  &__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../../../static/img/slide0.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    transition: 1.4s all;
+    transition-delay: 0.4s;
+    z-index: 1;
+  }
+
+  &__content {
+    z-index: 2;
+  }
+    &__title {
+      position: absolute;
+      left: 30px;
+      top: 100px;
+      font-size: 22px;
+      opacity: 0;
+    }
+
+  &.slide_active {
+    .home__background {
+        transform: scale(1.05, 1.05);
+        opacity: 0.7;
+        box-shadow: 0 0 50px 40px black inset;
+      }
+    .home__title {
+      //font-size: 32px;
+      color: white;
+      left: 130px;
+      top: 100px;
+      opacity: 1;
+    }
+  }
 }

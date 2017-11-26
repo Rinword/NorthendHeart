@@ -12,21 +12,25 @@ class App extends Component {
         super(props);
 
         this.state = {
-            currentActiveSlide: 'slide0',
+            activePage: '',
         };
 
         this.oneMenuSelect = item => {
-            console.log('menu', item);
+            // console.log('menu', item);
             this.setState({ activePage: item })
         };
         this.onMouseSelect = item => {
-            console.log('scroll', item);
+            // console.log('scroll', item);
             this.setState({ activePage: item });
         }
+    }
 
+    componentDidMount() {
+        this.setState({activePage: 'slide0'});
     }
 
     render() {
+        console.log('--render', this.state.activePage);
         return (
             <div className="app" id="app">
                 <HeaderMenu activePage={this.state.activePage} onSelectItem={this.oneMenuSelect} cls="app__header"/>

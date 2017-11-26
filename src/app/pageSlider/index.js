@@ -10,7 +10,7 @@ import './style.css';
 class PageSlider extends React.PureComponent {
     static propTypes = {
         pages: PropTypes.array.isRequired,
-        activePage: PropTypes.number,
+        activePage: PropTypes.string,
     };
     static defaultProps = {
         activePageId: 'slide0',

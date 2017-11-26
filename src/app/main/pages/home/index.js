@@ -9,7 +9,11 @@ class Home extends React.PureComponent {
     render() {
         return (
             <div id={this.props.id} className={cx("home", {'slide_active': this.props.isActive})}>
-                Home slide
+                <div className="home__background"/>
+                <div className="home__content">
+                    <div className="home__title">Northern Heart</div>
+                </div>
+
             </div>
         );
     }
