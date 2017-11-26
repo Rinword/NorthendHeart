@@ -20,10 +20,30 @@ class Main extends React.PureComponent {
                     activePage={this.props.activePage}
                     onSelectPage={this.props.onSelectPage}
                     pages={[
-                        <Home key="home-slide" id="slide0"/>,
-                        <Features key="feature-slide" id="slide1"/>,
-                        <Projects key="projects" id="slide2"/>,
-                        <Lifestyle key="lifestyle" id="slide3"/>,
+                        {
+                            component: Home,
+                            props: {
+                                id: 'slide0'
+                            },
+                        },
+                        {
+                            component: Features,
+                            props: {
+                                id: 'slide1'
+                            },
+                        },
+                        {
+                            component: Projects,
+                            props: {
+                                id: 'slide2'
+                            },
+                        },
+                        {
+                            component: Lifestyle,
+                            props: {
+                                id: 'slide3'
+                            },
+                        },
                     ]}
                 />
             </div>

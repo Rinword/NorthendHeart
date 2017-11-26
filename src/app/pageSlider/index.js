@@ -33,9 +33,6 @@ class PageSlider extends React.PureComponent {
 
         window.onwheel = (evt) => {
             this.isUp = evt.wheelDelta >= 0;
-            // if(this.state.isScrollNow) {
-            //
-            // }
         };
 
         window.onscroll = (evt) => {
@@ -83,7 +80,12 @@ class PageSlider extends React.PureComponent {
     render() {
         return (
             <div ref="content" className="ux-page-slider">
-                {this.props.pages.map(Page => Page)}
+                {this.props.pages.map(Page =>
+                    <Page.component
+                        key={Page.props.id}
+                        {...Page.props}
+                        isActive={this.props.activePage === Page.props.id}
+                    />)}
             </div>
         );
     }
