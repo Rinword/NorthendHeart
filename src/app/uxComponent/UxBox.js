@@ -1,4 +1,4 @@
-import Btn from './Btn'
+import Btn from './btn'
 
 import L from './Layout'
 const Layout = L.Layout;

@@ -1,4 +1,6 @@
 import React from 'react';
+import cx from 'classnames';
+import './style.css';
 export default class Btn extends React.Component {
 
     constructor(props){
@@ -10,7 +12,6 @@ export default class Btn extends React.Component {
     }
 
     renderInnerIcon() {
-
         return(
             <div className={'ux-btn__inner-icon icon icon_'+ this.props.innerIconName}>
 
@@ -20,7 +21,7 @@ export default class Btn extends React.Component {
 
     render(){
         return (
-            <button className={"ux-btn " + (this.props.cls? this.props.cls : '')} onClick={this.onClick}>
+            <button className= {cx("ux-btn" + (this.props.cls? this.props.cls : ''), {'ux-btn_alt' : this.props.alt})} onClick={this.onClick}>
                 {this.props.children}
                 {this.props.innerIconName && this.renderInnerIcon()}
             </button>
