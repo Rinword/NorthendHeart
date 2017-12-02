@@ -5,6 +5,7 @@ import cx from 'classnames';
 
 import logo from '../../static/img/logo.svg'; //TODO set absolute path
 import './style.css';
+import menuConfig from './menuConfig';
 
 class HeaderMenu extends React.PureComponent {
     render() {
@@ -32,25 +33,3 @@ class HeaderMenu extends React.PureComponent {
 
 export default HeaderMenu;
 
-const menuConfig = [
-    {
-        order: 0,
-        id: 'slide0',
-        name: 'Home',
-    },
-    {
-        order: 1,
-        id: 'slide1',
-        name: 'Features',
-    },
-    {
-        order: 2,
-        id: 'slide2',
-        name: 'Projects',
-    },
-    {
-        order: 3,
-        id: 'slide3',
-        name: 'Lifestyle',
-    },
-]
