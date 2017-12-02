@@ -36,16 +36,18 @@ class PageSlider extends React.PureComponent {
         };
 
         window.onscroll = (evt) => {
-            if(this.state.isScrollNow) return false;
+            if(this.state.isScrollNow) {
+                return false;
+            }
             let scrolled = window.pageYOffset || document.documentElement.scrollTop;
             if(this.isUp) {
                 const currSlide = 'slide' + (Math.floor(scrolled/this.state.pageHeight));
-                this.scrollTo(currSlide)
+                this.scrollTo(currSlide);
                 this.props.onSelectPage(currSlide)
             }
             if(!this.isUp) {
                 const currSlide = 'slide' + (Math.ceil(scrolled/this.state.pageHeight));
-                this.scrollTo(currSlide)
+                this.scrollTo(currSlide);
                 this.props.onSelectPage(currSlide)
             }
         };
