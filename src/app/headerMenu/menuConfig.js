@@ -19,4 +19,14 @@ export default  [
         id: 'slide3',
         name: 'Lifestyle',
     },
+    // {
+    //     order: 4,
+    //     id: 'slide4',
+    //     name: 'Contacts',
+    // },
+    // {
+    //     order: 5,
+    //     id: 'slide5',
+    //     name: 'About us',
+    // },
 ]
