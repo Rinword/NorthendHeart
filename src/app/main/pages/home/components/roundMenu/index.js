@@ -15,12 +15,38 @@ class RoundMenu extends React.PureComponent {
             mainRadius: 0,
             itemAngle: +((360/props.menuItems.length).toFixed(0)),
             containerSize: 0,
+            fade: 'none',
+            shadow: 'none',
         };
 
-        this.onHover = (order) => {
-            this.setState({ hoveredItem: order });
+        const clearTimeouts = (tIds) => {
+            if(Array.isArray(tIds)) {
+                tIds.forEach( id => id && clearTimeout(id))
+            }
+
+            return null;
         }
 
+        this.onHover = (order) => {
+            const duration = this.props.fadeDuration;
+            if(order === this.state.hoveredItem) return;
+            clearTimeouts([tId]);
+
+            this.setState({ fade: 'fade_in' });
+            tId = setTimeout(()=> {
+                this.setState({ hoveredItem: order, fade: 'fade_out', shadow: 'shadow'});
+                tId2 = setTimeout(()=> {
+                    this.setState({fade: 'fade_out'});
+                    tId3 = setTimeout(()=> {
+                        this.setState({fade: 'none'});
+                        tId4 = setTimeout(()=> {
+                            this.setState({shadow: 'none'});
+                        }, 2*duration)
+                    }, duration)
+                }, duration)
+            }, duration);
+            var tId, tId2,tId3, tId4;
+        }
     }
 
     componentDidMount() {
@@ -39,8 +65,16 @@ class RoundMenu extends React.PureComponent {
 
         return (
             <div ref="content" className={cx("ux-round-menu")}>
-                <div className="ux-round-menu__center">
-                    <div>{menuItems[currItem].name}</div>
+                <div
+                    className={cx(
+                        "ux-round-menu__center",
+                        `ux-round-menu__center_${this.state.fade}`,
+                        `ux-round-menu__center_${this.state.shadow}`
+                    )}
+                >
+                    <div className="text-out" style={{transition: `${this.props.fadeDuration/1000}s all`}}>
+                        {menuItems[currItem].name}
+                    </div>
                 </div>
                 {this.props.menuItems.map( (item, i) => {
                     return (
@@ -55,8 +89,8 @@ class RoundMenu extends React.PureComponent {
 const MenuItem = ({r, order, fi, data, onHover}) => {
     let crs = toDecart(r, order * fi);
 
-    crs.x += r + 25;
-    crs.y += r + 25;
+    crs.x += r + 10;
+    crs.y += r + 10;
     return (
             <div
                 className="ux-round-menu__item"
@@ -73,10 +107,13 @@ RoundMenu.displayName = 'RoundMenu';
 RoundMenu.propTypes = {
     menuItems: PropTypes.array.isRequired,
     padding: PropTypes.number,
+    fadeDuration: PropTypes.number,
+
 };
 
 RoundMenu.defaultProps = {
     padding: 50,
+    fadeDuration: 200,
 }
 
 export default RoundMenu;
