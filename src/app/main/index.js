@@ -23,7 +23,8 @@ class Main extends React.PureComponent {
                         {
                             component: Home,
                             props: {
-                                id: 'slide0'
+                                id: 'slide0',
+                                onMenuClick: this.props.onSelectPage
                             },
                         },
                         {

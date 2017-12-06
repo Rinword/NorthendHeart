@@ -17,6 +17,7 @@ class RoundMenu extends React.PureComponent {
             containerSize: 0,
             fade: 'none',
             shadow: 'none',
+            animation: true,
         };
 
         const clearTimeouts = (tIds) => {
@@ -25,27 +26,31 @@ class RoundMenu extends React.PureComponent {
             }
 
             return null;
-        }
+        };
 
         this.onHover = (order) => {
             const duration = this.props.fadeDuration;
+            this.setState({animation: false });
             if(order === this.state.hoveredItem) return;
-            clearTimeouts([tId]);
+            clearTimeouts([tId, tId2]);
 
             this.setState({ fade: 'fade_in' });
             tId = setTimeout(()=> {
-                this.setState({ hoveredItem: order, fade: 'fade_out', shadow: 'shadow'});
+                // if(this.state.fade === 'fade_in') {
+                    this.setState({ hoveredItem: order, fade: 'fade_out'});
+                // }
                 tId2 = setTimeout(()=> {
-                    this.setState({fade: 'fade_out'});
-                    tId3 = setTimeout(()=> {
+                    // this.setState({fade: 'fade_out'});
+                    // tId3 = setTimeout(()=> {
                         this.setState({fade: 'none'});
-                        tId4 = setTimeout(()=> {
-                            this.setState({shadow: 'none'});
-                        }, 2*duration)
-                    }, duration)
+                    // }, duration)
                 }, duration)
             }, duration);
             var tId, tId2,tId3, tId4;
+        };
+
+        this.onBlur = () => {
+            this.setState({ animation: true });
         }
     }
 
@@ -64,12 +69,17 @@ class RoundMenu extends React.PureComponent {
         const angle = this.state.itemAngle;
 
         return (
-            <div ref="content" className={cx("ux-round-menu")}>
+            <div ref="content"
+                 className={cx(
+                     "ux-round-menu",
+                     {[`ux-round-menu_stop-animation`]: !this.state.animation})}
+            >
                 <div
                     className={cx(
                         "ux-round-menu__center",
                         `ux-round-menu__center_${this.state.fade}`,
-                        `ux-round-menu__center_${this.state.shadow}`
+                        `ux-round-menu__center_${this.state.shadow}`,
+                        {[`ux-round-menu__center_stop-animation`]: !this.state.animation}
                     )}
                 >
                     <div className="text-out" style={{transition: `${this.props.fadeDuration/1000}s all`}}>
@@ -78,7 +88,15 @@ class RoundMenu extends React.PureComponent {
                 </div>
                 {this.props.menuItems.map( (item, i) => {
                     return (
-                        <MenuItem onHover={this.onHover} key={angle} r={this.state.mainRadius} fi={angle} order={i} data={item} />
+                        <MenuItem
+                            onHover={this.onHover}
+                            onBlur={this.onBlur}
+                            onClick={this.props.onItemClick}
+                            key={i + angle}
+                            r={this.state.mainRadius}
+                            fi={angle} order={i} data={item}
+                            animation={this.state.animation}
+                        />
                     )
                 })}
             </div>
@@ -86,16 +104,21 @@ class RoundMenu extends React.PureComponent {
     }
 }
 
-const MenuItem = ({r, order, fi, data, onHover}) => {
+const MenuItem = ({r, order, fi, data, onHover, onBlur, onClick, animation}) => {
     let crs = toDecart(r, order * fi);
 
-    crs.x += r + 10;
-    crs.y += r + 10;
+    crs.x += r;
+    crs.y += r;
     return (
             <div
-                className="ux-round-menu__item"
+                className={cx(
+                    "ux-round-menu__item",
+                    {"ux-round-menu__item_stop-animation" : !animation},
+                )}
                 style={{left: crs.x, top: crs.y}}
                 onMouseEnter={()=>onHover(order)}
+                onMouseLeave={()=>onBlur(order)}
+                onClick={()=>onClick(data.id)}
             >
                 {data.name.charAt(0)}
             </div>

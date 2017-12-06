@@ -25,7 +25,7 @@ class Home extends React.PureComponent {
                         <div className="home__sub-tagline" >Начало пути к новому...</div>
                     </Column>
                     <Row cls="home__menu-wrap" jc="center" ai="flex-start" padding="10px 0">
-                        <RoundMenu menuItems={menuConfig} />
+                        <RoundMenu menuItems={menuConfig} onItemClick={this.props.onMenuClick} />
                     </Row>
                 </Column>
             </div>
