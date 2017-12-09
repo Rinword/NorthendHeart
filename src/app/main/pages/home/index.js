@@ -34,7 +34,6 @@ class Home extends React.PureComponent {
         return (
             <div id={this.props.id} className={cx('home', { slide_active: this.props.isActive })}>
                 <div className="home__background" />
-                <div className="home__title">PLUS MODUL</div>
                 <Column cls="home__content">
                     <Column ai="flex-start" cls="home__contact-area">
                         <div className="home__phone"> +7 (916)652-14-45 </div>
@@ -42,7 +41,7 @@ class Home extends React.PureComponent {
                             Заказать звонок
                         </Btn>
                     </Column>
-                    <Column flexGrow="0" height="auto" padding="20px 30px">
+                    <Column flexGrow="0" height="auto" padding="30px 10px 20px 85px">
                         <div className="home__tagline">
                             Сдержанность и дорогой минимализм — признаки роскоши и стиля
                         </div>

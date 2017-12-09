@@ -6,9 +6,21 @@
   &_transparent {
     background-color: transparent !important;
   }
+  &__logo {
+    //animation: App-logo-spin infinite 20s linear;
+    height: 60px;
+    width: 60px;
+    margin-top: 8px;
+  }
+  &__title {
+    position: absolute;
+    left: 60px;
+    top: 7px;
+    display: flex;
+    font-size: 28px;
+    font-family: Oswald;
 
-  &__options-container {
-    //margin-right: 10px;
+    transition: .5s all;
   }
   &__item {
     margin-right: 20px;

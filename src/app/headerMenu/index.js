@@ -16,7 +16,8 @@ class HeaderMenu extends React.PureComponent {
                 ai="center"
                 cls={cx([this.props.cls], 'header-menu', { 'header-menu_transparent': activePage === 'slide0' })}
             >
-                <img src={logo} className="app__logo" alt="logo" />
+                <img src={logo} className="header-menu__logo" alt="logo" />
+                <div className="header-menu__title">PLUS MODUL</div>
                 <Row flexGrow="0" jc="flex-end" ai="center" cls="header-menu__options-container">
                     {menuConfig.map(item => (
                         <span
