@@ -1,7 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 import './style.css';
-export default class Btn extends React.Component {
+class Btn extends React.Component {
     constructor(props) {
         super(props);
 
@@ -17,8 +18,12 @@ export default class Btn extends React.Component {
     render() {
         return (
             <button
-                className={cx('ux-btn' + (this.props.cls ? this.props.cls : ''), { 'ux-btn_alt': this.props.alt })}
-                onClick={this.onClick}
+                className={cx(
+                    'ux-btn' + (this.props.cls ? this.props.cls : ''),
+                    { 'ux-btn_alt': this.props.alt },
+                    { 'ux-btn_disabled': this.props.disabled }
+                )}
+                onClick={!this.props.disabled && this.onClick}
             >
                 {this.props.children}
                 {this.props.innerIconName && this.renderInnerIcon()}
@@ -26,3 +31,13 @@ export default class Btn extends React.Component {
         );
     }
 }
+
+Btn.displayName = 'Btn';
+
+Btn.propTypes = {
+    cls: PropTypes.string,
+    alt: PropTypes.bool,
+    disabled: PropTypes.bool,
+};
+
+export default Btn;
