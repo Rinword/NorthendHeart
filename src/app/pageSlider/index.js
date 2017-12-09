@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Scroll from 'react-scroll';
-import { scroller, Events, Element } from 'react-scroll';
+import { scroller, Events } from 'react-scroll';
 
 import './style.css';
 

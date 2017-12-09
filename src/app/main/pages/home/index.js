@@ -34,9 +34,3 @@ class Home extends React.PureComponent {
 }
 
 export default Home;
-
-const menuItems = [
-    {
-        id: ''
-    }
-];
