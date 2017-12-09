@@ -70,6 +70,8 @@ $animation-time: 24s;
     height: 100px;
     border-radius: 50%;
     position: absolute;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
     border: 1px solid white;
     color: white;
     display: flex;
@@ -85,11 +87,22 @@ $animation-time: 24s;
     }
 
     &:hover {
-      box-shadow: 0 0 8px 1px #66b7e4;
-      transform: scale(1.2, 1.2);
-      animation-play-state: paused;
+      box-shadow: 0 0 8px 1px #66b7e4 !important;
+      //transform: scale(1.2, 1.2) !important;
+    }
+
+    &_show-at_visible {
+      opacity: 1 !important;
     }
   }
+
+  //@for $i from 0 to 16 {
+  //  &__item_show-at_#{$i} {
+  //    opacity: 1 !im;
+  //    //transition: 0.12s all;
+  //    //transition-delay: (#{$i * 0.15}s) !important;
+  //  }
+  //}
 }
 
 @-webkit-keyframes rotation {

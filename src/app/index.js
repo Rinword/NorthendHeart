@@ -30,16 +30,19 @@ class App extends Component {
     }
 
     render() {
-        console.log('--render', this.state.activePage);
         return (
             <div className="app" id="app">
                 <HeaderMenu activePage={this.state.activePage} onSelectItem={this.oneMenuSelect} cls="app__header"/>
                 <Row cls="app__body">
                     <Main activePage={this.state.activePage} onSelectPage={this.onMouseSelect} />
                 </Row>
-                {/*<Row cls="app__footer">*/}
-                    {/*footer*/}
-                {/*</Row>*/}
+                <Row cls="app__footer">
+                    <div>Icons made by
+                        <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>
+                        from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+                        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+                    </div>
+                </Row>
             </div>
         );
   }

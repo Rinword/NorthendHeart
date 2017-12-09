@@ -4,6 +4,30 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 24px;
+
+  &_bg-size_contain {
+    background-size: contain;
+  }
+
+  &_menu {
+
+    &_home {
+      background-image: url('../static/img/roundMenu/home.svg');
+    }
+    &_features {
+      background-image: url('../static/img/roundMenu/features.svg');
+    }
+    &_projects {
+      background-image: url('../static/img/roundMenu/projects.svg');
+    }
+    &_technologies {
+      background-image: url('../static/img/roundMenu/technologies.svg');
+    }
+    &_contacts {
+      background-image: url('../static/img/roundMenu/contacts.svg');
+    }
+
+  }
 }
 
 @mixin bg-size($size) {

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Column, Btn } from "../../../../../uxComponent/UxBox";
 import {toDecart} from "./utils";
 import './style.css';
 
@@ -11,7 +10,7 @@ class RoundMenu extends React.PureComponent {
         super(props);
 
         this.state = {
-            hoveredItem: 0,
+            hoveredItem: -1,
             mainRadius: 0,
             itemAngle: +((360/props.menuItems.length).toFixed(0)),
             containerSize: 0,
@@ -20,33 +19,33 @@ class RoundMenu extends React.PureComponent {
             animation: true,
         };
 
-        const clearTimeouts = (tIds) => {
-            if(Array.isArray(tIds)) {
-                tIds.forEach( id => id && clearTimeout(id))
-            }
-
-            return null;
-        };
+        // const clearTimeouts = (tIds) => {
+        //     if(Array.isArray(tIds)) {
+        //         tIds.forEach( id => id && clearTimeout(id))
+        //     }
+        //
+        //     return null;
+        // };
 
         this.onHover = (order) => {
             const duration = this.props.fadeDuration;
             this.setState({animation: false });
             if(order === this.state.hoveredItem) return;
-            clearTimeouts([tId, tId2]);
+            // clearTimeouts([tId, tId2]);
 
             this.setState({ fade: 'fade_in' });
-            tId = setTimeout(()=> {
+            setTimeout(()=> {
                 // if(this.state.fade === 'fade_in') {
                     this.setState({ hoveredItem: order, fade: 'fade_out'});
                 // }
-                tId2 = setTimeout(()=> {
+                setTimeout(()=> {
                     // this.setState({fade: 'fade_out'});
                     // tId3 = setTimeout(()=> {
                         this.setState({fade: 'none'});
                     // }, duration)
                 }, duration)
             }, duration);
-            var tId, tId2,tId3, tId4;
+            // var tId, tId2;
         };
 
         this.onBlur = () => {
@@ -83,7 +82,7 @@ class RoundMenu extends React.PureComponent {
                     )}
                 >
                     <div className="text-out" style={{transition: `${this.props.fadeDuration/1000}s all`}}>
-                        {menuItems[currItem].name}
+                        { (menuItems[currItem] && menuItems[currItem].name) || ''}
                     </div>
                 </div>
                 {this.props.menuItems.map( (item, i) => {
@@ -96,6 +95,8 @@ class RoundMenu extends React.PureComponent {
                             r={this.state.mainRadius}
                             fi={angle} order={i} data={item}
                             animation={this.state.animation}
+                            itemsFade={this.props.itemsFade}
+                            fadeDuration={this.props.fadeDuration}
                         />
                     )
                 })}
@@ -104,7 +105,7 @@ class RoundMenu extends React.PureComponent {
     }
 }
 
-const MenuItem = ({r, order, fi, data, onHover, onBlur, onClick, animation}) => {
+const MenuItem = ({r, order, fi, data, onHover, onBlur, onClick, animation, itemsFade, fadeDuration}) => {
     let crs = toDecart(r, order * fi);
 
     crs.x += r;
@@ -114,13 +115,18 @@ const MenuItem = ({r, order, fi, data, onHover, onBlur, onClick, animation}) => 
                 className={cx(
                     "ux-round-menu__item",
                     {"ux-round-menu__item_stop-animation" : !animation},
+                    {[`ux-round-menu__item_show-at_stop-animation`] : !itemsFade},
                 )}
-                style={{left: crs.x, top: crs.y}}
+                style={{
+                    left: crs.x || 'calc(50% - 50px)', top: crs.y || 'calc(50% - 50px)',
+                    transition: `${fadeDuration/1000}s all`,
+                    transitionDelay: `${0.1 * order + 0.2}s`
+                }}
                 onMouseEnter={()=>onHover(order)}
                 onMouseLeave={()=>onBlur(order)}
                 onClick={()=>onClick(data.id)}
             >
-                {data.name.charAt(0)}
+                <div className={cx(`icon icon_size_48 icon_bg-size_contain icon_menu_${data.iconName}`)}/>
             </div>
         )
 };
@@ -131,12 +137,14 @@ RoundMenu.propTypes = {
     menuItems: PropTypes.array.isRequired,
     padding: PropTypes.number,
     fadeDuration: PropTypes.number,
+    itemsFade: PropTypes.bool,
 
 };
 
 RoundMenu.defaultProps = {
     padding: 50,
     fadeDuration: 200,
+    itemsFade: true,
 }
 
 export default RoundMenu;
