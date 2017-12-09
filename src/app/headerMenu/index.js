@@ -3,7 +3,7 @@ import { Row } from '../uxComponent/UxBox';
 // import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import logo from '../../static/img/logo.svg'; //TODO set absolute path
+import logo from '../../static/icons/logo.png'; //TODO set absolute path and get svg icon
 import './style.css';
 import menuConfig from './menuConfig';
 

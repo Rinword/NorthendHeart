@@ -17,17 +17,16 @@ class App extends Component {
         };
 
         this.oneMenuSelect = item => {
-            // console.log('menu', item);
             this.setState({ activePage: item });
         };
         this.onMouseSelect = item => {
-            // console.log('scroll', item);
             this.setState({ activePage: item });
         };
     }
 
     componentDidMount() {
         this.setState({ activePage: 'slide0' });
+        Modal.setAppElement('#app');
     }
 
     render() {

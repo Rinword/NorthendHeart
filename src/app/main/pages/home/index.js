@@ -34,7 +34,7 @@ class Home extends React.PureComponent {
         return (
             <div id={this.props.id} className={cx('home', { slide_active: this.props.isActive })}>
                 <div className="home__background" />
-                <div className="home__title">Northern Heart</div>
+                <div className="home__title">PLUS MODUL</div>
                 <Column cls="home__content">
                     <Column ai="flex-start" cls="home__contact-area">
                         <div className="home__phone"> +7 (916)652-14-45 </div>
