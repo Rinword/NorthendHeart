@@ -20,7 +20,7 @@ class HeaderMenu extends React.PureComponent {
                             className={cx('header-menu__item', {'header-menu__item_active' : activePage === item.id})}
                             onClick={() => this.props.onSelectItem(item.id)}
                         >
-                            {item.name}
+                            {item.title}
                         </span>)
                     }
                 </Row>

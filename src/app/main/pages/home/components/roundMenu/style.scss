@@ -81,6 +81,7 @@ $animation-time: 24s;
     transition: .25s all;
     box-shadow: 0 0 4px 1px white inset;
     -webkit-animation: revert-rotation $animation-time infinite linear;
+    opacity: 0.7;
 
     &_stop-animation {
       animation-play-state: paused;
@@ -88,7 +89,7 @@ $animation-time: 24s;
 
     &:hover {
       box-shadow: 0 0 8px 1px #66b7e4 !important;
-      //transform: scale(1.2, 1.2) !important;
+      opacity: 1;
     }
 
     &_show-at_visible {

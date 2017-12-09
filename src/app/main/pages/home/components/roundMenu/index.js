@@ -82,7 +82,7 @@ class RoundMenu extends React.PureComponent {
                     )}
                 >
                     <div className="text-out" style={{transition: `${this.props.fadeDuration/1000}s all`}}>
-                        { (menuItems[currItem] && menuItems[currItem].name) || ''}
+                        { (menuItems[currItem] && menuItems[currItem].title) || ''}
                     </div>
                 </div>
                 {this.props.menuItems.map( (item, i) => {
@@ -126,7 +126,7 @@ const MenuItem = ({r, order, fi, data, onHover, onBlur, onClick, animation, item
                 onMouseLeave={()=>onBlur(order)}
                 onClick={()=>onClick(data.id)}
             >
-                <div className={cx(`icon icon_size_48 icon_bg-size_contain icon_menu_${data.iconName}`)}/>
+                <div className={cx(`icon icon_size_48 icon_bg-size_contain icon_menu_${data.name}`)}/>
             </div>
         )
 };
