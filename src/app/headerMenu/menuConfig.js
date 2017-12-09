@@ -1,4 +1,4 @@
-export default  [
+export default [
     {
         order: 0,
         id: 'slide0',
@@ -35,4 +35,4 @@ export default  [
     //     title: 'About us',
     //     iconName: 'about_us',
     // },
-]
+];

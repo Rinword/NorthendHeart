@@ -23,47 +23,46 @@ class PageSlider extends React.PureComponent {
             isScrollNow: false,
         };
 
-        Events.scrollEvent.register('begin', ()=> {
+        Events.scrollEvent.register('begin', () => {
             this.setState({ isScrollNow: true });
         });
-        Events.scrollEvent.register('end', ()=> {
+        Events.scrollEvent.register('end', () => {
             this.setState({ isScrollNow: false });
         });
 
-        window.onwheel = (evt) => {
+        window.onwheel = evt => {
             this.isUp = evt.wheelDelta >= 0;
         };
 
-        window.onscroll = (evt) => {
-            if(this.state.isScrollNow) {
+        window.onscroll = evt => {
+            if (this.state.isScrollNow) {
                 return false;
             }
             let scrolled = window.pageYOffset || document.documentElement.scrollTop;
-            if(this.isUp) {
-                const currSlide = 'slide' + (Math.floor(scrolled/this.state.pageHeight));
+            if (this.isUp) {
+                const currSlide = `slide${Math.floor(scrolled / this.state.pageHeight)}`;
                 this.scrollTo(currSlide);
-                this.props.onSelectPage(currSlide)
+                this.props.onSelectPage(currSlide);
             }
-            if(!this.isUp) {
-                const currSlide = 'slide' + (Math.ceil(scrolled/this.state.pageHeight));
+            if (!this.isUp) {
+                const currSlide = `slide${Math.ceil(scrolled / this.state.pageHeight)}`;
                 this.scrollTo(currSlide);
-                this.props.onSelectPage(currSlide)
+                this.props.onSelectPage(currSlide);
             }
         };
 
-        this.scrollTo = (id) => {
+        this.scrollTo = id => {
             scroller.scrollTo(id, {
                 duration: 600,
                 delay: 0,
-                smooth: 'easeInOut'
-            })
+                smooth: 'easeInOut',
+            });
         };
-
     }
 
     componentDidMount() {
         const height = window.innerHeight;
-        this.setState({pageHeight: height});
+        this.setState({ pageHeight: height });
 
         // document.addEventListener('mousewheel', (e)=> {
         //     if(this.state.isScrollNow) {
@@ -73,7 +72,7 @@ class PageSlider extends React.PureComponent {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.activePage !== this.props.activePage) {
+        if (nextProps.activePage !== this.props.activePage) {
             this.scrollTo(nextProps.activePage);
         }
     }
@@ -81,12 +80,13 @@ class PageSlider extends React.PureComponent {
     render() {
         return (
             <div ref="content" className="ux-page-slider">
-                {this.props.pages.map(Page =>
+                {this.props.pages.map(Page => (
                     <Page.component
                         key={Page.props.id}
                         {...Page.props}
                         isActive={this.props.activePage === Page.props.id}
-                    />)}
+                    />
+                ))}
             </div>
         );
     }

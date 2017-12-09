@@ -12,7 +12,6 @@ import Lifestyle from './pages/lifeStyle';
 import './style.css';
 
 class Main extends React.PureComponent {
-
     render() {
         return (
             <div className="main-content">
@@ -24,25 +23,25 @@ class Main extends React.PureComponent {
                             component: Home,
                             props: {
                                 id: 'slide0',
-                                onMenuClick: this.props.onSelectPage
+                                onMenuClick: this.props.onSelectPage,
                             },
                         },
                         {
                             component: Features,
                             props: {
-                                id: 'slide1'
+                                id: 'slide1',
                             },
                         },
                         {
                             component: Projects,
                             props: {
-                                id: 'slide2'
+                                id: 'slide2',
                             },
                         },
                         {
                             component: Lifestyle,
                             props: {
-                                id: 'slide3'
+                                id: 'slide3',
                             },
                         },
                     ]}

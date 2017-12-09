@@ -2,7 +2,6 @@ import cx from 'classnames';
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-
 class Layout extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -75,7 +74,7 @@ class Layout extends React.PureComponent {
             className: cls || '',
         };
 
-        if ((width !== 'auto' && height !== 'auto') && flexGrow !== '0') {
+        if (width !== 'auto' && height !== 'auto' && flexGrow !== '0') {
             if (/px/.test(style.width) && !/calc/.test(style.width)) {
                 style.flex = '0 0 ' + style.width;
             }
