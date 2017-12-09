@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from 'react-modal';
 
 import { Row } from './uxComponent/UxBox';
 import Main from './main';
