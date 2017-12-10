@@ -25,7 +25,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.setState({ activePage: 'slide0' });
+        this.setState({ activePage: 'slide1' });
         Modal.setAppElement('#app');
     }
 
