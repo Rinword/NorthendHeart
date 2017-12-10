@@ -11,12 +11,12 @@ $error-color: #ff665f;
 
   label {
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
 
     &:after {
       content: "*";
-      display: inline-block;
+      display: none;
       position: relative;
       color: $error-color;
       margin-left: 4px;
@@ -26,8 +26,10 @@ $error-color: #ff665f;
   input {
     border: none;
     margin-bottom: 8px;
+    padding-bottom: 3px;
     border-bottom: 1px solid $border-color;
     outline: none;
+    font-size: 16px;
     &:focus {
       margin-bottom: 7px;
       border-width: 2px;
@@ -41,9 +43,9 @@ $error-color: #ff665f;
     color: $error-color;
   }
 
-  &_requred {
+  &_required {
     label:after {
-
+      display: inline-block !important;
     }
   }
 

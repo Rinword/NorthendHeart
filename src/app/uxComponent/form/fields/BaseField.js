@@ -1,6 +1,8 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { withFormsy } from 'formsy-react';
+import MaskedInput from 'react-text-mask';
+import masks from './masks';
 import './style.css';
 
 class Field extends React.Component {
@@ -27,12 +29,23 @@ class Field extends React.Component {
         return (
             <div className={className}>
                 <label htmlFor={this.props.name}>{this.props.title}</label>
-                <input
-                    onChange={this.changeValue}
-                    name={this.props.name}
-                    type={this.props.type || 'text'}
-                    value={this.props.getValue() || ''}
-                />
+                {this.props.mask ? (
+                    <MaskedInput
+                        onChange={this.changeValue}
+                        name={this.props.name}
+                        type={this.props.type || 'text'}
+                        value={this.props.getValue() || ''}
+                        mask={masks[this.props.mask] || [/\d*/]}
+                        guide={this.props.guide}
+                    />
+                ) : (
+                    <input
+                        onChange={this.changeValue}
+                        name={this.props.name}
+                        type={this.props.type || 'text'}
+                        value={this.props.getValue() || ''}
+                    />
+                )}
                 <span className="ux-field__error">{errorMessage}</span>
             </div>
         );

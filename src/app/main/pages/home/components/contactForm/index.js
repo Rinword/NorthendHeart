@@ -50,7 +50,14 @@ class ContactForm extends React.PureComponent {
                             validationError="Не менее 3 символов"
                             required
                         />
-                        <Field name="phone" title="Телефон" required value={draft.phone || ''} />
+                        <Field
+                            name="phone"
+                            title="Телефон"
+                            required
+                            value={draft.phone || ''}
+                            mask="phone"
+                            guide={true}
+                        />
                         <Row jc="flex-end">
                             <Btn disabled={!this.state.isValid}>Отправить</Btn>
                         </Row>
