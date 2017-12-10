@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { withFormsy } from 'formsy-react';
+import './style.css';
 
 class Field extends React.Component {
     constructor(props) {
@@ -15,14 +16,9 @@ class Field extends React.Component {
     }
 
     render() {
-        // Set a specific className based on the validation
-        // state of this component. showRequired() is true
-        // when the value is empty and the required prop is
-        // passed to the input. showError() is true when the
-        // value typed is invalid
-        const className = `form-group ${this.props.className} ${this.props.showRequired() ? 'required' : ''} ${
-            this.props.showError() ? 'error' : ''
-        }`;
+        const className = `ux-field ${this.props.className || ''} ${
+            this.props.showRequired() ? 'ux-field_required' : ''
+        } ${this.props.showError() ? 'ux-field_invalid' : ''}`;
 
         // An error message is returned ONLY if the component is invalid
         // or the server has returned an error message
@@ -37,7 +33,7 @@ class Field extends React.Component {
                     type={this.props.type || 'text'}
                     value={this.props.getValue() || ''}
                 />
-                <span className="validation-error">{errorMessage}</span>
+                <span className="ux-field__error">{errorMessage}</span>
             </div>
         );
     }

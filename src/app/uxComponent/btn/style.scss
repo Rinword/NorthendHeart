@@ -1,4 +1,6 @@
 $main-blue: #307db4;
+
+
 .ux-btn {
   transition: .3s all;
   position: relative;
@@ -92,10 +94,13 @@ $main-blue: #307db4;
   &_disabled {
     opacity: 0.5;
     cursor: auto;
-  }
 
-  &_type_circle {
-    border-radius: 50%;
-    padding: 0.4em;
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:focus {
+      opacity: 0.5;
+    }
   }
 }

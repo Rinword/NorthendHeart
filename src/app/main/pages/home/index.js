@@ -15,7 +15,7 @@ class Home extends React.PureComponent {
 
         this.state = {
             contactModalIsOpen: false,
-            draft: {},
+            formDraft: {},
         };
 
         this.showContactModal = () => {
@@ -23,11 +23,12 @@ class Home extends React.PureComponent {
         };
 
         this.hideContactModal = draft => {
-            this.setState({ contactModalIsOpen: false, formDraft: draft });
+            this.setState({ contactModalIsOpen: false, formDraft: draft }); //not work, need redux or set in window
         };
 
         this.onContactFormSubmit = draft => {
-            console.log(draft);
+            this.hideContactModal(draft);
+            //fetch data to server
         };
     }
     render() {
@@ -52,12 +53,8 @@ class Home extends React.PureComponent {
                     </Row>
                 </Column>
 
-                <Modal
-                    isOpen={this.state.contactModalIsOpen}
-                    onRequestClose={this.hideContactModal}
-                    onFormSubmit={this.onContactFormSubmit}
-                >
-                    <ContactForm draft={this.state.draft} onSubmit={this.onContactFormSubmit} />
+                <Modal isOpen={this.state.contactModalIsOpen} onRequestClose={this.hideContactModal}>
+                    <ContactForm draft={this.state.formDraft} onSubmit={this.onContactFormSubmit} />
                 </Modal>
             </div>
         );

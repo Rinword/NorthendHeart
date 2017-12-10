@@ -21,7 +21,7 @@ const defaultStyle = {
     bottom: 'auto',
     padding: '0',
     width: '350px',
-    height: '50%',
+    height: 'auto',
 };
 
 const defaultOverlay = {

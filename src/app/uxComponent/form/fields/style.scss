@@ -1,0 +1,55 @@
+$main-blue: #307db4;
+$border-color: #dedede;
+$error-color: #ff665f;
+
+.ux-field {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+
+  label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+
+    &:after {
+      content: "*";
+      display: inline-block;
+      position: relative;
+      color: $error-color;
+      margin-left: 4px;
+    }
+  }
+
+  input {
+    border: none;
+    margin-bottom: 8px;
+    border-bottom: 1px solid $border-color;
+    outline: none;
+    &:focus {
+      margin-bottom: 7px;
+      border-width: 2px;
+      border-color: $main-blue;
+    }
+  }
+
+  &__error {
+    font-size: 14px;
+    margin-top: 5px;
+    color: $error-color;
+  }
+
+  &_requred {
+    label:after {
+
+    }
+  }
+
+  &_invalid {
+    input {
+      border-color: $error-color !important;
+    }
+  }
+}
