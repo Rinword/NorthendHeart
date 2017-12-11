@@ -2,8 +2,13 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { Row, Column } from '../../../uxComponent/UxBox';
 import cx from 'classnames';
+import ReactIntense from '../../../../libs/react-intense/ReactIntense';
+
+import feature1 from '../../../../static/img/feature1.jpg';
 
 import './style.css';
+
+const Img = <div className="img_feature" />;
 
 class Features extends React.PureComponent {
     render() {
@@ -15,13 +20,26 @@ class Features extends React.PureComponent {
                         <div className="show-panel__title">
                             Конечное число форм - <br /> бесконечное число формобразований
                         </div>
-                        <div className="show-panel__img img_feature img_feature_1" />
+                        <ReactIntense
+                            caption="бесконечное число формобразований"
+                            className="show-panel__img img_feature"
+                            src={feature1}
+                            title="Конечное число форм"
+                            alt=""
+                            thumbnailSrc={feature1}
+                        />
                     </Column>
                     <Column height="auto" ai="center" cls="features__show-panel show-panel">
                         <div className="show-panel__title">
-                            Всегда можно достроить модуль позже, <br/> когда в нем появится необходимость
+                            Всегда можно достроить модуль позже, <br /> когда в нем появится необходимость
                         </div>
-                        <div className="show-panel__img img_feature img_feature_1" />
+                        <ReactIntense
+                            className="show-panel__img img_feature"
+                            src={feature1}
+                            title="Всегда можно достроить модуль позже"
+                            alt=""
+                            thumbnailSrc={feature1}
+                        />
                     </Column>
                 </Row>
             </div>
