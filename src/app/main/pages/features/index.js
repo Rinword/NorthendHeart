@@ -8,8 +8,6 @@ import feature1 from '../../../../static/img/feature1.jpg';
 
 import './style.css';
 
-const Img = <div className="img_feature" />;
-
 class Features extends React.PureComponent {
     render() {
         return (
@@ -27,6 +25,7 @@ class Features extends React.PureComponent {
                             title="Конечное число форм"
                             alt=""
                             thumbnailSrc={feature1}
+                            vertical={true}
                         />
                     </Column>
                     <Column height="auto" ai="center" cls="features__show-panel show-panel">
@@ -39,6 +38,7 @@ class Features extends React.PureComponent {
                             title="Всегда можно достроить модуль позже"
                             alt=""
                             thumbnailSrc={feature1}
+                            vertical={true}
                         />
                     </Column>
                 </Row>

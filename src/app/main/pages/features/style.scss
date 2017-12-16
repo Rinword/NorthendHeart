@@ -30,9 +30,16 @@
   }
 
   &__content {
-    z-index: 2;
+    z-index: 11; //TODO should be 2, fix only for react-intense
   }
 
+
+  &.slide_active {
+    .show-panel__title {
+      margin-right: 0;
+      opacity: 1;
+    }
+  }
 }
 
 .show-panel {
@@ -41,9 +48,13 @@
   overflow: visible !important;
   &__title {
     flex: 0 0 auto;
+    margin-right: -45px;
+    opacity: 0;
     margin-bottom: 25px;
     font-family: Oswald;
     font-size: 28px;
+    transition: 0.3s all;
+    transition-delay: 0.6s;
   }
   &__img {
     flex-grow: 1;
