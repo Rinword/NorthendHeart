@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import cx from 'classnames';
+import Cookies from 'js-cookie';
 import { Row, Column, Btn, Modal } from '../../../uxComponent/UxBox';
 import menuConfig from '../../../../app/headerMenu/menuConfig';
 
@@ -9,7 +10,7 @@ import ContactForm from './components/contactForm';
 
 import './style.css';
 
-class Home extends React.PureComponent {
+class Home extends React.Component {
     constructor(props) {
         super(props);
 
@@ -22,8 +23,17 @@ class Home extends React.PureComponent {
             this.setState({ contactModalIsOpen: true });
         };
 
-        this.hideContactModal = draft => {
-            this.setState({ contactModalIsOpen: false, formDraft: draft }); //not work, need redux or set in window
+        this.hideContactModal = () => {
+            this.setState({ contactModalIsOpen: false });
+            Cookies.set('nh-phoneDraft', JSON.stringify(this.state.formDraft), { expires: 7 });
+        };
+
+        this.onContactFormHide = draft => {
+            this.hideContactModal(draft);
+        };
+
+        this.onContactFormChange = draft => {
+            this.setState({ formDraft: draft });
         };
 
         this.onContactFormSubmit = draft => {
@@ -31,6 +41,21 @@ class Home extends React.PureComponent {
             //fetch data to server
         };
     }
+
+    componentDidMount() {
+        let oldDraft = Cookies.get('nh-phoneDraft');
+        if (oldDraft === 'undefined') return;
+        this.setState({ formDraft: JSON.parse(oldDraft) });
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (JSON.stringify(nextState.formDraft) !== JSON.stringify(this.state.formDraft)) {
+            return false; //cut excess renders when change form only
+        }
+
+        return true;
+    }
+
     render() {
         return (
             <div id={this.props.id} className={cx('home', { slide_active: this.props.isActive })}>
@@ -54,7 +79,11 @@ class Home extends React.PureComponent {
                 </Column>
 
                 <Modal isOpen={this.state.contactModalIsOpen} onRequestClose={this.hideContactModal}>
-                    <ContactForm draft={this.state.formDraft} onSubmit={this.onContactFormSubmit} />
+                    <ContactForm
+                        draft={this.state.formDraft}
+                        onSubmit={this.onContactFormSubmit}
+                        onChange={this.onContactFormChange}
+                    />
                 </Modal>
             </div>
         );

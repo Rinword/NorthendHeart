@@ -23,7 +23,7 @@ class Btn extends React.Component {
                     { 'ux-btn_alt': this.props.alt },
                     { 'ux-btn_disabled': this.props.disabled }
                 )}
-                onClick={!this.props.disabled && this.onClick}
+                onClick={!this.props.disabled ? this.onClick : undefined}
             >
                 {this.props.children}
                 {this.props.innerIconName && this.renderInnerIcon()}

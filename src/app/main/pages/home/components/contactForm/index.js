@@ -25,6 +25,10 @@ class ContactForm extends React.PureComponent {
         this.disableButton = () => {
             this.setState({ isValid: false });
         };
+
+        this.onChange = data => {
+            this.props.onChange(data);
+        };
     }
 
     render() {
@@ -33,7 +37,12 @@ class ContactForm extends React.PureComponent {
             <Column width="auto" cls={cx('home__contact-form contact-form')}>
                 <div className={'contact-form__title'}>Заполните форму</div>
                 <div className={'contact-form__form-wrap'}>
-                    <Formsy onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
+                    <Formsy
+                        onValidSubmit={this.submit}
+                        onValid={this.enableButton}
+                        onInvalid={this.disableButton}
+                        onChange={this.onChange}
+                    >
                         <Field
                             name="subject"
                             title="Тема"
