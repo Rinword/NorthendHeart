@@ -18,6 +18,7 @@ class HeaderMenu extends React.PureComponent {
             >
                 <img src={logo} className="header-menu__logo" alt="logo" />
                 <div className="header-menu__title">PLUS MODUL</div>
+                <div style={{ marginLeft: '155px', flex: '0 0 200px' }}>build#35 (17.12.2017)</div>
                 <Row flexGrow="0" jc="flex-end" ai="center" cls="header-menu__options-container">
                     {menuConfig.map(item => (
                         <span

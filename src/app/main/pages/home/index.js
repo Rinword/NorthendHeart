@@ -45,7 +45,6 @@ class Home extends React.Component {
     componentDidMount() {
         let oldDraft = Cookies.get('nh-phoneDraft');
 
-        console.log(oldDraft);
         if (oldDraft === 'undefined' || oldDraft === undefined) return;
         this.setState({ formDraft: JSON.parse(oldDraft) });
     }

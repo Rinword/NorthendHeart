@@ -20,13 +20,12 @@ class App extends Component {
             this.setState({ activePage: item });
         };
         this.onMouseSelect = item => {
-            console.log('osp', item)
             this.setState({ activePage: item });
         };
     }
 
     componentDidMount() {
-        this.setState({ activePage: 'slide1' });
+        this.setState({ activePage: 'slide0' });
         Modal.setAppElement('#app');
     }
 
