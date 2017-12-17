@@ -12,7 +12,7 @@ class PageSlider extends React.PureComponent {
         activePage: PropTypes.string,
     };
     static defaultProps = {
-        activePageId: 'slide0',
+        activePage: 'slide0',
     };
 
     constructor(props) {
@@ -31,24 +31,35 @@ class PageSlider extends React.PureComponent {
         });
 
         window.onwheel = evt => {
-            this.isUp = evt.wheelDelta >= 0;
+            if (evt.wheelDelta >= 0) this.isUp = 'up';
+            if (evt.wheelDelta < 0) this.isUp = 'down';
         };
 
         window.onscroll = evt => {
             if (this.state.isScrollNow) {
                 return false;
             }
-            let scrolled = window.pageYOffset || document.documentElement.scrollTop;
-            if (this.isUp) {
-                const currSlide = `slide${Math.floor(scrolled / this.state.pageHeight)}`;
-                this.scrollTo(currSlide);
-                this.props.onSelectPage(currSlide);
-            }
+
             if (!this.isUp) {
-                const currSlide = `slide${Math.ceil(scrolled / this.state.pageHeight)}`;
-                this.scrollTo(currSlide);
-                this.props.onSelectPage(currSlide);
+                return true;
             }
+            const currPageNumber = parseInt(this.props.activePage.replace(/\D+/, ''));
+            // if (currPageNumber <= 0 || currPageNumber >= this.props.pages.length - 1) {
+            //     return false;
+            // }
+            console.log('svroll', currPageNumber);
+            if (this.isUp === 'up') {
+                const currSlide = `slide${currPageNumber - 1}`;
+                this.props.onSelectPage(currSlide);
+                return true;
+            }
+            if (this.isUp === 'down') {
+                const currSlide = `slide${currPageNumber + 1}`;
+                this.props.onSelectPage(currSlide);
+                return true;
+            }
+
+            this.isUp = null;
         };
 
         this.scrollTo = id => {
@@ -72,7 +83,8 @@ class PageSlider extends React.PureComponent {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.activePage !== this.props.activePage) {
+        console.log('scroll to ', nextProps, this.props.activePage);
+        if (nextProps.activePage !== this.props.activePage && !this.state.isScrollNow) {
             this.scrollTo(nextProps.activePage);
         }
     }

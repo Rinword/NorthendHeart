@@ -16,10 +16,11 @@ class App extends Component {
             activePage: '',
         };
 
-        this.oneMenuSelect = item => {
+        this.onMenuSelect = item => {
             this.setState({ activePage: item });
         };
         this.onMouseSelect = item => {
+            console.log('osp', item)
             this.setState({ activePage: item });
         };
     }
@@ -32,7 +33,7 @@ class App extends Component {
     render() {
         return (
             <div className="app" id="app">
-                <HeaderMenu activePage={this.state.activePage} onSelectItem={this.oneMenuSelect} cls="app__header" />
+                <HeaderMenu activePage={this.state.activePage} onSelectItem={this.onMenuSelect} cls="app__header" />
                 <Row cls="app__body">
                     <Main activePage={this.state.activePage} onSelectPage={this.onMouseSelect} />
                 </Row>
