@@ -15,6 +15,8 @@
     "react-modal": "^3.1.7",
     "react-scripts": "1.0.17",
     "react-scroll": "^1.6.4",
+    "react-slick": "^0.16.0",
+    "react-slick-carousel": "^0.14.9",
     "react-text-mask": "^5.0.2"
   },
   "scripts": {

@@ -13,7 +13,7 @@ class App extends Component {
         super(props);
 
         this.state = {
-            activePage: 'slide0',
+            activePage: 'slide2',
         };
 
         this.onMenuSelect = item => {
@@ -25,7 +25,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.setState({ activePage: 'slide0' });
+        this.setState({ activePage: 'slide2' });
         Modal.setAppElement('#app');
     }
 
