@@ -8,6 +8,7 @@ import Home from './pages/home';
 import Features from './pages/features';
 import Projects from './pages/projects';
 import Lifestyle from './pages/lifeStyle';
+import Contacts from './pages/contacts';
 
 import './style.css';
 
@@ -42,6 +43,12 @@ class Main extends React.PureComponent {
                             component: Lifestyle,
                             props: {
                                 id: 'slide3',
+                            },
+                        },
+                        {
+                            component: Contacts,
+                            props: {
+                                id: 'slide4',
                             },
                         },
                     ]}
