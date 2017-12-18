@@ -35,7 +35,7 @@ class PageSlider extends React.PureComponent {
                 let direction = null;
                 if (evt.wheelDelta >= 0) direction = 'up';
                 if (evt.wheelDelta < 0) direction = 'down';
-                const currPageNumber = parseInt(this.props.activePage.replace(/\D+/, ''));
+                const currPageNumber = parseInt(this.props.activePage.replace(/\D+/, ''), 10);
 
                 if (direction === 'up' && currPageNumber >= 1) {
                     const currSlide = `slide${currPageNumber - 1}`;
