@@ -15,10 +15,14 @@ class CustomSlider extends React.PureComponent {
             activeSlide: 0,
         };
 
-        this.afterChange = index => {};
+        this.afterChange = index => {
+            this.setState({ activeSlide: index });
+        };
 
         // this.beforeChange = (oldIndex, newIndex) => {
-        //     this.setState({ activeSlide: newIndex });
+        //     setTimeout(() => {
+        //         this.setState({ activeSlide: newIndex });
+        //     }, 500);
         // };
     }
 
@@ -32,11 +36,13 @@ class CustomSlider extends React.PureComponent {
     }
 
     render() {
+        console.log(this.state);
         return (
             <div className="ux-slider-wrap">
-                {/*                <div className="ux-slider-legend">
-                    <div className="ux-slider-legend__title">Gjgjdf</div>
-                </div>*/}
+                <div className="ux-slider-legend">
+                    <div className="ux-slider-legend__title">{this.props.slides[this.state.activeSlide].title}</div>
+                    <div className="ux-slider-legend__description">{this.props.slides[this.state.activeSlide].description}</div>
+                </div>
                 <Slider
                     className="ux-full-slider"
                     dots={true}
