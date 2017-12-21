@@ -15,21 +15,28 @@ class CustomSlider extends React.PureComponent {
             activeSlide: 0,
         };
 
-        this.afterChange = index => {
-
-        };
+        this.afterChange = index => {};
 
         // this.beforeChange = (oldIndex, newIndex) => {
         //     this.setState({ activeSlide: newIndex });
         // };
     }
 
+    componentDidMount() {
+        // const resizeEvent = document.createEvent('HTMLEvents');
+        // resizeEvent.initEvent('resize', true, true);
+        // // console.log('triggering resize...');
+        // // this.sliderRef.dispatchEvent(resizeEvent);
+        // const slider = document.getElementsByClassName('ux-full-slider')[0];
+        // slider.dispatchEvent(resizeEvent);
+    }
+
     render() {
         return (
             <div className="ux-slider-wrap">
-                <div className="ux-slider-legend">
+                {/*                <div className="ux-slider-legend">
                     <div className="ux-slider-legend__title">Gjgjdf</div>
-                </div>
+                </div>*/}
                 <Slider
                     className="ux-full-slider"
                     dots={true}
