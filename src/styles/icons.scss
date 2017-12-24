@@ -10,7 +10,6 @@
   }
 
   &_menu {
-
     &_home {
       background-image: url('../static/img/roundMenu/home.svg');
     }
@@ -26,7 +25,24 @@
     &_contacts {
       background-image: url('../static/img/roundMenu/contacts.svg');
     }
+  }
 
+  &_visibility {
+    &_on {
+      background-image: url('../static/icons/visibility_on.svg');
+    }
+    &_off {
+      background-image: url('../static/icons/visibility_off.svg');
+    }
+  }
+
+  &_prev {
+    background-image: url('../static/icons/prev.svg');
+    margin-right: 3px;
+  }
+  &_next {
+    background-image: url('../static/icons/next.svg');
+    margin-left: 3px;
   }
 }
 

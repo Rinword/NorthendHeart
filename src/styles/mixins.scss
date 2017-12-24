@@ -16,3 +16,8 @@
   display: block;
   position: absolute;
 }
+
+//TODO create mixin or create new css for similar rules
+.bg_color_black_07 {
+  background-color: rgba(0,0,0, 0.7);
+}
