@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
 import Slider from './slider';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import TabPanel from './components/tabs';
 
 import './style.css';
 
@@ -87,6 +90,8 @@ class CustomSlider extends React.PureComponent {
                     <div className="ux-slider-legend__description">
                         {this.props.slides[this.state.activeSlide].description}
                     </div>
+
+                    <TabPanel tabs={this.props.slides[this.state.activeSlide].tabs} />
 
                     <div className="ux-slider-legend__bottom-btns no_blur">
                         <div className="ux-slider-legend__btn" onClick={this.goToProject}>
