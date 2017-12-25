@@ -28,6 +28,14 @@ class CustomSlider extends React.PureComponent {
             this.setState({ legendHidden: !this.state.legendHidden });
         };
 
+        this.goToProject = () => {
+            console.log(this.props.slides[this.state.activeSlide].title);
+        };
+
+        this.goToProjects = () => {
+            // push('/projects');
+        };
+
         this.next = () => {
             this.slider.getRef().slickNext();
         };
@@ -67,7 +75,7 @@ class CustomSlider extends React.PureComponent {
                         { 'ux-slider-legend_hidden': this.state.legendHidden }
                     )}
                 >
-                    <div className="ux-slider-legend__slide-btns">
+                    <div className="ux-slider-legend__slide-btns no_blur">
                         <div className="ux-slider-legend__slide-btn" onClick={this.prev}>
                             <div className="icon icon_prev icon_bg-size_18 icon_size_24" />
                         </div>
@@ -78,6 +86,15 @@ class CustomSlider extends React.PureComponent {
                     <div className="ux-slider-legend__title">{this.props.slides[this.state.activeSlide].title}</div>
                     <div className="ux-slider-legend__description">
                         {this.props.slides[this.state.activeSlide].description}
+                    </div>
+
+                    <div className="ux-slider-legend__bottom-btns no_blur">
+                        <div className="ux-slider-legend__btn" onClick={this.goToProject}>
+                            Подробнее...
+                        </div>
+                        <div className="ux-slider-legend__btn" onClick={this.goToProjects}>
+                            Ознакомиться с проектами
+                        </div>
                     </div>
                 </div>
                 <Slider
