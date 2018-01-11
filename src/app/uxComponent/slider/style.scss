@@ -149,13 +149,13 @@
   position: absolute;
   height: calc(100vh - 101px);
   width: 50%;
-  max-width: 600px;
+  max-width: 580px;
   top: 61px;
   right: 0;
   background-color: rgba(0,0,0, 0.7);
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 20px 30px;
+  padding: 20px 30px 20px 30px;
   z-index: 5;
   opacity: 1;
 
@@ -167,9 +167,10 @@
 
   &__title {
     color: white;
-    font-size: 32px;
+    font-size: 36px;
     font-family: Oswald;
     text-align: left;
+    letter-spacing: 1px;
     line-height: 1.41;
     margin-bottom: 20px;
   }
@@ -181,6 +182,7 @@
     letter-spacing: 1px;
     font-family: Roboto;
     font-weight: 300;
+    margin: 8px 0 20px;
   }
 
   &_blurred {

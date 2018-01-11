@@ -24,7 +24,7 @@ class TabPanelC extends React.PureComponent {
                 </TabList>
 
                 {this.props.tabs.map((tab, i) => (
-                    <TabPanel key={i} className="tab-panel__title">
+                    <TabPanel key={i} className="tab-panel__text">
                         <p>{tab.text}</p>
                     </TabPanel>
                 ))}

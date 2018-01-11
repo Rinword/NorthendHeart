@@ -26,7 +26,7 @@ export default Projects;
 
 const slides = [
     {
-        title: 'GrowSeek',
+        title: 'Grow Seek',
         index: 1,
         srcCls: 'projects_img_1',
         description: 'Отличный загородный домик для небольшой семьи',
@@ -46,7 +46,7 @@ const slides = [
         ],
     },
     {
-        title: 'LonePine',
+        title: 'Lone Pine',
         index: 2,
         srcCls: 'projects_img_2',
         description: 'Просторный двухэтажный дом с развитым вторым этажом',
@@ -56,7 +56,7 @@ const slides = [
                 text: 'Все очень зачетно',
             },
             {
-                title: 'Многополигональная крыша',
+                title: 'Развитая крыша',
                 text: 'Причудливая, почти футуристичного вида крыша с изогнутыми окнами-транформерами',
             },
             {
@@ -66,7 +66,7 @@ const slides = [
         ],
     },
     {
-        title: 'FreshBreath',
+        title: 'Fresh Breath',
         index: 3,
         srcCls: 'projects_img_3',
         description: 'Отличный загородный домик для небольшой семьи',
