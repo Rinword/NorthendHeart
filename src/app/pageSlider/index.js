@@ -84,15 +84,12 @@ class PageSlider extends React.PureComponent {
     }
 
     render() {
+        //TODO component inside props
         return (
             <div ref="content" className="ux-page-slider">
-                {this.props.pages.map(Page => (
-                    <Page.component
-                        key={Page.props.id}
-                        {...Page.props}
-                        isActive={this.props.activePage === Page.props.id}
-                    />
-                ))}
+                {this.props.pages.map(Page => {
+                    return <Page.component key={Page.id} {...Page} isActive={this.props.activePage === Page.id} />;
+                })}
             </div>
         );
     }

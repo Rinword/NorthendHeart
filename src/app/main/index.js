@@ -5,53 +5,32 @@ import React from 'react';
 import PageSlider from '../pageSlider';
 
 import Home from './pages/home';
-import Features from './pages/features';
-import Projects from './pages/projects';
-import Lifestyle from './pages/lifeStyle';
-import Contacts from './pages/contacts';
+
+import contentData from '../contentData';
 
 import './style.css';
 
 class Main extends React.PureComponent {
+    constructor(props) {
+        super(props);
+
+        //additional props, callbacks, overrides
+        const specProps = {
+            home: {
+                onMenuClick: props.onSelectPage,
+            },
+        };
+        this.formattedPages = contentData.map(item => {
+            return { ...item, ...specProps[item.name] };
+        });
+    }
     render() {
         return (
             <div className="main-content">
                 <PageSlider
                     activePage={this.props.activePage}
                     onSelectPage={this.props.onSelectPage}
-                    pages={[
-                        {
-                            component: Home,
-                            props: {
-                                id: 'slide0',
-                                onMenuClick: this.props.onSelectPage,
-                            },
-                        },
-                        {
-                            component: Features,
-                            props: {
-                                id: 'slide1',
-                            },
-                        },
-                        {
-                            component: Projects,
-                            props: {
-                                id: 'slide2',
-                            },
-                        },
-                        {
-                            component: Lifestyle,
-                            props: {
-                                id: 'slide3',
-                            },
-                        },
-                        {
-                            component: Contacts,
-                            props: {
-                                id: 'slide4',
-                            },
-                        },
-                    ]}
+                    pages={this.formattedPages}
                 />
             </div>
         );
