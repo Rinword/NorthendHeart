@@ -5,7 +5,7 @@ import cx from 'classnames';
 
 import logo from '../../static/icons/logo.png'; //TODO set absolute path and get svg icon
 import './style.css';
-import menuConfig from './menuConfig';
+import menuConfig from '../content/menuConfig';
 
 class HeaderMenu extends React.PureComponent {
     render() {

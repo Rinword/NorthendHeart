@@ -3,6 +3,12 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: greenyellow;
+  background-color: #364033;
   font-size: 22px;
+
+  &__social {
+    > * {
+      margin: 15px;
+    }
+  }
 }

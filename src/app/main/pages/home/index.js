@@ -3,7 +3,7 @@ import React from 'react';
 import cx from 'classnames';
 import Cookies from 'js-cookie';
 import { Row, Column, Btn, Modal } from '../../../uxComponent/UxBox';
-import menuConfig from '../../../../app/headerMenu/menuConfig';
+import menuConfig from '../../../../app/content/menuConfig';
 
 import RoundMenu from './components/roundMenu';
 import ContactForm from './components/contactForm';
