@@ -5,4 +5,10 @@
   position: relative;
   background-color: #6dd8ff;
   font-size: 22px;
+
+  &__social {
+    > * {
+      margin: 15px;
+    }
+  }
 }

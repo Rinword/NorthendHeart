@@ -3,7 +3,7 @@ import projects from './content/projects';
 import Home from './main/pages/home';
 import Features from './main/pages/features';
 import Projects from './main/pages/projects';
-import Lifestyle from './main/pages/lifeStyle';
+import Lifestyle from './main/pages/technologies';
 import Contacts from './main/pages/contacts';
 
 const menu = [
