@@ -44,6 +44,15 @@
     background-image: url('../static/icons/next.svg');
     margin-left: 3px;
   }
+
+  &_social {
+    &_telegram {
+      background-image: url('../static/icons/social/telegram.svg');
+    }
+    &_whatsapp {
+      background-image: url('../static/icons/social/whatsapp.svg');
+    }
+  }
 }
 
 @mixin bg-size($size) {

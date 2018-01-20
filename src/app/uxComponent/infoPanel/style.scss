@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
 
-  max-width: 500px;
+  //max-width: 500px;
 
   border: 1px solid white;
   border-left: none;
@@ -42,6 +42,9 @@
     width: 100%;
     flex: 0 0 auto;
     height: 80px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid white;
 
     img {
       margin: 0 20px 0 15px;
@@ -67,18 +70,20 @@
   }
 
   &__title {
-    margin: 0 0 3px 0;
+    margin: 0 0 1px 0;
     color: white;
     width: 100%;
     font-family: Oswald;
+    font-weight: 400;
     letter-spacing: 1px;
     display: flex;
   }
 
   &__sub-title {
     width: 100%;
-    color: #6dd8ff;
+    color: #45d6e5;
     font-size: 18px;
+    font-weight: 300;
     margin: 0;
     text-align: left;
   }

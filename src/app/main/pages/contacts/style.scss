@@ -45,4 +45,58 @@
       }
     }
   }
+
+  &__company-data {
+    border-top: 1px solid #696969;
+    border-bottom: 1px solid #696969;
+  }
+  &__phone {
+    font-size: 48px;
+    margin: 15px 0 0 0;
+    color: #201844;
+  }
+
+  &__email {
+    font-size: 28px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #201844;
+    text-decoration: underline;
+    font-family: Oswald;
+    letter-spacing: 1px;
+  }
+  &__address {
+    font-size: 28px;
+    margin-top: 15px;
+    color: #201844;
+  }
+
+  &__social-data {
+    flex: 0 0 200px !important;
+  }
+
+  &__info-desc {
+    padding: 10px 15px 0 15px;
+    color: white;
+  }
+    &__info-section {
+      p {
+        margin: 0;
+      }
+      div {
+        > div {
+          border-radius: 5px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+  &__footer {
+    flex: 0 0 120px !important;
+    border-top: 1px solid white;
+    box-sizing: border-box;
+    * {
+      box-sizing: border-box;
+    }
+  }
 }

@@ -7,7 +7,7 @@ import { Row, Column } from '../../../uxComponent/UxBox';
 import { InfoPanel } from '../../../uxComponent/UxBox';
 import BackForm from '../home/components/contactForm';
 
-import youtube from '../../../../static/icons/social/youtube.svg';
+import manager from '../../../../static/img/manager.png';
 
 import './style.css';
 
@@ -44,13 +44,44 @@ class Contacts extends React.PureComponent {
                         />
                     </Row>
                     <Column className="contacts__contacts" jc="space-between">
-                        <Column classNme="contacts__company-data">phone, adress</Column>
-                        <Row classNme="contacts__social-data">
-                            <InfoPanel img={youtube} title="Канал Youtube" subTitle="перейти >" />
+                        <Column
+                            width="auto"
+                            height="auto"
+                            ai="flex-start"
+                            cls="contacts__company-data"
+                            margin="0 35px 0 0"
+                        >
+                            <p className="contacts__phone">+ 7 (495) 771-12-12</p>
+                            <p className="contacts__email">plusmodul@support.ru</p>
+                            <p className="contacts__address">Москва, Симоновский Вал 15, офис 416</p>
+                        </Column>
+                        <Row cls="contacts__social-data" ai="center" height="auto">
+                            <InfoPanel img={manager} title="Чистов Павел" subTitle="инженер-конструктор">
+                                <Column cls="contacts__info-desc">
+                                    <Row cls="contacts__info-section" ai="center" margin="5px 0">
+                                        <p>pchistov@plusmodul.ru</p>
+                                    </Row>
+                                    <Row cls="contacts__info-section" ai="center" margin="5px 0">
+                                        <p>+7 (926) 616 48-96</p>
+                                        <Row width="auto" flexGrow="0" margin="0 15px">
+                                            <div className="icon icon_size_24 icon_bg-size_contain icon_social_telegram" />
+                                            <div className="icon icon_size_24 icon_bg-size_contain icon_social_whatsapp" />
+                                        </Row>
+                                    </Row>
+                                </Column>
+                            </InfoPanel>
                         </Row>
                     </Column>
                 </Row>
-                <div className="contacts__footer">footer</div>
+                <Row
+                    flexGrow="0"
+                    height="auto"
+                    width="calc(100% - 30px)"
+                    cls="contacts__footer"
+                    margin="15px 30px 0 15px"
+                >
+                    footer
+                </Row>
             </div>
         );
     }
