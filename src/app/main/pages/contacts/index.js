@@ -7,7 +7,7 @@ import { Row, Column } from '../../../uxComponent/UxBox';
 import { InfoPanel } from '../../../uxComponent/UxBox';
 import BackForm from '../home/components/contactForm';
 
-import manager from '../../../../static/img/manager.png';
+import contacts from '../../../content/contacts';
 
 import './style.css';
 
@@ -35,13 +35,12 @@ class Contacts extends React.PureComponent {
     componentDidMount() {
         const YMaps = window.YMaps;
         const map = new YMaps.Map(this.mapRef);
-        console.log(this.mapRef);
-        map.setCenter(new YMaps.GeoPoint(37.601218, 55.813559), 16);
+        map.setCenter(new YMaps.GeoPoint(contacts.office.gpsPoint[0], contacts.office.gpsPoint[1]), 16);
 
-        let placemark = new YMaps.Placemark(new YMaps.GeoPoint(37.601218, 55.813559));
+        let placemark = new YMaps.Placemark(new YMaps.GeoPoint(contacts.office.gpsPoint[0], contacts.office.gpsPoint[1]));
 
-        placemark.name = "PLUSMODUL";
-        placemark.description = "обслуживание клиентов";
+        placemark.name = contacts.office.mapTitle;
+        placemark.description = contacts.office.mapDesc;
 
         map.addControl(new YMaps.TypeControl());
         map.addControl(new YMaps.ToolBar());
@@ -60,19 +59,19 @@ class Contacts extends React.PureComponent {
                         <BackForm
                             className="contacts__back-form"
                             draft={this.state.formDraft}
-                            title="Обратная связь"
+                            title={contacts.formTitle}
                             btnAlt={true}
                             onSubmit={this.onFormSubmit}
                             onChange={this.onFormChange}
                         />
                         <Row cls="contacts__social-data" ai="center" height="inherit">
-                            <InfoPanel img={manager} title="Чистов Павел" subTitle="инженер-конструктор">
+                            <InfoPanel img={contacts.manager.img} title={contacts.manager.name} subTitle={contacts.manager.role}>
                                 <Column cls="contacts__info-desc">
                                     <Row cls="contacts__info-section" ai="center" margin="5px 0">
-                                        <p>pchistov@plusmodul.ru</p>
+                                        <p>{contacts.manager.email}</p>
                                     </Row>
                                     <Row cls="contacts__info-section" ai="center" margin="5px 0">
-                                        <p>+7 (926) 616 48-96</p>
+                                        <p>{contacts.manager.phone}</p>
                                         <Row width="auto" flexGrow="0" margin="0 15px">
                                             <div className="icon icon_size_24 icon_bg-size_contain icon_social_telegram" />
                                             <div className="icon icon_size_24 icon_bg-size_contain icon_social_whatsapp" />
@@ -90,9 +89,9 @@ class Contacts extends React.PureComponent {
                             cls="contacts__company-data"
                             margin="0 35px 0 0"
                         >
-                            <p className="contacts__phone">+ 7 (495) 771-12-12</p>
-                            <p className="contacts__email">plusmodul@support.ru</p>
-                            <p className="contacts__address">Москва, Симоновский Вал 15, офис 416</p>
+                            <p className="contacts__phone">{contacts.office.phone}</p>
+                            <p className="contacts__email">{contacts.office.email}</p>
+                            <p className="contacts__address">{contacts.office.address}</p>
                             <Row width="100%" height="470px">
                                 <div id="YMapsID" ref={this.getMapRef} style={{ width: '100%', height: '100%' }} />
                             </Row>
