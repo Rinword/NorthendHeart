@@ -13,6 +13,7 @@ $error-color: #ff665f;
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: 500;
+    text-align: left;
 
     &:after {
       content: "*";
@@ -30,6 +31,7 @@ $error-color: #ff665f;
     border-bottom: 1px solid $border-color;
     outline: none;
     font-size: 16px;
+    background-color: transparent;
     &:focus {
       margin-bottom: 7px;
       border-width: 2px;
@@ -41,6 +43,7 @@ $error-color: #ff665f;
     font-size: 14px;
     margin-top: 5px;
     color: $error-color;
+    text-align: left;
   }
 
   &_required {

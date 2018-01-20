@@ -1,12 +1,48 @@
+
 .contacts {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   position: relative;
   background-image:
           radial-gradient(farthest-side at 80% 100px, #effacf, #02576e);
   font-size: 22px;
   padding-top: 60px;
 
+  &__title {
+    color: white;
+    font-size: 48px;
+    margin: 20px 40px;
+    text-align: left;
+    font-weight: 500;
+  }
+
+  &__back-form-wrap {
+    padding: 0 40px;
+    align-items: flex-start !important;
+  }
+
+  &__back-form {
+    color: white;
+    border: 1px solid white;
+    height: auto !important;
+    width: 300px !important;
+    padding: 20px 30px 30px;
+
+    .contact-form {
+      &__title {
+        text-align: left;
+      }
+    }
+
+    .ux-field {
+      input {
+        color: white !important;
+        &:focus {
+          border-color: white;
+        }
+      }
+    }
+  }
 }

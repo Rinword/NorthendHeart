@@ -5,6 +5,8 @@ import { Row } from './uxComponent/UxBox';
 import Main from './main';
 import HeaderMenu from './headerMenu';
 
+import validations from './uxComponent/form/validations';
+
 import './index.css';
 
 //routing here
@@ -22,6 +24,8 @@ class App extends Component {
         this.onMouseSelect = item => {
             this.setState({ activePage: item });
         };
+
+        validations();
     }
 
     componentDidMount() {

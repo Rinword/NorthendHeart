@@ -34,8 +34,8 @@ class ContactForm extends React.PureComponent {
     render() {
         const draft = this.props.draft;
         return (
-            <Column width="auto" cls={cx('home__contact-form contact-form')}>
-                <div className={'contact-form__title'}>Заполните форму</div>
+            <Column width="auto" cls={cx('home__contact-form contact-form', this.props.className)}>
+                <div className={'contact-form__title'}>{this.props.title}</div>
                 <div className={'contact-form__form-wrap'}>
                     <Formsy
                         onValidSubmit={this.submit}
@@ -43,14 +43,6 @@ class ContactForm extends React.PureComponent {
                         onInvalid={this.disableButton}
                         onChange={this.onChange}
                     >
-                        <Field
-                            name="subject"
-                            title="Тема"
-                            value={draft.subject || ''}
-                            validations="minLength:5"
-                            validationError="Не менее 5 символов"
-                            required
-                        />
                         <Field
                             name="name"
                             title="Ваше имя"
@@ -60,15 +52,34 @@ class ContactForm extends React.PureComponent {
                             required
                         />
                         <Field
+                            name="email"
+                            title="E-mail"
+                            value={draft.email || ''}
+                            validations="isEmail"
+                            validationError="Некорректный e-mail"
+                            required
+                        />
+                        <Field
                             name="phone"
                             title="Телефон"
                             required
                             value={draft.phone || ''}
                             mask="phone"
                             guide={true}
+                            validations={{ minDigitsLength: 11 }}
+                            validationError="Некорректный номер"
+                        />
+                        <Field
+                            name="name"
+                            title="Удобное время"
+                            value={draft.time || ''}
+                            validations="maxLength:25"
+                            validationError="Не более 25 символов"
                         />
                         <Row jc="flex-end">
-                            <Btn disabled={!this.state.isValid}>Отправить</Btn>
+                            <Btn alt={this.props.btnAlt} disabled={!this.state.isValid}>
+                                Отправить
+                            </Btn>
                         </Row>
                     </Formsy>
                 </div>
@@ -81,11 +92,18 @@ ContactForm.displayName = 'ContactForm';
 
 ContactForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     draft: PropTypes.object,
+    className: PropTypes.string,
+    title: PropTypes.string,
+    btnAlt: PropTypes.bool,
 };
 
 ContactForm.defaultProps = {
     draft: {},
+    className: '',
+    title: 'Заполните форму',
+    btnAlt: false,
 };
 
 export default ContactForm;

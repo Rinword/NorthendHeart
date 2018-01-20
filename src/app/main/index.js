@@ -4,8 +4,6 @@ import React from 'react';
 
 import PageSlider from '../pageSlider';
 
-import Home from './pages/home';
-
 import contentData from '../contentData';
 
 import './style.css';
