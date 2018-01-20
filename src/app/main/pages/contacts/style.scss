@@ -1,4 +1,4 @@
-
+$main-blue: #307db4;
 .contacts {
   display: flex;
   flex-direction: column;
@@ -9,6 +9,7 @@
           radial-gradient(farthest-side at 80% 100px, #effacf, #02576e);
   font-size: 22px;
   padding-top: 60px;
+  box-sizing: border-box;
 
   &__title {
     color: white;
@@ -16,6 +17,7 @@
     margin: 20px 40px;
     text-align: left;
     font-weight: 500;
+    flex: 0 0 60px;
   }
 
   &__back-form-wrap {
@@ -29,6 +31,7 @@
     height: auto !important;
     width: 300px !important;
     padding: 20px 30px 30px;
+    margin-bottom: 10px;
 
     .contact-form {
       &__title {
@@ -73,6 +76,9 @@
 
   &__social-data {
     flex: 0 0 200px !important;
+    .ux-info-panel {
+      width: 362px;
+    }
   }
 
   &__info-desc {
@@ -92,11 +98,35 @@
     }
 
   &__footer {
-    flex: 0 0 120px !important;
+    flex: 0 0 76px !important;
     border-top: 1px solid white;
     box-sizing: border-box;
     * {
       box-sizing: border-box;
+    }
+    color: white;
+    font-weight: 300;
+  }
+
+  &__footer-site {
+    font-weight: 300;
+    font-size: 18px;
+  }
+
+  &__author {
+    p {
+      margin: 0;
+    }
+    span {
+      color: #f7931a;
+    }
+    div {
+      font-size: 14px;
+    }
+    .icons-legal {
+      a {
+        color: #3aaaed;
+      }
     }
   }
 }

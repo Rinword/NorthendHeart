@@ -40,28 +40,6 @@ class App extends Component {
                 <Row cls="app__body">
                     <Main activePage={this.state.activePage} onSelectPage={this.onMouseSelect} />
                 </Row>
-                <Row cls="app__footer">
-                    <div>
-                        Icons made by
-                        <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">
-                            Smashicons
-                        </a>
-                        <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">
-                            Pixel perfect
-                        </a>
-                        from{' '}
-                        <a href="https://www.flaticon.com/" title="Flaticon">
-                            www.flaticon.com
-                        </a>{' '}
-                        is licensed by
-                        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">
-                            CC 3.0 BY
-                        </a>
-                        <a href="http://www.freepik.com" title="Freepik">
-                            Freepik
-                        </a>{' '}
-                    </div>
-                </Row>
             </div>
         );
     }
