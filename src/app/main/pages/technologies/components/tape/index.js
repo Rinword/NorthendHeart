@@ -9,7 +9,9 @@ class TabPanelC extends React.PureComponent {
         const { title, description, img } = this.props;
         return (
             <div className={cx('tape')}>
-                <img className={cx('tape__img')} src={img} />
+                <div className={cx('tape__img')}>
+                    <img src={img} alt="" />
+                </div>
                 <div className={cx('tape__legend')}>
                     <div className={cx('tape__title')}>{title}</div>
                     <div className={cx('tape__desc')}>{description}</div>
@@ -25,10 +27,12 @@ TabPanelC.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
+    getRef: PropTypes.func,
 };
 
 TabPanelC.defaultProps = {
     tabs: [],
+    ref: () => {},
 };
 
 export default TabPanelC;
