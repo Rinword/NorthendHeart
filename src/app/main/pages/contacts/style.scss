@@ -1,4 +1,24 @@
 $main-blue: #307db4;
+
+@keyframes rotateSun {
+    0% {
+      background-image:
+              radial-gradient(farthest-side at 80% 100px, #effacf, #02576e);
+    }
+    50% {
+      //margin-left: 100%;
+      background-image:
+              radial-gradient(farthest-side at 100% -100px, #effacf, #1e6e54);
+    }
+
+    100% {
+      //margin-left: 0;
+      background-image:
+              radial-gradient(farthest-side at 80% 100px, #effacf, #62396e);
+    }
+  }
+
+
 .contacts {
   display: flex;
   flex-direction: column;
@@ -6,8 +26,11 @@ $main-blue: #307db4;
   align-items: stretch;
   position: relative;
   background-image:
-          radial-gradient(farthest-side at 80% 100px, #effacf, #02576e);
+        radial-gradient(farthest-side at 80% 100px, #effacf, #02576e);
   font-size: 22px;
+  animation-name: rotateSun;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
   padding-top: 60px;
   box-sizing: border-box;
 
