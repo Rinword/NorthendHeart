@@ -8,8 +8,17 @@ import './style.css';
 import menuConfig from '../content/menuConfig';
 
 class HeaderMenu extends React.PureComponent {
+    constructor(props) {
+        super(props);
+
+        this.date = new Date();
+    }
+
     render() {
         const activePage = this.props.activePage;
+        const date = `build#55 (${this.date.getDate()}.${
+            this.date.getMonth() + 1 < 10 ? '0' + (this.date.getMonth() + 1).toString() : this.date.getMonth() + 1
+        }.${this.date.getFullYear()})`;
         return (
             <Row
                 jc="space-between"
@@ -18,7 +27,7 @@ class HeaderMenu extends React.PureComponent {
             >
                 <img src={logo} className="header-menu__logo" alt="logo" />
                 <div className="header-menu__title">PLUS MODUL</div>
-                <div style={{ marginLeft: '155px', flex: '0 0 200px' }}>build#36 (17.12.2017)</div>
+                <div style={{ marginLeft: '155px', flex: '0 0 200px' }}>{date}</div>
                 <Row flexGrow="0" jc="flex-end" ai="center" cls="header-menu__options-container">
                     {menuConfig.map(item => (
                         <span

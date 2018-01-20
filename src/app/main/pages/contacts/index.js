@@ -19,6 +19,10 @@ class Contacts extends React.PureComponent {
             formDraft: {},
         };
 
+        this.getMapRef = ref => {
+            this.mapRef = ref;
+        };
+
         this.onFormSubmit = () => {
             console.log(this.state.formDraft);
         };
@@ -26,6 +30,25 @@ class Contacts extends React.PureComponent {
         this.onFormChange = draft => {
             this.setState({ formDraft: draft });
         };
+    }
+
+    componentDidMount() {
+        const YMaps = window.YMaps;
+        const map = new YMaps.Map(this.mapRef);
+        console.log(this.mapRef);
+        map.setCenter(new YMaps.GeoPoint(37.601218, 55.813559), 16);
+
+        let placemark = new YMaps.Placemark(new YMaps.GeoPoint(37.601218, 55.813559));
+
+        placemark.name = "PLUSMODUL";
+        placemark.description = "обслуживание клиентов";
+
+        map.addControl(new YMaps.TypeControl());
+        map.addControl(new YMaps.ToolBar());
+        map.addControl(new YMaps.Zoom());
+        map.addControl(new YMaps.ScaleLine());
+
+        map.addOverlay(placemark);
     }
 
     render() {
@@ -70,6 +93,9 @@ class Contacts extends React.PureComponent {
                             <p className="contacts__phone">+ 7 (495) 771-12-12</p>
                             <p className="contacts__email">plusmodul@support.ru</p>
                             <p className="contacts__address">Москва, Симоновский Вал 15, офис 416</p>
+                            <Row width="100%" height="470px">
+                                <div id="YMapsID" ref={this.getMapRef} style={{ width: '100%', height: '100%' }} />
+                            </Row>
                         </Column>
                     </Column>
                 </Row>
