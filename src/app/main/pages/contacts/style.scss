@@ -1,14 +1,12 @@
 .contacts {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #6dd8ff;
+  background-image:
+          radial-gradient(farthest-side at 80% 100px, #effacf, #02576e);
   font-size: 22px;
+  padding-top: 60px;
 
-  &__social {
-    > * {
-      margin: 15px;
-    }
-  }
 }
