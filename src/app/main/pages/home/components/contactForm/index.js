@@ -70,9 +70,10 @@ class ContactForm extends React.PureComponent {
                             validationError="Некорректный номер"
                         />
                         <Field
-                            name="name"
+                            name="date"
                             title="Удобное время"
-                            value={draft.time || ''}
+                            value={draft.date || ''}
+                            placeholder="будни с 10 до 23"
                             validations="maxLength:25"
                             validationError="Не более 25 символов"
                         />

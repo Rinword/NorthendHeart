@@ -8,7 +8,16 @@ import './style.css';
 class Field extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            isBlured: false,
+        };
+
         this.changeValue = this.changeValue.bind(this);
+
+        this.onBlur = () => {
+            this.setState({ isBlured: true });
+        };
     }
 
     changeValue(event) {
@@ -18,14 +27,14 @@ class Field extends React.Component {
     }
 
     render() {
+        const showError = this.state.isBlured && this.props.showError();
         const className = `ux-field ${this.props.className || ''} ${
             this.props.showRequired() ? 'ux-field_required' : ''
-        } ${this.props.showError() ? 'ux-field_invalid' : ''}`;
+        } ${showError ? 'ux-field_invalid' : ''}`;
 
         // An error message is returned ONLY if the component is invalid
         // or the server has returned an error message
         const errorMessage = this.props.getErrorMessage();
-
         return (
             <div className={className}>
                 <label htmlFor={this.props.name}>{this.props.title}</label>
@@ -37,6 +46,7 @@ class Field extends React.Component {
                         value={this.props.getValue() || ''}
                         mask={masks[this.props.mask] || [/\d*/]}
                         guide={this.props.guide}
+                        onBlur={this.onBlur}
                     />
                 ) : (
                     <input
@@ -44,9 +54,11 @@ class Field extends React.Component {
                         name={this.props.name}
                         type={this.props.type || 'text'}
                         value={this.props.getValue() || ''}
+                        onBlur={this.onBlur}
+                        placeholder={this.props.placeholder}
                     />
                 )}
-                <span className="ux-field__error">{errorMessage}</span>
+                <span className="ux-field__error">{showError && errorMessage}</span>
             </div>
         );
     }
