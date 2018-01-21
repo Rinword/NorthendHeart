@@ -37,7 +37,9 @@ class Contacts extends React.PureComponent {
         const map = new YMaps.Map(this.mapRef);
         map.setCenter(new YMaps.GeoPoint(contacts.office.gpsPoint[0], contacts.office.gpsPoint[1]), 16);
 
-        let placemark = new YMaps.Placemark(new YMaps.GeoPoint(contacts.office.gpsPoint[0], contacts.office.gpsPoint[1]));
+        let placemark = new YMaps.Placemark(
+            new YMaps.GeoPoint(contacts.office.gpsPoint[0], contacts.office.gpsPoint[1])
+        );
 
         placemark.name = contacts.office.mapTitle;
         placemark.description = contacts.office.mapDesc;
@@ -53,6 +55,8 @@ class Contacts extends React.PureComponent {
     render() {
         return (
             <div id={this.props.id} className={cx('contacts', { slide_active: this.props.isActive })}>
+                <div className="contacts__back_1" />
+                <div className="contacts__back_2" />
                 <div className="contacts__title">Контакты</div>
                 <Row className="contacts__content">
                     <Column cls="contacts__back-form-wrap">
@@ -65,7 +69,11 @@ class Contacts extends React.PureComponent {
                             onChange={this.onFormChange}
                         />
                         <Row cls="contacts__social-data" ai="center" height="inherit">
-                            <InfoPanel img={contacts.manager.img} title={contacts.manager.name} subTitle={contacts.manager.role}>
+                            <InfoPanel
+                                img={contacts.manager.img}
+                                title={contacts.manager.name}
+                                subTitle={contacts.manager.role}
+                            >
                                 <Column cls="contacts__info-desc">
                                     <Row cls="contacts__info-section" ai="center" margin="5px 0">
                                         <p>{contacts.manager.email}</p>
