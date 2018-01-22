@@ -9,15 +9,11 @@ import { getDataByName } from '../../../contentData';
 import './style.css';
 import '../../../uxComponent/slider/style.css';
 
-// import house1 from '../../../../static/img/projects/house1.jpg';
-// import house2 from '../../../../static/img/projects/house2.jpg';
-// import house3 from '../../../../static/img/projects/house3.jpg';
-
 class Projects extends React.PureComponent {
     render() {
         return (
             <div id={this.props.id} className={cx('projects', { slide_active: this.props.isActive })}>
-                <Slider slides={getDataByName(this.props.name)} />
+                <Slider photosTitle="Еще фото:" slides={getDataByName(this.props.name)} />
             </div>
         );
     }

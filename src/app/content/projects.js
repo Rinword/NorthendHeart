@@ -1,3 +1,13 @@
+import pr1_1 from '../../static/img/projects/1/1.png';
+import pr1_2 from '../../static/img/projects/1/2.png';
+import pr1_3 from '../../static/img/projects/1/3.png';
+
+import pr2_1 from '../../static/img/projects/2/1.png';
+import pr2_2 from '../../static/img/projects/2/2.png';
+import pr2_3 from '../../static/img/projects/2/3.png';
+
+import pr3_1 from '../../static/img/projects/3/1.png';
+
 export default [
     {
         title: 'Grow Seek',
@@ -18,6 +28,7 @@ export default [
                 text: 'Выберите компоновку дома по своему вкусу. Мы учтем любые Ваши пожелания',
             },
         ],
+        photos: [pr1_1, pr1_2, pr1_3],
     },
     {
         title: 'Lone Pine',
@@ -38,6 +49,7 @@ export default [
                 text: 'П-образная планировка дом содержит внутри себя уютный бассейн',
             },
         ],
+        photos: [pr2_1, pr2_2, pr2_3],
     },
     {
         title: 'Fresh Breath',
@@ -54,5 +66,6 @@ export default [
                 text: 'Минимальные потери тепла',
             },
         ],
+        photos: [pr3_1],
     },
 ];

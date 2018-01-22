@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import TabPanel from './components/tabs';
+import PhotoSlides from './components/photos';
 
 import './style.css';
 
@@ -92,15 +93,19 @@ class CustomSlider extends React.PureComponent {
                     </div>
 
                     <TabPanel tabs={this.props.slides[this.state.activeSlide].tabs} />
-
-                    <div className="ux-slider-legend__bottom-btns no_blur">
-                        <div className="ux-slider-legend__btn" onClick={this.goToProject}>
-                            Подробнее...
-                        </div>
-                        <div className="ux-slider-legend__btn" onClick={this.goToProjects}>
-                            Ознакомиться с проектами
-                        </div>
-                    </div>
+                    <PhotoSlides
+                        title={this.props.photosTitle}
+                        photos={this.props.slides[this.state.activeSlide].photos || []}
+                        className="ux-slider-legend__photos"
+                    />
+                    {/*<div className="ux-slider-legend__bottom-btns no_blur">*/}
+                    {/*<div className="ux-slider-legend__btn" onClick={this.goToProject}>*/}
+                    {/*Подробнее...*/}
+                    {/*</div>*/}
+                    {/*<div className="ux-slider-legend__btn" onClick={this.goToProjects}>*/}
+                    {/*Ознакомиться с проектами*/}
+                    {/*</div>*/}
+                    {/*</div>*/}
                 </div>
                 <Slider
                     beforeChange={this.beforeChange}
