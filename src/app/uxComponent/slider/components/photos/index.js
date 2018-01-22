@@ -4,6 +4,7 @@ import cx from 'classnames';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ReactIntense from '../../../../../libs/react-intense/ReactIntense';
 
 import './style.css';
 
@@ -40,7 +41,13 @@ class CustomSlider extends React.PureComponent {
             >
                 {this.props.photos.map(slide => (
                     <div key={slide.index} className="ux-photo-slider__slide">
-                        <img src={slide} alt="" />
+                        <ReactIntense
+                            className={cx('ux-full-slider__img', [slide.srcCls])}
+                            src={slide}
+                            alt=""
+                            thumbnailSrc={slide}
+                            vertical={true}
+                        />
                     </div>
                 ))}
             </Slider>
