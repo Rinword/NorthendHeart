@@ -21,7 +21,7 @@ class CustomSlider extends React.PureComponent {
 
         this.getRef = () => {
             return this.ref;
-        }
+        };
     }
 
     render() {

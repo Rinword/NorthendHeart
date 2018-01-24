@@ -1,23 +1,22 @@
 .ux-photo-slider {
   padding: 0 65px 0 60px;
+
+  //overflow: visible;
+  * {
+    overflow: visible;
+  }
+
   &__slide {
+    position: relative;
     width: 160px !important;
     height: 90px;
     border: 1px solid white;
     opacity: 0.9;
     margin: 10px;
-    > div.ri-wrapper {
+
+    img {
       width: 100%;
       height: 100%;
-      margin: 0;
-      > a {
-        width: 100%;
-        height: 100%;
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
     }
 
     &:hover {
@@ -47,6 +46,10 @@
   //.slick-track {
   //  left: 85px;
   //}
+
+  .slick-list {
+    overflow: hidden;
+  }
 
   .ri-container {
     z-index: 11;
