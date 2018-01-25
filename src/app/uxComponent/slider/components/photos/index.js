@@ -4,7 +4,6 @@ import cx from 'classnames';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-// import ReactIntense from '../../../../../libs/react-intense/ReactIntense';
 import Lightbox from 'react-images';
 import './style.css';
 
@@ -72,8 +71,8 @@ class CustomSlider extends React.PureComponent {
                     afterChange={this.afterChange}
                     ref={sl => (this.ref = sl)}
                 >
-                    {this.props.photos.map((slide, i) => (
-                        <div key={slide.index} className="ux-photo-slider__slide" onClick={()=> this.onClick(i)}>
+                    {this.props.photos_mini.map((slide, i) => (
+                        <div key={i} className="ux-photo-slider__slide" onClick={()=> this.onClick(i)}>
                             <img className={cx('ux-full-slider__img', [slide.srcCls])} src={slide} alt="" />
                         </div>
                     ))}
@@ -93,11 +92,13 @@ class CustomSlider extends React.PureComponent {
 }
 
 CustomSlider.propTypes = {
-    slides: PropTypes.arrayOf(PropTypes.object),
+    photos: PropTypes.arrayOf(PropTypes.object),
+    photos_mini: PropTypes.arrayOf(PropTypes.string),
 };
 
 CustomSlider.defaultProps = {
-    slides: [],
+    photos: [],
+    photos_mini: [],
 };
 
 export default CustomSlider;

@@ -33,6 +33,7 @@ class CustomSlider extends React.PureComponent {
                 speed={500}
                 slidesToShow={1}
                 slidesToScroll={1}
+                initialSlide={1}
                 beforeChange={this.beforeChange}
                 afterChange={this.afterChange}
                 ref={sl => (this.ref = sl)}

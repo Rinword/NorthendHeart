@@ -16,8 +16,9 @@ class CustomSlider extends React.PureComponent {
         super(props);
 
         this.state = {
-            activeSlide: 0,
+            activeSlide: 1,
             legendHidden: false,
+            hasSlick: false,
         };
 
         this.afterChange = index => {
@@ -32,14 +33,6 @@ class CustomSlider extends React.PureComponent {
             this.setState({ legendHidden: !this.state.legendHidden });
         };
 
-        this.goToProject = () => {
-            console.log(this.props.slides[this.state.activeSlide].title);
-        };
-
-        this.goToProjects = () => {
-            // push('/projects');
-        };
-
         this.next = () => {
             this.slider.getRef().slickNext();
         };
@@ -48,13 +41,14 @@ class CustomSlider extends React.PureComponent {
         };
     }
 
-    componentDidMount() {
-        // const resizeEvent = document.createEvent('HTMLEvents');
-        // resizeEvent.initEvent('resize', true, true);
-        // // console.log('triggering resize...');
-        // // this.sliderRef.dispatchEvent(resizeEvent);
-        // const slider = document.getElementsByClassName('ux-full-slider')[0];
-        // slider.dispatchEvent(resizeEvent);
+    componentWillReceiveProps(nextProps) {
+        const hasSlick = this.state.hasSlick;
+        if (!hasSlick && nextProps.isActive) {
+            setTimeout(() => {
+                this.slider.getRef().slickGoTo(0);
+                !hasSlick && this.setState({ hasSlick: true });
+            }, 300);
+        }
     }
 
     render() {
@@ -96,6 +90,7 @@ class CustomSlider extends React.PureComponent {
                     <PhotoSlides
                         title={this.props.photosTitle}
                         photos={this.props.slides[this.state.activeSlide].photos || []}
+                        photos_mini={this.props.slides[this.state.activeSlide].photos_mini || []}
                         className="ux-slider-legend__photos"
                     />
                 </div>
