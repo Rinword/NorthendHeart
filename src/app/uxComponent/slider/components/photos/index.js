@@ -19,6 +19,9 @@ class CustomSlider extends React.PureComponent {
 
         this.afterChange = index => {
             this.props.afterChange && this.props.afterChange(index);
+            this.formattedSlides = this.props.photos.map(slide => {
+                return { src: slide };
+            });
         };
 
         this.beforeChange = (oldIndex, newIndex) => {
@@ -33,14 +36,26 @@ class CustomSlider extends React.PureComponent {
             return { src: slide };
         });
 
-        this.onClick = () => {
-            this.setState({ isOpen: true });
+        this.onClick = i => {
+            this.setState({ isOpen: true, slideId: i });
         };
+
+        this.onPrevClick = () => {
+            this.setState({ slideId: this.state.slideId - 1 });
+        };
+        this.onNextClick = () => {
+            this.setState({ slideId: this.state.slideId + 1 });
+        };
+
         this.onClose = () => {
             this.setState({ isOpen: false });
         };
+    }
 
-        console.log(this.formattedSlides);
+    componentWillReceiveProps(nextProps) {
+        this.formattedSlides = nextProps.photos.map(slide => {
+            return { src: slide };
+        });
     }
 
     render() {
@@ -57,18 +72,20 @@ class CustomSlider extends React.PureComponent {
                     afterChange={this.afterChange}
                     ref={sl => (this.ref = sl)}
                 >
-                    {this.props.photos.map(slide => (
-                        <div key={slide.index} className="ux-photo-slider__slide" onClick={this.onClick}>
+                    {this.props.photos.map((slide, i) => (
+                        <div key={slide.index} className="ux-photo-slider__slide" onClick={()=> this.onClick(i)}>
                             <img className={cx('ux-full-slider__img', [slide.srcCls])} src={slide} alt="" />
                         </div>
                     ))}
                 </Slider>
                 <Lightbox
-                    images={[this.formattedSlides]}
+                    images={this.formattedSlides}
                     isOpen={this.state.isOpen}
-                    onClickPrev={this.onClick}
-                    onClickNext={this.onClick}
+                    onClickPrev={this.onPrevClick}
+                    onClickNext={this.onNextClick}
                     onClose={this.onClose}
+                    currentImage={this.state.slideId}
+                    width={'calc(100vw - 150px)'}
                 />
             </div>
         );
