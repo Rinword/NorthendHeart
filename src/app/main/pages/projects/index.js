@@ -10,11 +10,14 @@ import './style.css';
 import '../../../uxComponent/slider/style.css';
 
 class Projects extends React.PureComponent {
-
     render() {
         return (
             <div id={this.props.id} className={cx('projects', { slide_active: this.props.isActive })}>
-                <Slider photosTitle="Еще фото:" slides={getDataByName(this.props.name)} isActive={this.props.isActive} />
+                <Slider
+                    photosTitle="Еще фото:"
+                    slides={getDataByName(this.props.name)}
+                    isActive={this.props.isActive}
+                />
             </div>
         );
     }
