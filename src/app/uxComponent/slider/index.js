@@ -98,14 +98,6 @@ class CustomSlider extends React.PureComponent {
                         photos={this.props.slides[this.state.activeSlide].photos || []}
                         className="ux-slider-legend__photos"
                     />
-                    {/*<div className="ux-slider-legend__bottom-btns no_blur">*/}
-                    {/*<div className="ux-slider-legend__btn" onClick={this.goToProject}>*/}
-                    {/*Подробнее...*/}
-                    {/*</div>*/}
-                    {/*<div className="ux-slider-legend__btn" onClick={this.goToProjects}>*/}
-                    {/*Ознакомиться с проектами*/}
-                    {/*</div>*/}
-                    {/*</div>*/}
                 </div>
                 <Slider
                     beforeChange={this.beforeChange}
