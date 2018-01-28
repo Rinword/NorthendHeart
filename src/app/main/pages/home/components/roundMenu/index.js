@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { toDecart } from './utils';
+import Responsive from 'react-responsive';
 import './style.css';
+
+const Desktop = props => <Responsive {...props} minWidth={798} />;
+const Mobile = props => <Responsive {...props} maxWidth={797} />;
 
 class RoundMenu extends React.PureComponent {
     constructor(props) {
@@ -17,34 +21,18 @@ class RoundMenu extends React.PureComponent {
             shadow: 'none',
             animation: true,
         };
-
-        // const clearTimeouts = (tIds) => {
-        //     if(Array.isArray(tIds)) {
-        //         tIds.forEach( id => id && clearTimeout(id))
-        //     }
-        //
-        //     return null;
-        // };
-
         this.onHover = order => {
             const duration = this.props.fadeDuration;
             this.setState({ animation: false });
             if (order === this.state.hoveredItem) return;
-            // clearTimeouts([tId, tId2]);
 
             this.setState({ fade: 'fade_in' });
             setTimeout(() => {
-                // if(this.state.fade === 'fade_in') {
                 this.setState({ hoveredItem: order, fade: 'fade_out' });
-                // }
                 setTimeout(() => {
-                    // this.setState({fade: 'fade_out'});
-                    // tId3 = setTimeout(()=> {
                     this.setState({ fade: 'none' });
-                    // }, duration)
                 }, duration);
             }, duration);
-            // var tId, tId2;
         };
 
         this.onBlur = () => {
@@ -67,40 +55,44 @@ class RoundMenu extends React.PureComponent {
         const angle = this.state.itemAngle;
 
         return (
-            <div
-                ref="content"
-                className={cx('ux-round-menu', { [`ux-round-menu_stop-animation`]: !this.state.animation })}
-            >
-                <div
-                    className={cx(
-                        'ux-round-menu__center',
-                        `ux-round-menu__center_${this.state.fade}`,
-                        `ux-round-menu__center_${this.state.shadow}`,
-                        { [`ux-round-menu__center_stop-animation`]: !this.state.animation }
-                    )}
-                >
-                    <div className="text-out" style={{ transition: `${this.props.fadeDuration / 1000}s all` }}>
-                        {(menuItems[currItem] && menuItems[currItem].title) || ''}
+            <Desktop>
+                <div className={cx('ux-round-menu-wrap_desktop')}>
+                    <div
+                        ref="content"
+                        className={cx('ux-round-menu', { [`ux-round-menu_stop-animation`]: !this.state.animation })}
+                    >
+                        <div
+                            className={cx(
+                                'ux-round-menu__center',
+                                `ux-round-menu__center_${this.state.fade}`,
+                                `ux-round-menu__center_${this.state.shadow}`,
+                                { [`ux-round-menu__center_stop-animation`]: !this.state.animation }
+                            )}
+                        >
+                            <div className="text-out" style={{ transition: `${this.props.fadeDuration / 1000}s all` }}>
+                                {(menuItems[currItem] && menuItems[currItem].title) || ''}
+                            </div>
+                        </div>
+                        {this.props.menuItems.map((item, i) => {
+                            return (
+                                <MenuItem
+                                    onHover={this.onHover}
+                                    onBlur={this.onBlur}
+                                    onClick={this.props.onItemClick}
+                                    key={i + angle}
+                                    r={this.state.mainRadius}
+                                    fi={angle}
+                                    order={i}
+                                    data={item}
+                                    animation={this.state.animation}
+                                    itemsFade={this.props.itemsFade}
+                                    fadeDuration={this.props.fadeDuration}
+                                />
+                            );
+                        })}
                     </div>
                 </div>
-                {this.props.menuItems.map((item, i) => {
-                    return (
-                        <MenuItem
-                            onHover={this.onHover}
-                            onBlur={this.onBlur}
-                            onClick={this.props.onItemClick}
-                            key={i + angle}
-                            r={this.state.mainRadius}
-                            fi={angle}
-                            order={i}
-                            data={item}
-                            animation={this.state.animation}
-                            itemsFade={this.props.itemsFade}
-                            fadeDuration={this.props.fadeDuration}
-                        />
-                    );
-                })}
-            </div>
+            </Desktop>
         );
     }
 }

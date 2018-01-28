@@ -14,6 +14,7 @@ class Layout extends React.PureComponent {
             'ac',
             'width',
             'height',
+            'flex',
             'flexGrow',
             'backgroundColor',
             'minWidth',
@@ -45,7 +46,7 @@ class Layout extends React.PureComponent {
     }
 
     generateStyle(props) {
-        const { direction, jc, ai, multiStr, ac, cls, width, height, flexGrow } = props;
+        const { direction, jc, ai, multiStr, ac, cls, width, height, flexGrow, flex } = props;
 
         let {
             backgroundColor,
@@ -84,6 +85,8 @@ class Layout extends React.PureComponent {
         } else {
             style.flexGrow = 0;
         }
+        console.log(overflow)
+
         if (display) style.display = display;
         if (minWidth) style.minWidth = minWidth;
         if (maxWidth) style.maxWidth = maxWidth;
@@ -93,6 +96,7 @@ class Layout extends React.PureComponent {
         if (padding) style.padding = padding;
         if (overflow) style.overflow = overflow;
         else style.overflow = 'hidden';
+        if (flex) style.flex = flex;
         if (backgroundColor) style.backgroundColor = backgroundColor;
 
         return style;

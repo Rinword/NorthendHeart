@@ -68,15 +68,15 @@ class Home extends React.Component {
                             Заказать звонок
                         </Btn>
                     </Column>
-                    <Column flexGrow="0" height="auto" padding="30px 10px 20px 85px">
+                    <Column flexGrow="0" flex="0 0 auto" height="auto" padding="30px 10px 20px 85px">
                         <div className="home__tagline">
                             Сдержанность и дорогой минимализм — признаки роскоши и стиля
                         </div>
                         <div className="home__sub-tagline">Начало пути к новому...</div>
                     </Column>
-                    <Row cls="home__menu-wrap" jc="center" ai="flex-start" padding="10px 0">
+                    <Column cls="home__menu-wrap" jc="flex-start" ai="center" overflow="visible">
                         <RoundMenu menuItems={menuConfig} onItemClick={this.props.onMenuClick} />
-                    </Row>
+                    </Column>
                 </Column>
 
                 <Modal isOpen={this.state.contactModalIsOpen} onRequestClose={this.hideContactModal}>
