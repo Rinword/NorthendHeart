@@ -6,10 +6,17 @@ import { Row, Column } from '../../../uxComponent/UxBox';
 
 import { InfoPanel } from '../../../uxComponent/UxBox';
 import BackForm from '../home/components/contactForm';
+import Manager from './components/manager';
 
 import contacts from '../../../content/contacts';
 
+import Responsive from 'react-responsive';
+
 import './style.css';
+
+const Desktop = props => <Responsive {...props} minWidth={798} minHeight={760} />;
+const SmallDesktop = props => <Responsive {...props} minWidth={798} />;
+const Mobile = props => <Responsive {...props} maxWidth={797} />;
 
 class Contacts extends React.PureComponent {
     constructor(props) {
@@ -68,27 +75,8 @@ class Contacts extends React.PureComponent {
                             onSubmit={this.onFormSubmit}
                             onChange={this.onFormChange}
                         />
-                        <Row cls="contacts__social-data" ai="center" height="inherit">
-                            <InfoPanel
-                                img={contacts.manager.img}
-                                title={contacts.manager.name}
-                                subTitle={contacts.manager.role}
-                            >
-                                <Column cls="contacts__info-desc">
-                                    <Row cls="contacts__info-section" ai="center" margin="5px 0">
-                                        <p>{contacts.manager.email}</p>
-                                    </Row>
-                                    <Row cls="contacts__info-section" ai="center" margin="5px 0">
-                                        <p>{contacts.manager.phone}</p>
-                                        <Row width="auto" flexGrow="0" margin="0 15px">
-                                            <div className="icon icon_size_24 icon_bg-size_contain icon_social_telegram" />
-                                            <div className="icon icon_size_24 icon_bg-size_contain icon_social_whatsapp" />
-                                        </Row>
-                                    </Row>
-                                </Column>
-                            </InfoPanel>
-                        </Row>
                     </Column>
+                    <Manager contacts={contacts.manager} />
                     <Column className="contacts__contacts" height="auto" jc="space-between">
                         <Column
                             width="auto"
