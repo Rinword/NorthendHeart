@@ -1,3 +1,13 @@
+@media screen and (max-width: 1030px) {
+  .show-panel__title {
+    font-size: 28px !important;
+  }
+  .show-panel__desc {
+    font-size: 20px !important;
+  }
+}
+
+
 .features {
   display: flex;
   flex-direction: column;

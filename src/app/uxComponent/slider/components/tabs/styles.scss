@@ -1,3 +1,10 @@
+@media screen and (max-width: 1120px) { /* Для малой высоты */
+  .tab-panel__title {
+    font-size: 20px !important;
+
+  }
+}
+
 .tab-panel {
   position: relative;
 
@@ -27,6 +34,7 @@
       user-select: none;
       cursor: pointer;
 
+      overflow: hidden;
       background-color: transparent;
 
       opacity: 0.7;
