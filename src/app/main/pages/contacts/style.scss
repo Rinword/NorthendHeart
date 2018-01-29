@@ -35,6 +35,39 @@ $main-blue: #307db4;
   }
 }
 
+@media screen and (max-height: 942px) { /* Для малой высоты */
+  .contacts {
+    &__social-data {
+      display: none !important;
+    }
+    &__phone {
+      font-size: 42px !important;
+    }
+  }
+
+}
+
+@media screen and (max-height: 750px) {
+  .contacts {
+    &__back-form {
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    &__company-data {
+      border: none !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .contacts {
+    &__author p {
+      display: none;
+    }
+  }
+}
+
 
 .contacts {
   display: flex;
@@ -129,6 +162,7 @@ $main-blue: #307db4;
     font-size: 28px;
     margin-top: 15px;
     color: #201844;
+    text-align: left;
   }
 
   &__social-data {
@@ -179,6 +213,7 @@ $main-blue: #307db4;
     }
     div {
       font-size: 14px;
+      text-align: right;
     }
     .icons-legal {
       a {

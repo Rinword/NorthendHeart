@@ -85,7 +85,6 @@ class Layout extends React.PureComponent {
         } else {
             style.flexGrow = 0;
         }
-        console.log(overflow)
 
         if (display) style.display = display;
         if (minWidth) style.minWidth = minWidth;

@@ -7,6 +7,7 @@ import { Row, Column } from '../../../uxComponent/UxBox';
 import { InfoPanel } from '../../../uxComponent/UxBox';
 import BackForm from '../home/components/contactForm';
 import Manager from './components/manager';
+import Footer from './components/footer';
 
 import contacts from '../../../content/contacts';
 
@@ -14,8 +15,7 @@ import Responsive from 'react-responsive';
 
 import './style.css';
 
-const Desktop = props => <Responsive {...props} minWidth={798} minHeight={760} />;
-const SmallDesktop = props => <Responsive {...props} minWidth={798} />;
+const Desktop = props => <Responsive {...props} minWidth={798} />;
 const Mobile = props => <Responsive {...props} maxWidth={797} />;
 
 class Contacts extends React.PureComponent {
@@ -62,76 +62,41 @@ class Contacts extends React.PureComponent {
     render() {
         return (
             <div id={this.props.id} className={cx('contacts', { slide_active: this.props.isActive })}>
-                <div className="contacts__back_1" />
-                <div className="contacts__back_2" />
-                <div className="contacts__title">{this.props.title}</div>
-                <Row className="contacts__content">
-                    <Column cls="contacts__back-form-wrap">
-                        <BackForm
-                            className="contacts__back-form"
-                            draft={this.state.formDraft}
-                            title={contacts.formTitle}
-                            btnAlt={true}
-                            onSubmit={this.onFormSubmit}
-                            onChange={this.onFormChange}
-                        />
-                    </Column>
-                    <Manager contacts={contacts.manager} />
-                    <Column className="contacts__contacts" height="auto" jc="space-between">
-                        <Column
-                            width="auto"
-                            height="inherit"
-                            ai="flex-start"
-                            cls="contacts__company-data"
-                            margin="0 35px 0 0"
-                        >
-                            <p className="contacts__phone">{contacts.office.phone}</p>
-                            <p className="contacts__email">{contacts.office.email}</p>
-                            <p className="contacts__address">{contacts.office.address}</p>
-                            <Row width="100%" height="470px">
-                                <div id="YMapsID" ref={this.getMapRef} style={{ width: '100%', height: '100%' }} />
-                            </Row>
+                <Desktop>
+                    <div className="contacts__back_1" />
+                    <div className="contacts__back_2" />
+                    <div className="contacts__title">{this.props.title}</div>
+                    <Row className="contacts__content">
+                        <Column cls="contacts__back-form-wrap">
+                            <BackForm
+                                className="contacts__back-form"
+                                draft={this.state.formDraft}
+                                title={contacts.formTitle}
+                                btnAlt={true}
+                                onSubmit={this.onFormSubmit}
+                                onChange={this.onFormChange}
+                            />
+                            <Manager contacts={contacts.manager} />
                         </Column>
-                    </Column>
-                </Row>
-                <Row
-                    flexGrow="0"
-                    height="auto"
-                    width="calc(100% - 30px)"
-                    cls="contacts__footer"
-                    margin="15px 30px 0 15px"
-                >
-                    <Row ai="center" cls="contacts__footer-site">
-                        © PLUSMODUL 2018.
+                        <Column className="contacts__contacts" height="auto" jc="space-between">
+                            <Column
+                                width="auto"
+                                height="inherit"
+                                ai="flex-start"
+                                cls="contacts__company-data"
+                                margin="0 35px 0 0"
+                            >
+                                <p className="contacts__phone">{contacts.office.phone}</p>
+                                <p className="contacts__email">{contacts.office.email}</p>
+                                <p className="contacts__address">{contacts.office.address}</p>
+                                <Row width="100%" height="400px">
+                                    <div id="YMapsID" ref={this.getMapRef} style={{ width: '100%', height: '100%' }} />
+                                </Row>
+                            </Column>
+                        </Column>
                     </Row>
-
-                    <Column cls="contacts__author" ai="flex-end" padding="5px 0">
-                        <p>Made by Rinword</p>
-                        <div>
-                            Есть вопросы по сайту? Пишите на <span>ilyabelenko@mail.ru</span>
-                        </div>
-                        <div className="icons-legal">
-                            Icons made by{' '}
-                            <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">
-                                Smashicons,
-                            </a>{' '}
-                            <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">
-                                Pixel perfect,
-                            </a>{' '}
-                            <a href="http://www.freepik.com" title="Freepik">
-                                Freepik,
-                            </a>{' '}
-                            from{' '}
-                            <a href="https://www.flaticon.com/" title="Flaticon">
-                                www.flaticon.com
-                            </a>{' '}
-                            is licensed by
-                            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">
-                                CC 3.0 BY
-                            </a>
-                        </div>
-                    </Column>
-                </Row>
+                    <Footer />
+                </Desktop>
             </div>
         );
     }
