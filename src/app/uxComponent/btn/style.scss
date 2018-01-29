@@ -5,7 +5,7 @@ $main-blue: #307db4;
   transition: .3s all;
   position: relative;
   display: inline-flex;
-  outline: none;
+  outline: none !important;
   cursor: pointer;
   text-align: center;
   border-radius: 0;
@@ -47,6 +47,7 @@ $main-blue: #307db4;
   &_active {
     box-shadow: none;
     font-weight: 700;
+    outline: none;
     &::after {
       content: " ";
       display: block;

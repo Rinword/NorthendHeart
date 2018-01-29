@@ -32,7 +32,6 @@ class ContactForm extends React.PureComponent {
 
     render() {
         const contacts = this.props.contacts;
-        console.log(this.props);
         return (
             <Row cls="contacts__social-data" ai="center" height="inherit">
                 <InfoPanel img={contacts.img} title={contacts.name} subTitle={contacts.role}>
