@@ -20,7 +20,7 @@ class PageSlider extends React.PureComponent {
 
         this.state = {
             pageHeight: 0,
-            isScrollNow: false,
+            isScrollNow: true,
         };
 
         Events.scrollEvent.register('begin', () => {
@@ -33,8 +33,8 @@ class PageSlider extends React.PureComponent {
         window.onwheel = evt => {
             if (!this.state.isScrollNow) {
                 let direction = null;
-                if (evt.wheelDelta >= 0) direction = 'up';
-                if (evt.wheelDelta < 0) direction = 'down';
+                if (evt.deltaY > 0) direction = 'down';
+                if (evt.deltaY < 0) direction = 'up';
                 const currPageNumber = parseInt(this.props.activePage.replace(/\D+/, ''), 10);
 
                 if (direction === 'up' && currPageNumber >= 1) {
@@ -58,6 +58,7 @@ class PageSlider extends React.PureComponent {
         // };
 
         this.scrollTo = id => {
+            // console.log('scrollTo', id)
             scroller.scrollTo(id, {
                 duration: 600,
                 delay: 0,
