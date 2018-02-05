@@ -53,6 +53,10 @@
       background-image: url('../static/icons/social/whatsapp.svg');
     }
   }
+
+  &_sandwich {
+    background-image: url('../static/icons/sandwich.svg');
+  }
 }
 
 @mixin bg-size($size) {

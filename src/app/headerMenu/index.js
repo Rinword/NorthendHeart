@@ -1,17 +1,42 @@
 import React from 'react';
-import { Row } from '../uxComponent/UxBox';
+import { Row, Column } from '../uxComponent/UxBox';
 // import PropTypes from 'prop-types';
 import cx from 'classnames';
+import Responsive from 'react-responsive';
 
 import logo from '../../static/icons/logo.png'; //TODO set absolute path and get svg icon
-import './style.css';
 import menuConfig from '../content/menuConfig';
+
+import './style.css';
+
+const Desktop = props => <Responsive {...props} minWidth={931} />;
+const Mobile = props => <Responsive {...props} maxWidth={930} />;
 
 class HeaderMenu extends React.PureComponent {
     constructor(props) {
         super(props);
 
         this.date = new Date();
+
+        this.state = {
+            menuOpen: false,
+        };
+
+        this.toggleMenuState = isOpen => {
+            let menuOpen = this.state.menuOpen;
+
+            if (typeof isOpen === 'boolean') {
+                console.log('3123');
+                this.setState({ menuOpen: isOpen });
+            } else {
+                this.setState({ menuOpen: !menuOpen });
+            }
+        };
+
+        this.onMenuClick = id => {
+            this.props.onSelectItem(id);
+            this.toggleMenuState(false);
+        };
     }
 
     render() {
@@ -19,27 +44,85 @@ class HeaderMenu extends React.PureComponent {
         const date = `build#67 (${this.date.getDate()}.${
             this.date.getMonth() + 1 < 10 ? '0' + (this.date.getMonth() + 1).toString() : this.date.getMonth() + 1
         }.${this.date.getFullYear()})`;
+
+        const isOpen = this.state.menuOpen;
+
         return (
-            <Row
-                jc="space-between"
-                ai="center"
-                cls={cx([this.props.cls], 'header-menu', { 'header-menu_transparent': activePage === 'slide0' })}
-            >
-                <img src={logo} className="header-menu__logo" alt="logo" />
-                <div className="header-menu__title">PLUS MODUL</div>
-                <div style={{ marginLeft: '155px', flex: '0 0 200px' }}>{date}</div>
-                <Row flexGrow="0" jc="flex-end" ai="center" cls="header-menu__options-container">
-                    {menuConfig.map(item => (
-                        <span
-                            key={item.id}
-                            className={cx('header-menu__item', { 'header-menu__item_active': activePage === item.id })}
-                            onClick={() => this.props.onSelectItem(item.id)}
+            <div>
+                <Desktop>
+                    <Row
+                        jc="space-between"
+                        ai="center"
+                        cls={cx([this.props.cls], 'header-menu', {
+                            'header-menu_transparent': activePage === 'slide0',
+                        })}
+                    >
+                        <img src={logo} className="header-menu__logo" alt="logo" />
+                        <div className="header-menu__title">PLUS MODUL</div>
+                        <div style={{ marginLeft: '155px', flex: '0 0 200px' }}>{date}</div>
+                        <Row
+                            flexGrow="0"
+                            overflow="visible"
+                            height="auto"
+                            jc="flex-end"
+                            ai="center"
+                            cls="header-menu__options-container"
                         >
-                            {item.title}
-                        </span>
-                    ))}
-                </Row>
-            </Row>
+                            {menuConfig.map(item => (
+                                <span
+                                    key={item.id}
+                                    className={cx('header-menu__item', {
+                                        'header-menu__item_active': activePage === item.id,
+                                    })}
+                                    onClick={() => this.onMenuClick(item.id)}
+                                >
+                                    {item.title}
+                                </span>
+                            ))}
+                        </Row>
+                    </Row>
+                </Desktop>
+                <Mobile>
+                    <Row
+                        jc="space-between"
+                        ai="center"
+                        cls={cx([this.props.cls], 'header-menu', {
+                            'header-menu_transparent': activePage === 'slide0',
+                        })}
+                    >
+                        <img src={logo} className="header-menu__logo" alt="logo" />
+                        <div className="header-menu__title">PLUS MODUL</div>
+                        {!isOpen && (
+                            <Row jc="flex-end" ai="center" padding="0 20px 0 0">
+                                <div
+                                    className={cx('icon icon_size_22 icon_bg-size_contain icon_sandwich')}
+                                    onClick={this.toggleMenuState}
+                                />
+                            </Row>
+                        )}
+                        <Column
+                            flexGrow="0"
+                            jc="flex-start"
+                            ai="stretch"
+                            cls={cx('header-menu__options-container', 'header-menu__options-container_vertical', {
+                                'header-menu_hidden': !isOpen,
+                            })}
+                        >
+                            {menuConfig.map(item => (
+                                <span
+                                    key={item.id}
+                                    className={cx('header-menu__item', {
+                                        'header-menu__item_active': activePage === item.id,
+                                    })}
+                                    onClick={() => this.onMenuClick(item.id)}
+                                >
+                                    {item.title}
+                                </span>
+                            ))}
+                        </Column>
+                    </Row>
+                </Mobile>
+            </div>
         );
     }
 }
