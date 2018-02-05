@@ -61,43 +61,57 @@ class Contacts extends React.PureComponent {
 
     render() {
         return (
-            <div id={this.props.id} className={cx('contacts', { slide_active: this.props.isActive })}>
+            (
                 <Desktop>
-                    <div className="contacts__back_1" />
-                    <div className="contacts__back_2" />
-                    <div className="contacts__title">{this.props.title}</div>
-                    <Row className="contacts__content">
-                        <Column cls="contacts__back-form-wrap">
-                            <BackForm
-                                className="contacts__back-form"
-                                draft={this.state.formDraft}
-                                title={contacts.formTitle}
-                                btnAlt={true}
-                                onSubmit={this.onFormSubmit}
-                                onChange={this.onFormChange}
-                            />
-                            <Manager contacts={contacts.manager} />
-                        </Column>
-                        <Column className="contacts__contacts" height="auto" jc="space-between">
-                            <Column
-                                width="auto"
-                                height="inherit"
-                                ai="flex-start"
-                                cls="contacts__company-data"
-                                margin="0 35px 0 0"
-                            >
-                                <p className="contacts__phone">{contacts.office.phone}</p>
-                                <p className="contacts__email">{contacts.office.email}</p>
-                                <p className="contacts__address">{contacts.office.address}</p>
-                                <Row width="100%" height="400px">
-                                    <div id="YMapsID" ref={this.getMapRef} style={{ width: '100%', height: '100%' }} />
-                                </Row>
+                    <div id={this.props.id} className={cx('contacts', { slide_active: this.props.isActive })}>
+                        <div className="contacts__back_1" />
+                        <div className="contacts__back_2" />
+                        <div className="contacts__title">{this.props.title}</div>
+                        <Row className="contacts__content">
+                            <Column cls="contacts__back-form-wrap">
+                                <BackForm
+                                    className="contacts__back-form"
+                                    draft={this.state.formDraft}
+                                    title={contacts.formTitle}
+                                    btnAlt={true}
+                                    onSubmit={this.onFormSubmit}
+                                    onChange={this.onFormChange}
+                                />
+                                <Manager contacts={contacts.manager} />
                             </Column>
-                        </Column>
+                            <Column className="contacts__contacts" height="auto" jc="space-between">
+                                <Column
+                                    width="auto"
+                                    height="inherit"
+                                    ai="flex-start"
+                                    cls="contacts__company-data"
+                                    margin="0 35px 0 0"
+                                >
+                                    <p className="contacts__phone">{contacts.office.phone}</p>
+                                    <p className="contacts__email">{contacts.office.email}</p>
+                                    <p className="contacts__address">{contacts.office.address}</p>
+                                    <Row width="100%" height="400px">
+                                        <div
+                                            id="YMapsID"
+                                            ref={this.getMapRef}
+                                            style={{ width: '100%', height: '100%' }}
+                                        />
+                                    </Row>
+                                </Column>
+                            </Column>
+                        </Row>
+                        <Footer />
+                    </div>
+                </Desktop>
+            ),
+            (
+                <Mobile>
+                    <Row width="100%" height="400px">
+                        <div id="YMapsID" ref={this.getMapRef} style={{ width: '100%', height: '100%' }} />
                     </Row>
                     <Footer />
-                </Desktop>
-            </div>
+                </Mobile>
+            )
         );
     }
 }
