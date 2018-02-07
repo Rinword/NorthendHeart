@@ -60,32 +60,62 @@ class Home extends React.Component {
     render() {
         return (
             <div id={this.props.id} className={cx('home', { slide_active: this.props.isActive })}>
-                <div className="home__background" />
-                <Column cls="home__content">
-                    <Column ai="flex-start" cls="home__contact-area">
-                        <div className="home__phone"> +7 (916)652-14-45 </div>
-                        <Btn alt={true} onClick={this.showContactModal}>
-                            Заказать звонок
-                        </Btn>
+                <Desktop>
+                    <div className="home__background" />
+                    <Column cls="home__content">
+                        <Column ai="flex-start" cls="home__contact-area">
+                            <div className="home__phone"> +7 (916)652-14-45 </div>
+                            <Btn alt={true} onClick={this.showContactModal}>
+                                Заказать звонок
+                            </Btn>
+                        </Column>
+                        <Column cls="home__tagline-container" flexGrow="0" flex="0 0 auto" width="auto" height="auto">
+                            <div className="home__tagline">
+                                Сдержанность и дорогой минимализм — признаки роскоши и стиля
+                            </div>
+                            <div className="home__sub-tagline">Начало пути к новому...</div>
+                        </Column>
+                        <Column cls="home__menu-wrap" jc="flex-start" ai="center" overflow="visible">
+                            <RoundMenu menuItems={menuConfig} onItemClick={this.props.onMenuClick} />
+                        </Column>
                     </Column>
-                    <Column flexGrow="0" flex="0 0 auto" height="auto" padding="30px 10px 20px 85px">
-                        <div className="home__tagline">
-                            Сдержанность и дорогой минимализм — признаки роскоши и стиля
-                        </div>
-                        <div className="home__sub-tagline">Начало пути к новому...</div>
-                    </Column>
-                    <Column cls="home__menu-wrap" jc="flex-start" ai="center" overflow="visible">
-                        <RoundMenu menuItems={menuConfig} onItemClick={this.props.onMenuClick} />
-                    </Column>
-                </Column>
 
-                <Modal isOpen={this.state.contactModalIsOpen} onRequestClose={this.hideContactModal}>
-                    <ContactForm
-                        draft={this.state.formDraft}
-                        onSubmit={this.onContactFormSubmit}
-                        onChange={this.onContactFormChange}
-                    />
-                </Modal>
+                    <Modal isOpen={this.state.contactModalIsOpen} onRequestClose={this.hideContactModal}>
+                        <ContactForm
+                            draft={this.state.formDraft}
+                            onSubmit={this.onContactFormSubmit}
+                            onChange={this.onContactFormChange}
+                        />
+                    </Modal>
+                </Desktop>
+                <Mobile>
+                    <div className="home__background" />
+                    <Column cls="home__content home__content_mobile" overflow="visible">
+                        <Column ai="flex-start" cls="home__contact-area">
+                            <div className="home__phone"> +7 (916)652-14-45 </div>
+                            <Btn alt={true} onClick={this.showContactModal}>
+                                Заказать звонок
+                            </Btn>
+                        </Column>
+                        <Column cls="home__tagline-container" flexGrow="0" flex="0 0 auto" width="auto" height="auto">
+                            <div className="home__tagline home__tagline_mobile">
+                                Сдержанность и дорогой минимализм — признаки роскоши и стиля
+                            </div>
+                            <div className="home__sub-tagline home__sub-tagline_mobile">Начало пути к новому...</div>
+                        </Column>
+                        <Column cls="home__menu-wrap" jc="flex-start" ai="center" overflow="visible">
+                            <RoundMenu menuItems={menuConfig} onItemClick={this.props.onMenuClick} />
+                        </Column>
+                    </Column>
+
+                    <Modal isOpen={this.state.contactModalIsOpen} onRequestClose={this.hideContactModal}>
+                        <ContactForm
+                            draft={this.state.formDraft}
+                            onSubmit={this.onContactFormSubmit}
+                            onChange={this.onContactFormChange}
+                        />
+                    </Modal>
+                </Mobile>
             </div>
         );
     }

@@ -1,3 +1,12 @@
+
+@media screen and (max-width: 970px) {
+  div.home {
+    &__tagline-container {
+      padding: 75px 30px 40px 60px;
+    }
+  }
+}
+
 .home {
   display: flex;
   justify-content: center;
@@ -20,6 +29,9 @@
     transition-delay: 0.4s;
     z-index: 1;
     opacity: 0.6;
+  }
+  &__tagline-container {
+    padding: 30px 10px 20px 85px;
   }
 
   &__content {
@@ -58,6 +70,10 @@
       position: relative;
       left: -750px;
       transition: .4s all;
+
+      &_mobile {
+        font-size: 2rem;
+      }
     }
     &__sub-tagline {
       max-width: 725px;
@@ -68,6 +84,9 @@
       line-height: 2;
       opacity: 0;
       transition: .4s all;
+      &_mobile {
+        font-size: 1.6rem;
+      }
     }
 
   &__menu-wrap {

@@ -8,3 +8,19 @@ body {
   box-sizing: border-box;
   font-family: Roboto;
 }
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 970px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 605px) {
+  html {
+    font-size: 12px;
+  }
+}
