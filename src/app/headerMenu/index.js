@@ -26,7 +26,6 @@ class HeaderMenu extends React.PureComponent {
             let menuOpen = this.state.menuOpen;
 
             if (typeof isOpen === 'boolean') {
-                console.log('3123');
                 this.setState({ menuOpen: isOpen });
             } else {
                 this.setState({ menuOpen: !menuOpen });
@@ -35,7 +34,6 @@ class HeaderMenu extends React.PureComponent {
 
         this.onMenuClick = id => {
             this.props.onSelectItem(id);
-            this.toggleMenuState(false);
         };
     }
 
@@ -86,7 +84,7 @@ class HeaderMenu extends React.PureComponent {
                     <Row
                         jc="space-between"
                         ai="center"
-                        cls={cx([this.props.cls], 'header-menu', {
+                        cls={cx([this.props.cls], 'header-menu', 'header-menu_mobile', {
                             'header-menu_transparent': activePage === 'slide0',
                         })}
                     >
@@ -102,11 +100,13 @@ class HeaderMenu extends React.PureComponent {
                         )}
                         <Column
                             flexGrow="0"
-                            jc="flex-start"
+                            jc="flex-end"
                             ai="stretch"
+                            height="100vh"
                             cls={cx('header-menu__options-container', 'header-menu__options-container_vertical', {
                                 'header-menu_hidden': !isOpen,
                             })}
+                            onClick={this.toggleMenuState}
                         >
                             {menuConfig.map(item => (
                                 <span
