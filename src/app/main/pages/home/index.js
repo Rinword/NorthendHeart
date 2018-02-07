@@ -1,8 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Cookies from 'js-cookie';
-import { Row, Column, Btn, Modal } from '../../../uxComponent/UxBox';
+import { Column, Btn, Modal } from '../../../uxComponent/UxBox';
+import { Desktop, Mobile } from '../../../uxComponent/Responsive';
 import menuConfig from '../../../../app/content/menuConfig';
 
 import RoundMenu from './components/roundMenu';

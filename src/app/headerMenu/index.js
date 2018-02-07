@@ -3,10 +3,8 @@ import { Row, Column } from '../uxComponent/UxBox';
 // import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Responsive from 'react-responsive';
-
 import logo from '../../static/icons/logo.png'; //TODO set absolute path and get svg icon
 import menuConfig from '../content/menuConfig';
-
 import './style.css';
 
 const Desktop = props => <Responsive {...props} minWidth={931} />;

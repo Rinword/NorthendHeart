@@ -5,18 +5,14 @@ import cx from 'classnames';
 import { Row, Column } from '../../../uxComponent/UxBox';
 
 import { InfoPanel } from '../../../uxComponent/UxBox';
+import { Desktop, Mobile } from '../../../uxComponent/Responsive';
 import BackForm from '../home/components/contactForm';
 import Manager from './components/manager';
 import Footer from './components/footer';
 
 import contacts from '../../../content/contacts';
 
-import Responsive from 'react-responsive';
-
 import './style.css';
-
-const Desktop = props => <Responsive {...props} minWidth={798} />;
-const Mobile = props => <Responsive {...props} maxWidth={797} />;
 
 class Contacts extends React.PureComponent {
     constructor(props) {

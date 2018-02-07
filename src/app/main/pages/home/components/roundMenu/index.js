@@ -2,11 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { toDecart } from './utils';
-import Responsive from 'react-responsive';
+import { Desktop, Mobile } from '../../../../../uxComponent/Responsive';
 import './style.css';
-
-const Desktop = props => <Responsive {...props} minWidth={798} />;
-const Mobile = props => <Responsive {...props} maxWidth={797} />;
 
 class RoundMenu extends React.PureComponent {
     constructor(props) {

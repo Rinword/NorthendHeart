@@ -3,14 +3,10 @@ import React from 'react';
 import { Row, Column } from '../../../uxComponent/UxBox';
 import cx from 'classnames';
 import ReactIntense from '../../../../libs/react-intense/ReactIntense';
-
+import { Desktop, Mobile } from '../../../uxComponent/Responsive';
 import features from '../../../content/features';
 
-import Responsive from 'react-responsive';
 import './style.css';
-
-const Desktop = props => <Responsive {...props} minWidth={798} />;
-const Mobile = props => <Responsive {...props} maxWidth={797} />;
 
 class Features extends React.PureComponent {
     render() {
