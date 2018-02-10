@@ -19,6 +19,10 @@
   color: white;
   padding: 60px 50px 50px 0;
 
+  &_mobile {
+    background: black;
+  }
+
   &__title {
     color: white;
     font-size: 48px;
@@ -29,11 +33,38 @@
     z-index: 2;
   }
 
-  &__show-panel {
-    padding: 35px 15px 15px;
-    margin-bottom: 25px !important;
-    min-width: 480px;
-    max-width: 500px;
+  &__tagline {
+    max-width: 80%;
+    text-align: left;
+    color: white;
+    font-family: Oswald;
+    font-size: 36px;
+    text-transform: uppercase;
+
+    position: relative;
+    left: -750px;
+    transition: .4s all;
+
+    &_mobile {
+      font-size: 2rem;
+    }
+  }
+  &__sub-tagline {
+    max-width: 80%;
+    text-align: left;
+    font-weight: 300;
+    color: white;
+    font-size: 26px;
+    line-height: 2;
+    opacity: 0;
+    transition: .4s all;
+    &_mobile {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__tagline-container {
+    padding: 10px 10px 20px 40px;
   }
 
   &__background {
@@ -49,10 +80,15 @@
 
     z-index: 1;
     opacity: 0.05;
+
+    &_mobile {
+      background: black;
+    }
   }
 
   &__content {
     z-index: 11; //TODO should be 2, fix only for react-intense
+    flex-wrap: wrap;
   }
 
 
@@ -61,15 +97,38 @@
       margin-right: 0;
       opacity: 1;
     }
+
+    .features {
+      &__tagline {
+        left: 0;
+        transition-delay: .6s;
+      }
+
+      &__sub-tagline {
+        transition-delay: 1.2s;
+        opacity: 1;
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-height: 700px) {
+  .show-panel {
+    font-size: 16px;
   }
 }
 
 .show-panel {
-  margin: 0 40px;
+  padding: 35px 15px 15px;
+  margin-bottom: 25px !important;
+  min-width: 8em;
+  max-width: 20em;
   overflow: visible !important;
   border: 1px solid white;
+
   &__legend {
-    margin-right: -45px;
     margin-top: 15px;
     opacity: 0;
 
@@ -81,18 +140,18 @@
     flex: 0 0 auto;
     margin-bottom: 5px;
     font-family: Oswald;
-    font-size: 36px;
+    font-size: 1.8em;
   }
   &__desc {
     flex: 0 0 auto;
     margin-bottom: 25px;
-    font-size: 22px;
+    font-size: 1.2em;
     font-weight: 300;
   }
   &__img {
     flex-grow: 1;
-    width: 180px;
-    height: 180px;
+    width: 10em;
+    height: 10em;
   }
 
   .ri-caption-container {
