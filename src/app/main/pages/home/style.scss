@@ -40,6 +40,10 @@
     height: 100%;
     margin-top: 120px;
     position: relative;
+
+    &_mobile {
+      margin-top: 0;
+    }
   }
     &__contact-area {
       position: absolute !important;

@@ -75,12 +75,12 @@ $main-blue: #307db4;
 
   &__back_1 {
     animation-name: rotateSun1;
-    background-image: radial-gradient(farthest-side at 80% 100px, #effacf, #02576e);
+    background-image: radial-gradient(farthest-side at 80% 100px, #666b59, #011821);
   }
 
   &__back_2 {
     animation-name: rotateSun2;
-    background-image: radial-gradient(farthest-side at 80% 100px, #effacf, #62396e);
+    background-image: radial-gradient(farthest-side at 80% 100px, #545849, #1d1021);
   }
 
   &__title {
@@ -88,9 +88,10 @@ $main-blue: #307db4;
     font-size: 48px;
     margin: 20px 40px;
     text-align: left;
-    font-weight: 500;
+    font-weight: 300;
     flex: 0 0 60px;
     z-index: 2;
+    font-family: Roboto;
   }
 
   &__back-form-wrap {
@@ -127,7 +128,7 @@ $main-blue: #307db4;
     border-bottom: 1px solid #696969;
   }
   &__phone {
-    font-size: 48px;
+    font-size: 64px;
     margin: 15px 0 0 0;
     color: #201844;
   }
@@ -208,37 +209,37 @@ $main-blue: #307db4;
   }
 }
 
-@keyframes rotateSun1 {
-  0% {
-    opacity: 0.5;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@keyframes rotateSun2 {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+//@keyframes rotateSun1 {
+//  0% {
+//    opacity: 0.5;
+//  }
+//  25% {
+//    opacity: 1;
+//  }
+//  50% {
+//    opacity: 0.5;
+//  }
+//  75% {
+//    opacity: 1;
+//  }
+//  100% {
+//    opacity: 0.5;
+//  }
+//}
+//@keyframes rotateSun2 {
+//  0% {
+//    opacity: 1;
+//  }
+//  25% {
+//    opacity: 0.5;
+//  }
+//  50% {
+//    opacity: 1;
+//  }
+//  75% {
+//    opacity: 0.5;
+//  }
+//  100% {
+//    opacity: 1;
+//  }
+//}

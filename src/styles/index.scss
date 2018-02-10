@@ -24,3 +24,9 @@ html {
     font-size: 12px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 10px;
+  }
+}

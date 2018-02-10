@@ -91,15 +91,9 @@ class Home extends React.Component {
                 <Mobile>
                     <div className="home__background" />
                     <Column cls="home__content home__content_mobile" overflow="visible">
-                        <Column ai="flex-start" cls="home__contact-area">
-                            <div className="home__phone"> +7 (916)652-14-45 </div>
-                            <Btn alt={true} onClick={this.showContactModal}>
-                                Заказать звонок
-                            </Btn>
-                        </Column>
                         <Column cls="home__tagline-container" flexGrow="0" flex="0 0 auto" width="auto" height="auto">
                             <div className="home__tagline home__tagline_mobile">
-                                Сдержанность и дорогой минимализм — признаки роскоши и стиля
+                                Сдержанность и дорогой минимализм — <br /> признаки роскоши и стиля
                             </div>
                             <div className="home__sub-tagline home__sub-tagline_mobile">Начало пути к новому...</div>
                         </Column>

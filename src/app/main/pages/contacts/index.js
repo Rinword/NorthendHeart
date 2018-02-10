@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 import { Row, Column } from '../../../uxComponent/UxBox';
 
-import { InfoPanel } from '../../../uxComponent/UxBox';
+// import { InfoPanel } from '../../../uxComponent/UxBox';
 import { Desktop, Mobile } from '../../../uxComponent/Responsive';
 import BackForm from '../home/components/contactForm';
 import Manager from './components/manager';
@@ -60,7 +60,7 @@ class Contacts extends React.PureComponent {
             <div id={this.props.id} className={cx('contacts', { slide_active: this.props.isActive })}>
                 <Desktop>
                     <div className="contacts__back_1" />
-                    <div className="contacts__back_2" />
+                    {/*<div className="contacts__back_2" />*/}
                     <div className="contacts__title">{this.props.title}</div>
                     <Row className="contacts__content">
                         <Column cls="contacts__back-form-wrap">
