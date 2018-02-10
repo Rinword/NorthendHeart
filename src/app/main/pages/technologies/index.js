@@ -8,10 +8,32 @@ import tapes from '../../../content/tech';
 import './style.css';
 
 class Technologies extends React.PureComponent {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            active: 0,
+        };
+
+        this.onHover = id => {
+            this.setState({ active: id });
+        };
+    }
+
     render() {
         return (
             <div id={this.props.id} className={cx('tech', { slide_active: this.props.isActive })}>
-                {tapes.map(tape => <Tape key={tape.img} {...tape} width={100 / tapes.length} />)}
+                {tapes.map((tape, i) => (
+                    <Tape
+                        key={tape.img}
+                        {...tape}
+                        width={100 / tapes.length}
+                        showToLeft={i === tapes.length - 1}
+                        showDesc={i === this.state.active}
+                        i={i}
+                        onHover={this.onHover}
+                    />
+                ))}
             </div>
         );
     }

@@ -28,15 +28,12 @@
     .tape__img {
       opacity: 0.8;
     }
-    .tape__legend {
-      opacity: 1;
-      z-index: 2;
-    }
+    //.tape__legend {
+    //  opacity: 1;
+    //  z-index: 2;
+    //}
     .tape__title {
       display: none;
-    }
-    .tape__desc {
-      display: block;
     }
   }
 
@@ -46,7 +43,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.2;
+    opacity: 0.12;
     transition: .2s all;
 
     > img {
@@ -63,17 +60,30 @@
     padding: 15px;
   }
   &__desc {
+    position: absolute;
+    display: none;
+    left: 0;
     width: 100%;
     padding: 15px;
 
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.9);
     font-size: 18px;
     color: white;
-    display: none;
     z-index: 3;
     cursor: pointer;
 
     text-align: left;
+
+
+    &_show {
+      opacity: 1;
+      display: block;
+      left: 100%;
+      transition: .2s;
+      &_left {
+        left: -100%;
+      }
+    }
 
     &_hidden {
       width: 100%;
