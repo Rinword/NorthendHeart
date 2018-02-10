@@ -54,7 +54,7 @@ class CustomSlider extends React.PureComponent {
     render() {
         const legendHidden = this.state.legendHidden;
         return (
-            <div className={cx('ux-slider-wrap', { 'ux-slider-wrap_show_next': legendHidden })}>
+            <div className={cx('ux-slider-wrap', { 'ux-slider-wrap_legend-hidden': legendHidden })}>
                 <div
                     className={cx('ux-slider-wrap__hide-btn', { bg_color_black_07: legendHidden })}
                     onClick={this.toggleLegendViewMode}
