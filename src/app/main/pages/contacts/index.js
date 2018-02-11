@@ -27,9 +27,9 @@ class Contacts extends React.PureComponent {
         };
 
         this.onFormSubmit = () => {
-            console.log(this.state.formDraft);
             const data = { ...this.state.formDraft };
             data.companyEmail = 'rinwordweb@gmail.com';
+            console.log(data);
             axios
                 .post('api/v1/send-bid', data)
                 .then(res => console.log('res', res))
