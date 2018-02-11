@@ -2,6 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Tape from './components/tape';
+import { Desktop, Mobile } from '../../../uxComponent/Responsive';
 
 import tapes from '../../../content/tech';
 
@@ -23,17 +24,20 @@ class Technologies extends React.PureComponent {
     render() {
         return (
             <div id={this.props.id} className={cx('tech', { slide_active: this.props.isActive })}>
-                {tapes.map((tape, i) => (
-                    <Tape
-                        key={tape.img}
-                        {...tape}
-                        width={100 / tapes.length}
-                        showToLeft={i === tapes.length - 1}
-                        showDesc={i === this.state.active}
-                        i={i}
-                        onHover={this.onHover}
-                    />
-                ))}
+                <Desktop>
+                    {tapes.map((tape, i) => (
+                        <Tape
+                            key={tape.img}
+                            {...tape}
+                            width={100 / tapes.length}
+                            showToLeft={i === tapes.length - 1}
+                            showDesc={i === this.state.active}
+                            i={i}
+                            onHover={this.onHover}
+                        />
+                    ))}
+                </Desktop>
+                <Mobile />
             </div>
         );
     }

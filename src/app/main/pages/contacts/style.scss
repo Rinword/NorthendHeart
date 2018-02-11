@@ -1,35 +1,9 @@
 $main-blue: #307db4;
 
-@media screen and (max-height: 942px) { /* Для малой высоты */
-  .contacts {
-    &__social-data {
-      display: none !important;
-    }
-    &__phone {
-      font-size: 42px !important;
-    }
-  }
-
-}
-
-@media screen and (max-height: 750px) {
-  .contacts {
-    &__back-form {
-      border: none !important;
-      padding: 0 !important;
-    }
-
-    &__company-data {
-      border: none !important;
-    }
-  }
-}
-
 @media screen and (max-height: 700px) {
   .contact-form {
     &__title {
       font-size: 28px;
-      margin-bottom: 8px;
     }
   }
   .ux-field {
@@ -38,19 +12,27 @@ $main-blue: #307db4;
       margin-bottom: 6px;
     }
   }
-  .contacts {
-
-  }
 }
 
-@media screen and (max-width: 1250px) {
-  .contacts {
-    &__author p {
-      display: none;
+@media screen and (max-device-width: 978px) {
+
+  div.contacts {
+    &__back-form-wrap {
+      order: 2;
+      margin-top: 25px;
+    }
+    //&__back-form {
+    //  padding: 30px;
+    //}
+    &__contacts {
+      font-size: 12px;
+      order: 1;
     }
   }
+  .contacts__article {
+    font-size: 1.6em !important;
+  }
 }
-
 
 .contacts {
   display: flex;
@@ -74,14 +56,14 @@ $main-blue: #307db4;
   }
 
   &__back_1 {
-    animation-name: rotateSun1;
-    background-image: radial-gradient(farthest-side at 80% 100px, #666b59, #011821);
+    //animation-name: rotateSun1;
+    background-image: radial-gradient(farthest-side at 45% 105%, #0d3f58, #000000);
   }
 
-  &__back_2 {
-    animation-name: rotateSun2;
-    background-image: radial-gradient(farthest-side at 80% 100px, #545849, #1d1021);
-  }
+  //&__back_2 {
+  //  animation-name: rotateSun2;
+  //  background-image: radial-gradient(farthest-side at 80% 100px, #545849, #1d1021);
+  //}
 
   &__title {
     color: white;
@@ -94,17 +76,19 @@ $main-blue: #307db4;
     font-family: Roboto;
   }
 
+  &__content {
+    flex-wrap: wrap;
+  }
+
   &__back-form-wrap {
-    padding: 0 40px;
-    align-items: flex-start !important;
+    max-width: 320px;
   }
 
   &__back-form {
     color: white;
-    border: 1px solid white;
     height: auto !important;
     width: 300px !important;
-    padding: 20px 30px 30px;
+    padding: 0 30px 30px;
     margin-bottom: 10px;
 
     .contact-form {
@@ -123,29 +107,38 @@ $main-blue: #307db4;
     }
   }
 
-  &__company-data {
-    border-top: 1px solid #696969;
-    border-bottom: 1px solid #696969;
+  &__contacts {
+    max-width: 25em;
+    color: white;
+    font-size: 16px;
   }
+
   &__phone {
-    font-size: 64px;
-    margin: 15px 0 0 0;
-    color: #201844;
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: 200;
   }
 
   &__email {
     font-size: 28px;
     margin-top: 15px;
     margin-bottom: 15px;
-    color: #201844;
     text-decoration: underline;
     font-family: Oswald;
     letter-spacing: 1px;
   }
   &__address {
-    font-size: 28px;
+    font-size: 32px;
     margin-top: 15px;
-    color: #201844;
+    font-weight: 300;
+    text-align: left;
+  }
+
+  &__article {
+    margin-bottom: 0;
+    font-size: 1.1em;
+    line-height: 1.31;
+    font-weight: 300;
     text-align: left;
   }
 
