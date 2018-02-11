@@ -101,7 +101,8 @@
     bottom: 0;
     top: auto;
     height: 8em;
-    width: 25%;
+    min-width: 25%;
+    width: calc((100vw - 640px)/2);
     transition: .2s all;
     background-color: rgba(0,0,0,0.4);
     outline: none;
@@ -123,7 +124,7 @@
   }
 
   .slick-next {
-    left: calc(25% - 1px);
+    left: calc((100vw - 640px)/2 - 1px);
   }
 
   .slick-track {
