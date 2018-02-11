@@ -2,6 +2,7 @@ import manager from '../../static/img/manager.png';
 
 export default {
     formTitle: 'Обратная связь',
+    companyEmail: 'rinwordweb@support.ru',
     manager: {
         img: manager,
         name: 'Чистов Павел',

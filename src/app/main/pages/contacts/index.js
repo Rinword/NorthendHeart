@@ -8,6 +8,7 @@ import { Row, Column } from '../../../uxComponent/UxBox';
 import BackForm from '../home/components/contactForm';
 // import Manager from './components/manager';
 import Footer from './components/footer';
+import axios from 'axios';
 
 import contacts from '../../../content/contacts';
 
@@ -27,6 +28,12 @@ class Contacts extends React.PureComponent {
 
         this.onFormSubmit = () => {
             console.log(this.state.formDraft);
+            const data = { ...this.state.formDraft };
+            data.companyEmail = 'rinwordweb@gmail.com';
+            axios
+                .post('api/v1/send-bid', data)
+                .then(res => console.log('res', res))
+                .catch(err => console.warn(err));
         };
 
         this.onFormChange = draft => {
