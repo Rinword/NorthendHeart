@@ -33,7 +33,7 @@ class TabPanelC extends React.PureComponent {
                 <div
                     className={cx('tape__desc', { tape__desc_show_left: showToLeft }, { tape__desc_show: showDesc })}
                     dangerouslySetInnerHTML={{ __html: description }}
-                    onMouseEnter={this.onDescHover}
+                    onClick={this.onDescHover}
                 />
             </div>
         );
