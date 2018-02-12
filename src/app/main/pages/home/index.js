@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import Cookies from 'js-cookie';
+import axios from 'axios';
 import { Column, Btn, Modal } from '../../../uxComponent/UxBox';
 import { Desktop, Mobile } from '../../../uxComponent/Responsive';
 import menuConfig from '../../../../app/content/menuConfig';
@@ -37,8 +38,16 @@ class Home extends React.Component {
         };
 
         this.onContactFormSubmit = draft => {
-            this.hideContactModal(draft);
-            //fetch data to server
+            axios
+                .post('api/v1/send-bid', draft)
+                .then(res => {
+                    this.hideContactModal(draft);
+                    alert('Заявка успешно отправлена');
+                })
+                .catch(err => {
+                    alert('Ошибка отправки ' + err);
+                    this.hideContactModal(draft);
+                });
         };
     }
 

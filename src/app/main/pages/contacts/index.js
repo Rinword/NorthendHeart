@@ -1,12 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import cx from 'classnames';
-
+import Cookies from 'js-cookie';
 import { Row, Column } from '../../../uxComponent/UxBox';
 
-// import { InfoPanel } from '../../../uxComponent/UxBox';
 import BackForm from '../home/components/contactForm';
-// import Manager from './components/manager';
 import Footer from './components/footer';
 import axios from 'axios';
 
@@ -29,13 +26,19 @@ class Contacts extends React.PureComponent {
         this.onFormSubmit = () => {
             axios
                 .post('api/v1/send-bid', this.state.formDraft)
-                .then(res => console.log('res', res))
+                .then(res => alert('Заявка успешно отправлена'))
                 .catch(err => console.warn(err));
         };
 
         this.onFormChange = draft => {
             this.setState({ formDraft: draft });
         };
+    }
+    componentDidMount() {
+        let oldDraft = Cookies.get('nh-phoneDraft');
+
+        if (oldDraft === 'undefined' || oldDraft === undefined) return;
+        this.setState({ formDraft: JSON.parse(oldDraft) });
     }
     //
     // componentDidMount() {
