@@ -1,10 +1,17 @@
 const express = require('express');
 const router = express.Router();
-// const url = require('url');
+const validations = require('../services/validations');
 
-router.get('/', function(req, res, next) {
-    console.log(req);
-    res.json({ data: 'data' });
+router.post('/', function(req, res, next) {
+    const userData = req.body;
+
+    if (!validations.validateBid(userData, [])) {
+        res.status(400).json({ success: false, error: 'Bad form data' });
+    }
+
+    //post service here
+
+    res.json({ success: true });
 });
 
 module.exports = router;
