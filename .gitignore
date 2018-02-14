@@ -7,7 +7,8 @@
 /coverage
 
 # production
-/build
+/build/static/css/*.map
+/build/static/js/*.map
 
 #private info
 /constants.js
@@ -31,3 +32,4 @@ yarn-error.log*
 
 # except libs css
 !src/libs/*/*.css
+!build/static/css/*.css

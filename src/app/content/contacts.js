@@ -11,9 +11,9 @@ export default {
         phone: '+7 (926) 616 48-96',
     },
     office: {
-        email: 'plusmodul@support.ru',
-        phone: '+7 (495) 771-12-12',
-        address: 'Москва, Симоновский Вал 15, офис 416',
+        email: 'info@plusmodul.ru',
+        phone: '+7 (499) 350-12-86',
+        address: 'Москва, Старопетровский проезд 7а, стр. 6, офис 409',
         gpsPoint: [37.601218, 55.813559],
         mapTitle: 'PLUSMODUL',
         mapDesc: 'обслуживание клиентов',

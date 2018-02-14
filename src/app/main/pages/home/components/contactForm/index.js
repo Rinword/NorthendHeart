@@ -72,7 +72,7 @@ class ContactForm extends React.PureComponent {
                         <Field
                             name="date"
                             title="Удобное время"
-                            value={draft.date || ''}
+                            value={draft.date || 'будни с 10 до 23'}
                             placeholder="будни с 10 до 23"
                             validations="maxLength:25"
                             validationError="Не более 25 символов"

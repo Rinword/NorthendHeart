@@ -34,7 +34,9 @@ router.post('/', function(req, res, next) {
                 </div>
                 <div style="display: inline-block;padding: 10px 0;width: 100%;">
                     <div style="font-weight: 500;font-size: 0.8em;float: left;">Email</div>
-                    <span style="font-size: 0.8em;float: right;font-weight: 300;">${userData.email}</span>
+                    <p style="font-size: 0.8em;float: right;font-weight: 300; margin:0; background-color: white">${
+                        userData.email
+                    }</p>
                 </div>
                 <div style="display: inline-block;padding: 10px 0;width: 100%;">
                     <div style="font-weight: 500;font-size: 0.8em;float: left;">Телефон</div>
