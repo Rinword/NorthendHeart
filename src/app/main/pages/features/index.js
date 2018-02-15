@@ -4,7 +4,7 @@ import { Row, Column } from '../../../uxComponent/UxBox';
 import cx from 'classnames';
 import ReactIntense from '../../../../libs/react-intense/ReactIntense';
 import { Desktop, Mobile } from '../../../uxComponent/Responsive';
-import features from '../../../content/features';
+import { features } from '../../../../content';
 
 import './style.css';
 

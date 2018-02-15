@@ -3,8 +3,8 @@ import { Row, Column } from '../uxComponent/UxBox';
 // import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Responsive from 'react-responsive';
-import logo from '../../static/icons/logo.png'; //TODO set absolute path and get svg icon
-import menuConfig from '../content/menuConfig';
+import logo from '../../static/icons/logo.png';
+import { menu } from '../../content';
 import './style.css';
 
 const Desktop = props => <Responsive {...props} minWidth={931} />;
@@ -37,7 +37,7 @@ class HeaderMenu extends React.PureComponent {
 
     render() {
         const activePage = this.props.activePage;
-        const date = `build#85 (${this.date.getDate()}.${
+        const date = `build#94 (${this.date.getDate()}.${
             this.date.getMonth() + 1 < 10 ? '0' + (this.date.getMonth() + 1).toString() : this.date.getMonth() + 1
         }.${this.date.getFullYear()})`;
 
@@ -64,7 +64,7 @@ class HeaderMenu extends React.PureComponent {
                             ai="center"
                             cls="header-menu__options-container"
                         >
-                            {menuConfig.map(item => (
+                            {menu.map(item => (
                                 <span
                                     key={item.id}
                                     className={cx('header-menu__item', {
@@ -106,7 +106,7 @@ class HeaderMenu extends React.PureComponent {
                             })}
                             onClick={this.toggleMenuState}
                         >
-                            {menuConfig.map(item => (
+                            {menu.map(item => (
                                 <span
                                     key={item.id}
                                     className={cx('header-menu__item', {

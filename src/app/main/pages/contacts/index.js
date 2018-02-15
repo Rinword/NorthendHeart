@@ -7,7 +7,7 @@ import BackForm from '../home/components/contactForm';
 import Footer from './components/footer';
 import axios from 'axios';
 
-import contacts from '../../../content/contacts';
+import { contacts } from '../../../../content';
 
 import './style.css';
 

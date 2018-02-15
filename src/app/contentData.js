@@ -1,4 +1,4 @@
-import projects from './content/projects';
+import { projects } from '../content';
 
 import Home from './main/pages/home';
 import Features from './main/pages/features';

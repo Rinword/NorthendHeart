@@ -4,10 +4,10 @@ import Cookies from 'js-cookie';
 import axios from 'axios';
 import { Column, Btn, Modal } from '../../../uxComponent/UxBox';
 import { Desktop, Mobile } from '../../../uxComponent/Responsive';
-import menuConfig from '../../../../app/content/menuConfig';
 
 import RoundMenu from './components/roundMenu';
 import ContactForm from './components/contactForm';
+import { home, menu } from '../../../../content';
 
 import './style.css';
 
@@ -73,19 +73,17 @@ class Home extends React.Component {
                     <div className="home__background" />
                     <Column cls="home__content">
                         <Column ai="flex-start" cls="home__contact-area">
-                            <div className="home__phone"> +7 (916)652-14-45 </div>
+                            <div className="home__phone"> {home.phone} </div>
                             <Btn alt={true} onClick={this.showContactModal}>
-                                Заказать звонок
+                                {home.btnText}
                             </Btn>
                         </Column>
                         <Column cls="home__tagline-container" flexGrow="0" flex="0 0 auto" width="auto" height="auto">
-                            <div className="home__tagline">
-                                Сдержанность и дорогой минимализм — признаки роскоши и стиля
-                            </div>
-                            <div className="home__sub-tagline">Начало пути к новому...</div>
+                            <div className="home__tagline">{home.title}</div>
+                            <div className="home__sub-tagline">{home.subTitle}</div>
                         </Column>
                         <Column cls="home__menu-wrap" jc="flex-start" ai="center" overflow="visible">
-                            <RoundMenu menuItems={menuConfig} onItemClick={this.props.onMenuClick} />
+                            <RoundMenu menuItems={menu} onItemClick={this.props.onMenuClick} />
                         </Column>
                     </Column>
 
@@ -102,12 +100,12 @@ class Home extends React.Component {
                     <Column cls="home__content home__content_mobile" overflow="visible">
                         <Column cls="home__tagline-container" flexGrow="0" flex="0 0 auto" width="auto" height="auto">
                             <div className="home__tagline home__tagline_mobile">
-                                Сдержанность и дорогой минимализм — <br /> признаки роскоши и стиля
+                                {home.title}
                             </div>
-                            <div className="home__sub-tagline home__sub-tagline_mobile">Начало пути к новому...</div>
+                            <div className="home__sub-tagline home__sub-tagline_mobile">{home.subTitle}</div>
                         </Column>
                         <Column cls="home__menu-wrap" jc="flex-start" ai="center" overflow="visible">
-                            <RoundMenu menuItems={menuConfig} onItemClick={this.props.onMenuClick} />
+                            <RoundMenu menuItems={menu} onItemClick={this.props.onMenuClick} />
                         </Column>
                     </Column>
 

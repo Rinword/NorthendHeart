@@ -4,7 +4,7 @@ import cx from 'classnames';
 import Tape from './components/tape';
 import { Desktop, Mobile } from '../../../uxComponent/Responsive';
 
-import tapes from '../../../content/tech';
+import { tech } from '../../../../content';
 
 import './style.css';
 
@@ -25,12 +25,12 @@ class Technologies extends React.PureComponent {
         return (
             <div id={this.props.id} className={cx('tech', { slide_active: this.props.isActive })}>
                 <Desktop>
-                    {tapes.map((tape, i) => (
+                    {tech.map((tape, i) => (
                         <Tape
                             key={tape.img}
                             {...tape}
-                            width={100 / tapes.length}
-                            showToLeft={i === tapes.length - 1}
+                            width={100 / tech.length}
+                            showToLeft={i === tech.length - 1}
                             showDesc={i === this.state.active}
                             i={i}
                             onHover={this.onHover}
