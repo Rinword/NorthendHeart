@@ -2,10 +2,10 @@
   text-align: center;
 
   &__header {
-    position: fixed !important;
+    position: fixed;
     left: 0;
     top: 0;
-    height: 60px !important; //TODO css vars
+    height: 60px; //TODO css vars
     width: 100vw;
     color: white;
     background-color: #222;
@@ -14,13 +14,7 @@
   }
 
   &__body {
-    //max-width: 1440px;
     margin: auto;
 
   }
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

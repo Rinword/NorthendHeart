@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { scroller, Events } from 'react-scroll';
 
+import { Desktop, Mobile } from '../uxComponent/Responsive';
+
 import './style.css';
 
 //TODO off mousewheel during scroll
@@ -88,9 +90,16 @@ class PageSlider extends React.PureComponent {
         //TODO component inside props
         return (
             <div ref="content" className="ux-page-slider">
-                {this.props.pages.map(Page => {
-                    return <Page.component key={Page.id} {...Page} isActive={this.props.activePage === Page.id} />;
-                })}
+                <Desktop>
+                    {this.props.pages.map(Page => {
+                        return <Page.component key={Page.id} {...Page} isActive={this.props.activePage === Page.id} />;
+                    })}
+                </Desktop>
+                <Mobile>
+                    {this.props.pages.map(Page => {
+                        return <Page.component key={Page.id} {...Page} isActive={true} />;
+                    })}
+                </Mobile>
             </div>
         );
     }

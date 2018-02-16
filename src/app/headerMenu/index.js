@@ -79,13 +79,7 @@ class HeaderMenu extends React.PureComponent {
                     </Row>
                 </Desktop>
                 <Mobile>
-                    <Row
-                        jc="space-between"
-                        ai="center"
-                        cls={cx([this.props.cls], 'header-menu', 'header-menu_mobile', {
-                            'header-menu_transparent': activePage === 'slide0',
-                        })}
-                    >
+                    <div className={cx([this.props.cls], 'header-menu', 'header-menu_mobile')}>
                         <img src={logo} className="header-menu__logo" alt="logo" />
                         <div className="header-menu__title">PLUS MODUL</div>
                         {!isOpen && (
@@ -118,7 +112,7 @@ class HeaderMenu extends React.PureComponent {
                                 </span>
                             ))}
                         </Column>
-                    </Row>
+                    </div>
                 </Mobile>
             </div>
         );

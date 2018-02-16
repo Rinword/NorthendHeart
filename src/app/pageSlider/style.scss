@@ -4,14 +4,14 @@
   > * {
     height: 100vh;
     width: 100%;
-    //padding-top: 40px;
   }
 }
 
-@media screen and (max-width: 615px) {
+@media screen and (max-width: 668px) {
     .ux-page-slider {
       > * {
         height: auto;
+        padding-top: 0 !important;
       }
     }
 }

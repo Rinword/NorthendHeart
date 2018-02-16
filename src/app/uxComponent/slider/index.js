@@ -17,7 +17,7 @@ class CustomSlider extends React.PureComponent {
 
         this.state = {
             activeSlide: 1,
-            legendHidden: false,
+            legendHidden: props.legendHidden || false,
             hasSlick: false,
         };
 
@@ -66,13 +66,7 @@ class CustomSlider extends React.PureComponent {
                         )}
                     />
                 </div>
-                <div
-                    className={cx(
-                        'ux-slider-legend',
-                        { 'ux-slider-legend_blurred': this.state.legendBlurred },
-                        { 'ux-slider-legend_hidden': this.state.legendHidden }
-                    )}
-                >
+                <div className={cx('ux-slider-legend', { 'ux-slider-legend_hidden': legendHidden })}>
                     <div className="ux-slider-legend__slide-btns no_blur">
                         <div className="ux-slider-legend__slide-btn" onClick={this.prev}>
                             <div className="icon icon_prev icon_bg-size_18 icon_size_24" />
