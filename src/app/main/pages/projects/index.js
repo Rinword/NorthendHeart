@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Slider } from '../../../uxComponent/UxBox';
+import { Row, Column, Slider } from '../../../uxComponent/UxBox';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { projects } from '../../../../content';
@@ -19,7 +19,23 @@ class Projects extends React.PureComponent {
                     <Slider slides={projects} isActive={this.props.isActive} />
                 </Desktop>
                 <Mobile>
-                    <Slider slides={projects} isActive={this.props.isActive} legendHidden={true} />
+                    <div className="features__title">{this.props.title}</div>
+                    <Column cls={cx('projects__mobile-wrap')} height="auto">
+                        {projects.map((pr, i) => {
+                            return (
+                                <Column cls={cx('projects__project')}>
+                                    <h3>{pr.title}</h3>
+                                    <p>{pr.description}</p>
+                                    <Column ai="center">
+                                        <div className={cx(`projects__mobile-img projects_img_${i + 1}`)} />
+                                        {pr.photos.map((img, i) => (
+                                            <img className={cx('projects__mobile-img')} src={pr.photos[i]} alt="" />
+                                        ))}
+                                    </Column>
+                                </Column>
+                            );
+                        })}
+                    </Column>
                 </Mobile>
             </div>
         );

@@ -1,9 +1,10 @@
 .projects {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #28231f;
+  background: linear-gradient(to bottom, #06121c, black);
   font-size: 22px;
 
   &_img {
@@ -16,5 +17,45 @@
     &_3 {
       background-image: url('../../../../static/img/projects/house3.jpg');
     }
+  }
+
+  &__mobile-wrap {
+    color: white;
+
+    h3 {
+      margin: 10px 0 10px 20px;
+      width: 100%;
+      text-align: left;
+      font-family: Oswald;
+    }
+
+    p {
+      margin: 0 10px 10px 20px;
+      text-align: left;
+      font-weight: 300;
+      font-size: 16px;
+    }
+  }
+
+  .features__title {
+    align-self: flex-start;
+  }
+
+  &__mobile-img {
+    width: 95%;
+    min-height: 200px;
+    height: 40%;
+    margin: 10px 0;
+    border: 1px solid #307db4;
+    box-shadow: 0 0 12px 2px #307db4;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__project {
+    border-top: 2px solid white;
+    margin-bottom: 15px;
   }
 }

@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { scroller, Events } from 'react-scroll';
-
-import { Desktop, Mobile } from '../uxComponent/Responsive';
+import Responsive from 'react-responsive';
 
 import './style.css';
+
+const Desktop = props => <Responsive {...props} minWidth={1025} />;
+const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={1024} />;
+const Mobile = props => <Responsive {...props} maxWidth={767} />;
 
 //TODO off mousewheel during scroll
 
@@ -95,6 +98,11 @@ class PageSlider extends React.PureComponent {
                         return <Page.component key={Page.id} {...Page} isActive={this.props.activePage === Page.id} />;
                     })}
                 </Desktop>
+                <Tablet>
+                    {this.props.pages.map(Page => {
+                        return <Page.component key={Page.id} {...Page} isActive={true} />;
+                    })}
+                </Tablet>
                 <Mobile>
                     {this.props.pages.filter(page => !page.hideOnMobile).map(Page => {
                         return <Page.component key={Page.id} {...Page} isActive={true} />;

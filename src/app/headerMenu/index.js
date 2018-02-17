@@ -90,7 +90,7 @@ class HeaderMenu extends React.PureComponent {
                         )}
                         <Column
                             flexGrow="0"
-                            jc="flex-end"
+                            jc="center"
                             ai="stretch"
                             height="100vh"
                             cls={cx('header-menu__options-container', 'header-menu__options-container_vertical', {
