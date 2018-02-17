@@ -96,7 +96,7 @@ class PageSlider extends React.PureComponent {
                     })}
                 </Desktop>
                 <Mobile>
-                    {this.props.pages.map(Page => {
+                    {this.props.pages.filter(page => !page.hideOnMobile).map(Page => {
                         return <Page.component key={Page.id} {...Page} isActive={true} />;
                     })}
                 </Mobile>

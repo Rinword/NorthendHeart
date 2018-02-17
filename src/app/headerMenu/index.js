@@ -46,10 +46,8 @@ class HeaderMenu extends React.PureComponent {
         return (
             <div>
                 <Desktop>
-                    <Row
-                        jc="space-between"
-                        ai="center"
-                        cls={cx([this.props.cls], 'header-menu', {
+                    <div
+                        className={cx([this.props.cls], 'header-menu', {
                             'header-menu_transparent': activePage === 'slide0',
                         })}
                     >
@@ -76,7 +74,7 @@ class HeaderMenu extends React.PureComponent {
                                 </span>
                             ))}
                         </Row>
-                    </Row>
+                    </div>
                 </Desktop>
                 <Mobile>
                     <div className={cx([this.props.cls], 'header-menu', 'header-menu_mobile')}>
@@ -100,7 +98,7 @@ class HeaderMenu extends React.PureComponent {
                             })}
                             onClick={this.toggleMenuState}
                         >
-                            {menu.map(item => (
+                            {menu.filter(i => !i.hideOnMobile).map(item => (
                                 <span
                                     key={item.id}
                                     className={cx('header-menu__item', {

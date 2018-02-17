@@ -49,6 +49,7 @@ export const menu = [
         id: 'slide3',
         title: 'Технологии',
         name: 'technologies',
+        hideOnMobile: true,
     },
     {
         order: 4,

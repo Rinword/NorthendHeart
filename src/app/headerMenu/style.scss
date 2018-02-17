@@ -21,9 +21,12 @@
       z-index: 110;
     }
   }
-
+  &__options-container {
+    margin-right: 17px;
+  }
   &__options-container_vertical {
     position: fixed !important;
+    margin-right: 0;
     left: 0;
     top: 0;
     height: 100vh !important;

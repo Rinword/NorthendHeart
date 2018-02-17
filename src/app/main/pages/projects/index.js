@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { Slider } from '../../../uxComponent/UxBox';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { getDataByName } from '../../../contentData';
+import { projects } from '../../../../content';
 
 import './style.css';
 import '../../../uxComponent/slider/style.css';
@@ -16,19 +16,10 @@ class Projects extends React.PureComponent {
         return (
             <div id={this.props.id} className={cx('projects', { slide_active: this.props.isActive })}>
                 <Desktop>
-                    <Slider
-                        photosTitle="Еще фото:"
-                        slides={getDataByName(this.props.name)}
-                        isActive={this.props.isActive}
-                    />
+                    <Slider slides={projects} isActive={this.props.isActive} />
                 </Desktop>
                 <Mobile>
-                    <Slider
-                        photosTitle="Еще фото:"
-                        slides={getDataByName(this.props.name)}
-                        isActive={this.props.isActive}
-                        legendHidden={true}
-                    />
+                    <Slider slides={projects} isActive={this.props.isActive} legendHidden={true} />
                 </Mobile>
             </div>
         );

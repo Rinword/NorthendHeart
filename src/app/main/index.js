@@ -1,12 +1,23 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import cx from 'classnames';
 
 import PageSlider from '../pageSlider';
 
-import contentData from '../contentData';
+import { menu } from '../../content';
+import Home from './pages/home';
+import Features from './pages/features';
+import Projects from './pages/projects';
+import Tech from './pages/technologies';
+import Contacts from './pages/contacts';
 
 import './style.css';
+
+const components = {
+    home: Home,
+    projects: Projects,
+    features: Features,
+    technologies: Tech,
+    contacts: Contacts,
+};
 
 class Main extends React.PureComponent {
     constructor(props) {
@@ -18,8 +29,8 @@ class Main extends React.PureComponent {
                 onMenuClick: props.onSelectPage,
             },
         };
-        this.formattedPages = contentData.map(item => {
-            return { ...item, ...specProps[item.name] };
+        this.formattedPages = menu.map(item => {
+            return { ...item, component: components[item.name], ...specProps[item.name] };
         });
     }
     render() {
