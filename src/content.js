@@ -5,6 +5,10 @@ import pr1_1 from './static/img/projects/1/1.png';
 import pr1_2 from './static/img/projects/1/2.png';
 import pr1_3 from './static/img/projects/1/3.png';
 
+import pr1_1_mobile from './static/img/projects/1/mobile/1.png';
+import pr1_2_mobile from './static/img/projects/1/mobile/2.png';
+import pr1_3_mobile from './static/img/projects/1/mobile/3.png';
+
 import pr1_1_mini from './static/img/projects/1/thumbnail/1.png';
 import pr1_2_mini from './static/img/projects/1/thumbnail/2.png';
 import pr1_3_mini from './static/img/projects/1/thumbnail/3.png';
@@ -13,11 +17,16 @@ import pr2_1 from './static/img/projects/2/1.png';
 import pr2_2 from './static/img/projects/2/2.png';
 import pr2_3 from './static/img/projects/2/3.png';
 
+import pr2_1_mobile from './static/img/projects/2/mobile/1.png';
+import pr2_2_mobile from './static/img/projects/2/mobile/2.png';
+import pr2_3_mobile from './static/img/projects/2/mobile/3.png';
+
 import pr2_1_mini from './static/img/projects/2/thumbnail/1.png';
 import pr2_2_mini from './static/img/projects/2/thumbnail/2.png';
 import pr2_3_mini from './static/img/projects/2/thumbnail/3.png';
 
 import pr3_1 from './static/img/projects/3/1.png';
+import pr3_1_mobile from './static/img/projects/3/mobile/1.png';
 import pr3_1_mini from './static/img/projects/3/thumbnail/1.png';
 
 import lvl from './static/img/tech/lvl.png';
@@ -104,6 +113,7 @@ export const projects = [
             },
         ],
         photos: [pr1_1, pr1_2, pr1_3],
+        photos_mobile: [pr1_1_mobile, pr1_2_mobile, pr1_3_mobile],
         photos_mini: [pr1_1_mini, pr1_2_mini, pr1_3_mini],
     },
     {
@@ -126,6 +136,7 @@ export const projects = [
             },
         ],
         photos: [pr2_1, pr2_2, pr2_3],
+        photos_mobile: [pr2_1_mobile, pr2_2_mobile, pr2_3_mobile],
         photos_mini: [pr2_1_mini, pr2_2_mini, pr2_3_mini],
     },
     {
@@ -144,6 +155,7 @@ export const projects = [
             },
         ],
         photos: [pr3_1],
+        photos_mobile: [pr3_1_mobile],
         photos_mini: [pr3_1_mini],
     },
 ];

@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Row, Column, Slider } from '../../../uxComponent/UxBox';
+import { Column, Slider } from '../../../uxComponent/UxBox';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { projects } from '../../../../content';
@@ -28,8 +28,8 @@ class Projects extends React.PureComponent {
                                     <p>{pr.description}</p>
                                     <Column ai="center">
                                         <div className={cx(`projects__mobile-img projects_img_${i + 1}`)} />
-                                        {pr.photos.map((img, i) => (
-                                            <img className={cx('projects__mobile-img')} src={pr.photos[i]} alt="" />
+                                        {pr.photos_mobile.map((img, i) => (
+                                            <img className={cx('projects__mobile-img')} src={img} alt="" />
                                         ))}
                                     </Column>
                                 </Column>
