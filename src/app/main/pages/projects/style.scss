@@ -42,12 +42,10 @@
   }
 
   &__mobile-img {
-    width: 95%;
+    width: 100%;
     min-height: 200px;
     height: 40%;
-    margin: 10px 0;
-    border: 1px solid #307db4;
-    box-shadow: 0 0 12px 2px #307db4;
+    //box-shadow: 0 0 12px 2px #307db4;
 
     background-repeat: no-repeat;
     background-size: cover;

@@ -1,18 +1,22 @@
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 767px) {
   div.home {
     &__tagline-container {
-      padding: 75px 30px 40px 60px;
+      padding: 40px;
+      > * {
+        text-align: center;
+      }
     }
   }
 }
 
 .home {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: black;
+  background: black;
 
   &__background {
     position: absolute;
@@ -29,6 +33,11 @@
     transition-delay: 0.4s;
     z-index: 1;
     opacity: 0.6;
+
+    &_mobile {
+      position: relative;
+      min-height: 500px;
+    }
   }
   &__tagline-container {
     padding: 30px 10px 20px 85px;
@@ -98,6 +107,7 @@
   }
 
   &.slide_active {
+    background: linear-gradient(to bottom, black, black, black, #06121c);
     .home {
       &__tagline {
         left: 0;
@@ -118,6 +128,11 @@
         transform: scale(1.05, 1.05);
         opacity: 0.4;
         box-shadow: 0 0 50px 40px black inset;
+
+        &_mobile {
+          opacity: 0.6;
+          box-shadow: 0 0 40px 30px black inset;
+        }
       }
       &__title {
         font-size: 32px;

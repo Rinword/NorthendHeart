@@ -57,10 +57,18 @@ class Features extends React.PureComponent {
                 </Desktop>
                 <Mobile>
                     <div className="features__background_mobile" />
-                    <div className="features__title">{this.props.title}</div>
-                    <Column cls="features__tagline-container" flexGrow="0" flex="0 0 auto" width="auto" height="auto">
-                        <div className="features__tagline">{features.title}</div>
-                        <div className="features__sub-tagline">{features.desc}</div>
+                    {/*<div className="features__title">{this.props.title}</div>*/}
+                    <Column
+                        cls="features__tagline-container"
+                        ai="center"
+                        flexGrow="0"
+                        flex="0 0 auto"
+                        width="auto"
+                        height="auto"
+                        padding="10px"
+                    >
+                        <div className={cx('features__tagline', 'ta_center')}>{features.title}</div>
+                        <div className={cx('features__sub-tagline', 'ta_center')}>{features.desc}</div>
                         <Column />
                     </Column>
                     <Row

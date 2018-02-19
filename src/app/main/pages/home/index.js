@@ -3,13 +3,16 @@ import cx from 'classnames';
 import Cookies from 'js-cookie';
 import axios from 'axios';
 import { Column, Btn, Modal } from '../../../uxComponent/UxBox';
-import { Desktop, Mobile } from '../../../uxComponent/Responsive';
+import Responsive from 'react-responsive';
 
 import RoundMenu from './components/roundMenu';
 import ContactForm from './components/contactForm';
 import { home, menu } from '../../../../content';
 
 import './style.css';
+
+const Desktop = props => <Responsive {...props} minWidth={768} />;
+const Mobile = props => <Responsive {...props} maxWidth={767} />;
 
 class Home extends React.Component {
     constructor(props) {
@@ -96,26 +99,13 @@ class Home extends React.Component {
                     </Modal>
                 </Desktop>
                 <Mobile>
-                    <div className="home__background" />
+                    <div className="home__background home__background_mobile" />
                     <Column cls="home__content home__content_mobile" overflow="visible">
                         <Column cls="home__tagline-container" flexGrow="0" flex="0 0 auto" width="auto" height="auto">
-                            <div className="home__tagline home__tagline_mobile">
-                                {home.title}
-                            </div>
+                            <div className="home__tagline home__tagline_mobile">{home.title}</div>
                             <div className="home__sub-tagline home__sub-tagline_mobile">{home.subTitle}</div>
                         </Column>
-                        <Column cls="home__menu-wrap" jc="flex-start" ai="center" overflow="visible">
-                            <RoundMenu menuItems={menu} onItemClick={this.props.onMenuClick} />
-                        </Column>
                     </Column>
-
-                    <Modal isOpen={this.state.contactModalIsOpen} onRequestClose={this.hideContactModal}>
-                        <ContactForm
-                            draft={this.state.formDraft}
-                            onSubmit={this.onContactFormSubmit}
-                            onChange={this.onContactFormChange}
-                        />
-                    </Modal>
                 </Mobile>
             </div>
         );

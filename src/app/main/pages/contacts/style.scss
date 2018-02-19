@@ -16,6 +16,10 @@ $main-blue: #307db4;
 
 @media screen and (max-device-width: 400px) {
   .contacts {
+
+    &__company-data {
+      padding: 0 7px;
+    }
     &__footer {
       flex-direction: column !important;
       justify-content: flex-start !important;
