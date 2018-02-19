@@ -10,6 +10,15 @@
   }
 }
 
+@media screen and (min-width: 997px) {
+  div.home {
+    &__contact-area {
+      visibility: visible !important;
+    }
+  }
+}
+
+
 .home {
   display: flex;
   flex-direction: column;
@@ -17,6 +26,7 @@
   align-items: center;
   position: relative;
   background: black;
+  overflow: hidden;
 
   &__background {
     position: absolute;
@@ -40,14 +50,14 @@
     }
   }
   &__tagline-container {
-    padding: 30px 10px 20px 85px;
+    padding: 30px 10px 0 85px;
   }
 
   &__content {
     z-index: 2;
     width: 100%;
     height: 100%;
-    margin-top: 120px;
+    margin-top: 60px;
     position: relative;
 
     &_mobile {
@@ -55,6 +65,7 @@
     }
   }
     &__contact-area {
+      visibility: hidden;
       position: absolute !important;
       right: -200px;
       top: 0;

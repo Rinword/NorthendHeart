@@ -1,11 +1,19 @@
 $animation-time: 24s;
 
+@media screen and (max-height: 1024px) { /* Ipad */
+  .ux-round-menu-wrap {
+    transform: scale(0.97);
+    margin-top: -10px;
+  }
+}
+
 @media screen and (max-height: 900px) { /* Для малой высоты */
   .ux-round-menu-wrap {
      transform: scale(0.7);
     margin-top: -100px;
   }
 }
+
 @media screen and (max-height: 700px) { /* Для совсем малой высоты */
   .ux-round-menu-wrap {
     transform: scale(0.6);

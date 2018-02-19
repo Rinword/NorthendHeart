@@ -27,7 +27,6 @@ class Projects extends React.PureComponent {
                                     <h3>{pr.title}</h3>
                                     <p>{pr.description}</p>
                                     <Column ai="center">
-                                        <div className={cx(`projects__mobile-img projects_img_${i + 1}`)} />
                                         {pr.photos_mobile.map((img, i) => (
                                             <img className={cx('projects__mobile-img')} src={img} alt="" />
                                         ))}
