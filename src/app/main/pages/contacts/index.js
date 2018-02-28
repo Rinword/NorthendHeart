@@ -67,7 +67,7 @@ class Contacts extends React.PureComponent {
                 <div className="contacts__back_1" />
                 {/*<div className="contacts__back_2" />*/}
                 <div className="contacts__title">{this.props.title}</div>
-                <Row cls="contacts__content" jc="space-around">
+                <Row height="auto" cls="contacts__content" jc="space-around" overflow="visible">
                     <Row jc="center" cls="contacts__back-form-wrap">
                         <BackForm
                             className="contacts__back-form"
@@ -79,8 +79,8 @@ class Contacts extends React.PureComponent {
                         />
                         {/*<Manager contacts={contacts.manager} />*/}
                     </Row>
-                    <Column cls="contacts__contacts" height="auto" jc="flex-start" ai="center">
-                        <Column width="auto" height="inherit" ai="flex-start" cls="contacts__company-data">
+                    <Column cls="contacts__contacts" height="auto" jc="flex-start" ai="center" overflow="visible">
+                        <Column width="auto" height="auto" ai="flex-start" cls="contacts__company-data" overflow="visible">
                             <p className="contacts__phone">{contacts.office.phone}</p>
                             <p className="contacts__email">{contacts.office.email}</p>
                             <p className="contacts__address">{contacts.office.address}</p>

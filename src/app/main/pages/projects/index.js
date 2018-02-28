@@ -21,23 +21,24 @@ class Projects extends React.PureComponent {
                 <Mobile>
                     <div className="features__title">{this.props.title}</div>
                     <Column cls={cx('projects__mobile-wrap')} height="auto">
-                        {projects.map((pr, i) => {
-                            return (
-                                <Column cls={cx('projects__project')}>
-                                    <h3>{pr.title}</h3>
-                                    <p>{pr.description}</p>
-                                    <Column ai="center">
-                                        {pr.photos_mobile.map((img, i) => (
-                                            <img className={cx('projects__mobile-img')} src={img} alt="" />
-                                        ))}
-                                    </Column>
-                                </Column>
-                            );
-                        })}
+                        {projects.map((pr, i) => <MobileProject key={i} {...pr} />)}
                     </Column>
                 </Mobile>
             </div>
         );
     }
 }
+
+const MobileProject = ({ title, description, photos_mobile }) => (
+    <Column height="auto" cls={cx('projects__project')}>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <Column height="auto" ai="center">
+            {photos_mobile.map((img, i) => (
+                <img key={title + i} className={cx('projects__mobile-img')} src={img} alt="" />
+            ))}
+        </Column>
+    </Column>
+);
+
 export default Projects;
