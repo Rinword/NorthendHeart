@@ -99,12 +99,20 @@ class Home extends React.Component {
                     </Modal>
                 </Desktop>
                 <Mobile>
-                    <div className="home__background home__background_mobile" />
-                    <Column cls="home__content home__content_mobile" overflow="visible">
-                        <Column cls="home__tagline-container" flexGrow="0" flex="0 0 auto" width="auto" height="auto">
+                    <Column cls="home__content home__content_mobile" overflow="visible" height="auto">
+                        <Column
+                            cls="home__tagline-container"
+                            flexGrow="0"
+                            flex="0 0 auto"
+                            width="auto"
+                            height="auto"
+                            margin="50px 0 0"
+                            padding="15px"
+                        >
                             <div className="home__tagline home__tagline_mobile">{home.title}</div>
                             <div className="home__sub-tagline home__sub-tagline_mobile">{home.subTitle}</div>
                         </Column>
+                        <div className="home__background home__background_mobile" />
                     </Column>
                 </Mobile>
             </div>

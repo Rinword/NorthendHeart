@@ -198,7 +198,7 @@ export const tech = [
 export const contacts = {
     formTitle: 'Обратная связь',
     office: {
-        email: 'info@plusmodul.ru',
+        email: 'info@plusmodul.com',
         phone: '+7 (499) 350-12-86',
         address: 'Москва, Старопетровский проезд 7а, стр. 6, офис 409',
     },

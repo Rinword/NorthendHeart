@@ -111,7 +111,7 @@
   }
 }
 
-@media screen and (orientation: landscape) and (max-device-height: 500px) {
+@media only screen  and (max-height: 500px) and (orientation: landscape) {
   .header-menu {
     background-color: transparent !important;
     img {

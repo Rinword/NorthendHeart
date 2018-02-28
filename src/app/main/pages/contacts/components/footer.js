@@ -2,7 +2,15 @@ import React from 'react';
 import { Row, Column } from '../../../../uxComponent/UxBox';
 
 const Footer = () => (
-    <Row flexGrow="0" height="auto" ai="center" width="calc(100%)" cls="contacts__footer" margin="15px 0 0 0" padding="5px 10px 0">
+    <Row
+        flexGrow="0"
+        height="auto"
+        ai="center"
+        width="calc(100%)"
+        cls="contacts__footer"
+        margin="15px 0 0 0"
+        padding="5px 10px 0"
+    >
         <Row ai="center" cls="contacts__footer-site">
             © PLUSMODUL 2018.
         </Row>

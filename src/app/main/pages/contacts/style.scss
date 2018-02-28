@@ -21,8 +21,11 @@ $main-blue: #307db4;
   }
 }
 
-@media screen and (max-device-width: 400px) {
+@media only screen and (max-device-width: 400px) {
   .contacts {
+    &__contacts {
+      height: auto !important;
+    }
     .contacts__phone {
       font-size: 2.5em !important;
     }
@@ -47,8 +50,7 @@ $main-blue: #307db4;
   }
 }
 
-@media screen and (max-device-width: 978px) {
-
+@media screen and (max-width: 978px) {
   div.contacts {
     &__back-form-wrap {
       order: 2;
