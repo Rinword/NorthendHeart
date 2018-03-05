@@ -81,20 +81,16 @@ class Features extends React.PureComponent {
                     >
                         {features.features.map(feature => (
                             <Column key={feature.title} height="auto" ai="center" cls="features__show-panel show-panel">
-                                <div className="show-panel__img-wrap">
-                                    <ReactIntense
-                                        caption={feature.desc}
-                                        title={feature.title}
-                                        className="show-panel__img img_feature"
-                                        src={feature.img}
-                                        alt=""
-                                        thumbnailSrc={feature.img}
-                                        vertical={true}
-                                    />
-                                </div>
                                 <div className="show-panel__legend">
                                     <div className="show-panel__title">{feature.title}</div>
                                     <div className="show-panel__desc">{feature.desc}</div>
+                                </div>
+                                <div className="show-panel__img-wrap">
+                                    <img
+                                        className="show-panel__img show-panel__img_mobile img_feature img_feature_mobile"
+                                        src={feature.img}
+                                        alt=""
+                                    />
                                 </div>
                             </Column>
                         ))}

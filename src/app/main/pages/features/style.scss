@@ -134,6 +134,11 @@
     flex-grow: 1;
     width: 10em;
     height: 10em;
+
+    &_mobile {
+      width: 100vw;
+      height: 100vw;
+    }
   }
 
   .ri-caption-container {
@@ -145,6 +150,10 @@
 .img_feature {
   box-shadow: 0 0 24px 3px #c5ecf8 !important;
   border-radius: 3px;
+
+  &_mobile {
+    border-radius: 0;
+  }
 }
 
 .ta_center {

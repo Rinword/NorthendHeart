@@ -10,11 +10,17 @@
     color: white;
     background-color: #222;
     display: flex;
-    z-index: 100;
+    z-index: 11;
   }
 
   &__body {
     margin: auto;
 
+  }
+}
+
+@media screen and (max-width: 1024px) { /* Ipad */
+  div.app__header {
+    z-index: 100;
   }
 }
