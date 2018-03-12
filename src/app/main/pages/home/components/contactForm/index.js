@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Formsy from 'formsy-react';
+import ReactGA from 'react-ga';
 import { Row, Column, Btn, Field } from '../../../../../uxComponent/UxBox';
 
 import './style.css';
@@ -15,6 +16,11 @@ class ContactForm extends React.PureComponent {
         };
 
         this.submit = data => {
+            ReactGA.event({
+                category: 'request',
+                action: 'Пользователь оставил контакты',
+            });
+            window.gtag_report_conversion && window.gtag_report_conversion();
             this.props.onSubmit(data);
         };
 

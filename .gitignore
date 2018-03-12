@@ -12,6 +12,7 @@
 
 #private info
 /constants.js
+/src/gaTokens.js
 
 # misc
 .DS_Store

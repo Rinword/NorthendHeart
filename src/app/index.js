@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 
+import { id } from '../gaTokens';
+import ReactGA from 'react-ga';
+
 import { Row } from './uxComponent/UxBox';
 import Main from './main';
 import HeaderMenu from './headerMenu';
@@ -8,6 +11,9 @@ import HeaderMenu from './headerMenu';
 import validations from './uxComponent/form/validations';
 
 import './index.css';
+
+ReactGA.initialize(id);
+ReactGA.pageview(window.location.pathname);
 
 //routing here
 class App extends Component {
