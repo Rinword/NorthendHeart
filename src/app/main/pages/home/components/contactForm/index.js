@@ -15,11 +15,16 @@ class ContactForm extends React.PureComponent {
             isValid: false,
         };
 
+        // const ga = ReactGA.ga();
+
         this.submit = data => {
             ReactGA.event({
                 category: 'request',
-                action: 'Пользователь оставил контакты',
+                action: 'click',
+                label: 'feedback',
             });
+
+            // ga('send', 'event', 'request', 'click', 'feedback');
             window.gtag_report_conversion && window.gtag_report_conversion();
             this.props.onSubmit(data);
         };
