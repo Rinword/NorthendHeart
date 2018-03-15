@@ -26,6 +26,7 @@ class ContactForm extends React.PureComponent {
 
             ga('send', 'event', 'request', 'click', 'feedback');
             window.gtag_report_conversion && window.gtag_report_conversion();
+            window.yaCounter47731816.reachGoal('RequestСallback');
             this.props.onSubmit(data);
         };
 
