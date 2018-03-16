@@ -134,7 +134,7 @@ $main-blue: #307db4;
     height: auto !important;
     width: 300px !important;
     padding: 0 30px 30px;
-    margin-bottom: 10px;
+    margin: 0px auto 10px auto;
 
     .contact-form {
       &__title {
@@ -163,6 +163,7 @@ $main-blue: #307db4;
     max-width: 25em;
     color: white;
     font-size: 16px;
+    margin: auto;
   }
 
   &__phone {
