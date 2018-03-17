@@ -34,7 +34,7 @@ class App extends Component {
 
         this.state = {
             activePage: 'slide1',
-            showShare: true,
+            showShare: false,
         };
 
         this.onMenuSelect = item => {
