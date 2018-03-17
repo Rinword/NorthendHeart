@@ -23,10 +23,10 @@ class ContactForm extends React.PureComponent {
                 action: 'click',
                 label: 'feedback',
             });
-
             ga('send', 'event', 'request', 'click', 'feedback');
+            window.fbq && window.fbq('track', 'CompleteRegistration');
             window.gtag_report_conversion && window.gtag_report_conversion();
-            window.yaCounter47731816.reachGoal('RequestСallback');
+            window.yaCounter47731816 && window.yaCounter47731816.reachGoal('RequestСallback');
             this.props.onSubmit(data);
         };
 
