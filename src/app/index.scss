@@ -35,6 +35,10 @@
     margin-bottom: -70px;
     opacity: 0;
     transition: 0.2s all;
+    margin-right: 8px;
+    padding: 2px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     > * {
       margin: 5px;
     }
@@ -42,6 +46,9 @@
     &_opened {
       margin-bottom: 0;
       opacity: 1;
+
+
+      background-color: rgba(0,0,0, 0.3);
     }
   }
 
