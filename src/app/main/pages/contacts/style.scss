@@ -70,6 +70,12 @@ $main-blue: #307db4;
   .contacts__article {
     font-size: 1.6em !important;
   }
+  .contacts__contacts {
+    margin: auto !important;
+  }
+  div.contacts__content {
+    height: auto !important;
+  }
 }
 
 @media screen and (max-device-width: 1220px) {
@@ -163,7 +169,6 @@ $main-blue: #307db4;
     max-width: 25em;
     color: white;
     font-size: 16px;
-    margin: auto;
   }
 
   &__phone {

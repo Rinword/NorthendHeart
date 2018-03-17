@@ -67,7 +67,7 @@ class Contacts extends React.PureComponent {
                 <div className="contacts__back_1" />
                 {/*<div className="contacts__back_2" />*/}
                 <div className="contacts__title">{this.props.title}</div>
-                <Row cls="contacts__content" height="auto" jc="space-around" overflow="visible">
+                <Row cls="contacts__content" jc="space-around" overflow="visible">
                     <Row jc="center" cls="contacts__back-form-wrap">
                         <BackForm
                             className="contacts__back-form"
