@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
-import cx from 'classnames';
 
 import { id } from '../gaTokens';
 import ReactGA from 'react-ga';

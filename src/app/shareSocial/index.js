@@ -23,12 +23,40 @@ class SocialShare extends React.PureComponent {
 
         this.state = {
             showShare: false,
+            showTooltip: false,
+            alreadyShown: false,
         };
 
         this.toggleShare = () => {
-            this.setState({ showShare: !this.state.showShare });
+            this.setState({ showShare: !this.state.showShare, showTooltip: false });
+
+            // if (this.state.showTooltip) {
+            //     setTimeout(() => {
+            //         console.log('close');
+            //         this.setState({ showTooltip: false });
+            //     }, 5000);
+            // }
         };
     }
+
+    componentDidMount() {
+        window.onscroll = () => {
+            const d = document.documentElement;
+            const offset = d.scrollTop + window.innerHeight;
+            const height = d.offsetHeight;
+
+            if (offset >= height && !this.state.alreadyShown) {
+            // if (offset >= height) {
+                this.setState({ showTooltip: true, alreadyShown: true });
+                setTimeout(() => {
+                    console.log('close');
+                    this.setState({ showTooltip: false });
+                }, 4000);
+            }
+        };
+    }
+
+    componentWillUpdate() {}
 
     render() {
         const shareUrl = 'https://plusmodul.com';
@@ -64,6 +92,17 @@ class SocialShare extends React.PureComponent {
                     })}
                 >
                     <p>{this.state.showShare ? '-' : '+'}</p>
+                </div>
+                <div
+                    onClick={this.toggleShare}
+                    className={cx('share-social__share-tooltip', {
+                        'share-social__share-tooltip_opened': this.state.showTooltip,
+                    })}
+                >
+                    <p>
+                        Сохраните <span>ссылку</span>, чтобы вернуться к нам, когда будете готовы
+                        <div className={cx('share-social__down-icon', 'icon icon_down')} />
+                    </p>
                 </div>
             </div>
         );
