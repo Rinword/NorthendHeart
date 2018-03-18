@@ -22,10 +22,11 @@
     box-sizing: border-box;
   }
 
-  &:hover {
+  &_active {
     .tape__img {
       opacity: 0.8;
     }
+
     .tape__title {
       display: none;
     }
@@ -37,7 +38,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.12;
+    opacity: 0.08;
     transition: .2s all;
 
     > img {
@@ -52,6 +53,8 @@
     font-size: 28px;
     font-family: Oswald;
     padding: 15px;
+    cursor: pointer;
+    z-index: 2;
   }
   &__desc {
     position: absolute;
@@ -70,6 +73,10 @@
     text-align: left;
 
     transition: .3s all;
+
+    > span {
+      color: #1ebdce;
+    }
 
     &_show {
       opacity: 1;

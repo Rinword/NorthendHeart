@@ -23,15 +23,17 @@ class TabPanelC extends React.PureComponent {
     }
 
     render() {
-        const { title, description, img, width, showToLeft, showDesc } = this.props;
+        const { title, description, img, width, showToLeft, isActive } = this.props;
         return (
-            <div className={cx('tape')} style={{ flex: `0 0 ${width}%` }} onMouseEnter={this.onHover}>
-                <div className={cx('tape__img')}>
+            <div className={cx('tape', { tape_active: isActive })} style={{ flex: `0 0 ${width}%` }}>
+                <div className={cx('tape__img')} onClick={this.onHover}>
                     <img src={img} alt="" />
                 </div>
-                <div className={cx('tape__title')}>{title}</div>
+                <div className={cx('tape__title')} onMouseEnter={this.onHover}>
+                    {title}
+                </div>
                 <div
-                    className={cx('tape__desc', { tape__desc_show_left: showToLeft }, { tape__desc_show: showDesc })}
+                    className={cx('tape__desc', { tape__desc_show_left: showToLeft }, { tape__desc_show: isActive })}
                     dangerouslySetInnerHTML={{ __html: description }}
                     onClick={this.onDescHover}
                 />

@@ -2,6 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Tape from './components/tape';
+import { Column } from '../../../uxComponent/UxBox';
 import { Desktop, Mobile } from '../../../uxComponent/Responsive';
 
 import { tech } from '../../../../content';
@@ -13,7 +14,7 @@ class Technologies extends React.PureComponent {
         super(props);
 
         this.state = {
-            active: 0,
+            active: -1,
         };
 
         this.onHover = id => {
@@ -22,20 +23,24 @@ class Technologies extends React.PureComponent {
     }
 
     render() {
+        const tapes = tech.slides;
         return (
             <div id={this.props.id} className={cx('tech', { slide_active: this.props.isActive })}>
                 <Desktop>
-                    {tech.map((tape, i) => (
-                        <Tape
-                            key={tape.img}
-                            {...tape}
-                            width={100 / tech.length}
-                            showToLeft={i === tech.length - 1}
-                            showDesc={i === this.state.active}
-                            i={i}
-                            onHover={this.onHover}
-                        />
-                    ))}
+                    <div className={cx('tech__tapes')}>
+                        {tapes.map((tape, i) => (
+                            <Tape
+                                key={tape.img}
+                                {...tape}
+                                width={100 / tapes.length}
+                                showToLeft={i === tapes.length - 1}
+                                isActive={i === this.state.active}
+                                i={i}
+                                onHover={this.onHover}
+                            />
+                        ))}
+                    </div>
+                    <div className={cx('tech__bottomText')} dangerouslySetInnerHTML={{ __html: tech.bottomText }} />
                 </Desktop>
                 <Mobile />
             </div>
