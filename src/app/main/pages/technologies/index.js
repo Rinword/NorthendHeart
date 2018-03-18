@@ -2,7 +2,6 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Tape from './components/tape';
-import { Column } from '../../../uxComponent/UxBox';
 import { Desktop, Mobile } from '../../../uxComponent/Responsive';
 
 import { tech } from '../../../../content';
