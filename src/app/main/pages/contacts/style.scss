@@ -1,26 +1,5 @@
 $main-blue: #307db4;
 
-@media screen and (max-height: 700px) {
-  .contact-form {
-    &__title {
-      font-size: 28px;
-    }
-  }
-  .ux-field {
-    margin-bottom: 8px;
-    label {
-      margin-bottom: 6px;
-    }
-  }
-
-  .contacts__company-data {
-    p {
-      width: 100%;
-      text-align: center;
-    }
-  }
-}
-
 @media only screen and (max-device-width: 400px) {
   .contacts {
     &__contacts {
@@ -264,37 +243,34 @@ $main-blue: #307db4;
   }
 }
 
-//@keyframes rotateSun1 {
-//  0% {
-//    opacity: 0.5;
-//  }
-//  25% {
-//    opacity: 1;
-//  }
-//  50% {
-//    opacity: 0.5;
-//  }
-//  75% {
-//    opacity: 1;
-//  }
-//  100% {
-//    opacity: 0.5;
-//  }
-//}
-//@keyframes rotateSun2 {
-//  0% {
-//    opacity: 1;
-//  }
-//  25% {
-//    opacity: 0.5;
-//  }
-//  50% {
-//    opacity: 1;
-//  }
-//  75% {
-//    opacity: 0.5;
-//  }
-//  100% {
-//    opacity: 1;
-//  }
-//}
+@media screen and (max-device-height: 720px) {
+  .contact-form {
+    &__title {
+      font-size: 28px;
+    }
+  }
+  .ux-field {
+    margin-bottom: 8px;
+    label {
+      margin-bottom: 6px;
+    }
+  }
+
+  .contacts {
+    &__title {
+      //margin-bottom: 0 !important;
+    }
+    &__email {
+      margin-bottom: 0 !important;
+    }
+    &__company-data {
+      p {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    &__address {
+      font-size: 2.1em;
+    }
+  }
+}

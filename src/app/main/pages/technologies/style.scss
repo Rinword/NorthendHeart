@@ -46,10 +46,8 @@
   }
 }
 
-@media screen and (max-device-height: 720px) { /* Для мобильных без ховера */
-
+@media screen and (max-device-height: 720px) {
   div.tech {
-
     &__tapes {
       > * {
         max-width: 250px;
@@ -60,6 +58,5 @@
       line-height: 1.21;
       font-weight: 300;
     }
-
   }
 }
