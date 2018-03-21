@@ -49,14 +49,11 @@ class SocialShare extends React.PureComponent {
             // if (offset >= height) {
                 this.setState({ showTooltip: true, alreadyShown: true });
                 setTimeout(() => {
-                    console.log('close');
                     this.setState({ showTooltip: false });
                 }, 4000);
             }
         };
     }
-
-    componentWillUpdate() {}
 
     render() {
         const shareUrl = 'https://plusmodul.com';

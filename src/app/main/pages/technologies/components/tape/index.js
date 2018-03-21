@@ -23,14 +23,14 @@ class TabPanelC extends React.PureComponent {
     }
 
     render() {
-        const { title, description, img, width, showToLeft, isActive } = this.props;
+        const { title, description, img, showToLeft, isActive } = this.props;
         return (
-            <div className={cx('tape', { tape_active: isActive })} style={{ flex: `0 0 ${width}%` }}>
+            <div className={cx('tape', { tape_active: isActive })}>
                 <div className={cx('tape__img')} onClick={this.onHover}>
                     <img src={img} alt="" />
                 </div>
                 <div className={cx('tape__title')} onMouseEnter={this.onHover}>
-                    {title}
+                    {title.replace('  ', '')}
                 </div>
                 <div
                     className={cx('tape__desc', { tape__desc_show_left: showToLeft }, { tape__desc_show: isActive })}
@@ -48,7 +48,6 @@ TabPanelC.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
-    width: PropTypes.number.isRequired,
     showToLeft: PropTypes.bool,
     darken: PropTypes.bool,
     getRef: PropTypes.func,

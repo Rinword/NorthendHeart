@@ -5,7 +5,7 @@
   &__tapes {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: stretch;
     position: relative;
     background-color: black;
@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     flex: 0 0 auto;
-    padding: 5px;
+    //padding: 5px;
 
     background-color: #051220;
     color: white;
@@ -35,7 +35,7 @@
 
     p {
       margin: 5px;
-      padding: 10px;
+      padding: 5px;
       border: 1px solid white;
       text-align: left;
     }
@@ -43,5 +43,23 @@
     span {
       color: #1ebdce;
     }
+  }
+}
+
+@media screen and (max-device-height: 720px) { /* Для мобильных без ховера */
+
+  div.tech {
+
+    &__tapes {
+      > * {
+        max-width: 250px;
+      }
+    }
+    &__bottomText {
+      font-size: 1em;
+      line-height: 1.21;
+      font-weight: 300;
+    }
+
   }
 }

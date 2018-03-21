@@ -19,6 +19,10 @@ class Technologies extends React.PureComponent {
         this.onHover = id => {
             this.setState({ active: id });
         };
+
+        this.onClean = id => {
+            this.setState({ active: -1 });
+        };
     }
 
     render() {
@@ -26,12 +30,11 @@ class Technologies extends React.PureComponent {
         return (
             <div id={this.props.id} className={cx('tech', { slide_active: this.props.isActive })}>
                 <Desktop>
-                    <div className={cx('tech__tapes')}>
+                    <div className={cx('tech__tapes')} onClick={this.onClean}>
                         {tapes.map((tape, i) => (
                             <Tape
                                 key={tape.img}
                                 {...tape}
-                                width={100 / tapes.length}
                                 showToLeft={i === tapes.length - 1}
                                 isActive={i === this.state.active}
                                 i={i}
@@ -39,7 +42,11 @@ class Technologies extends React.PureComponent {
                             />
                         ))}
                     </div>
-                    <div className={cx('tech__bottomText')} dangerouslySetInnerHTML={{ __html: tech.bottomText }} />
+                    <div
+                        onClick={this.onClean}
+                        className={cx('tech__bottomText')}
+                        dangerouslySetInnerHTML={{ __html: tech.bottomText }}
+                    />
                 </Desktop>
                 <Mobile />
             </div>
