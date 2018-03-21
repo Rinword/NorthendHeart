@@ -41,18 +41,39 @@ class SocialShare extends React.PureComponent {
 
     componentDidMount() {
         window.onscroll = () => {
-            const d = document.documentElement;
-            const offset = d.scrollTop + window.innerHeight;
-            const height = d.offsetHeight;
-
-            if (offset >= height && !this.state.alreadyShown) {
-            // if (offset >= height) {
-                this.setState({ showTooltip: true, alreadyShown: true });
-                setTimeout(() => {
-                    this.setState({ showTooltip: false });
-                }, 4000);
-            }
+            // const d = document.documentElement;
+            // const offset = d.scrollTop + window.innerHeight;
+            // const height = d.offsetHeight;
+            //
+            // console.log('onscroll');
+            //
+            // if (offset >= height && !this.state.alreadyShown) {
+            //     // if (offset >= height) {
+            //     this.setState({ showTooltip: true, alreadyShown: true });
+            //     setTimeout(() => {
+            //         this.setState({ showTooltip: false });
+            //     }, 4000);
+            // }
         };
+
+        //hack for iOS
+        document.addEventListener(
+            'scroll',
+            () => {
+                const d = document.documentElement;
+                const offset = d.scrollTop + window.innerHeight;
+                const height = d.offsetHeight;
+
+                if (offset >= height && !this.state.alreadyShown) {
+                    // if (offset >= height) {
+                    this.setState({ showTooltip: true, alreadyShown: true });
+                    setTimeout(() => {
+                        this.setState({ showTooltip: false });
+                    }, 4000);
+                }
+            },
+            false
+        );
     }
 
     render() {
