@@ -46,7 +46,7 @@
   }
 }
 
-@media screen and (max-device-height: 720px) {
+@media screen and (max-height: 720px) {
   div.tech {
     &__tapes {
       > * {
