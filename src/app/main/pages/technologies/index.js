@@ -20,7 +20,7 @@ class Technologies extends React.PureComponent {
             this.setState({ active: id });
         };
 
-        this.onClean = id => {
+        this.onClean = () => {
             this.setState({ active: -1 });
         };
     }
@@ -39,6 +39,7 @@ class Technologies extends React.PureComponent {
                                 isActive={i === this.state.active}
                                 i={i}
                                 onHover={this.onHover}
+                                onMouseLeave={this.onClean}
                             />
                         ))}
                     </div>

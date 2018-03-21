@@ -25,7 +25,10 @@ class TabPanelC extends React.PureComponent {
     render() {
         const { title, description, img, showToLeft, isActive } = this.props;
         return (
-            <div className={cx('tape', { tape_active: isActive })}>
+            <div
+                className={cx('tape', { tape_active: isActive })}
+                onMouseLeave={() => isActive && this.props.onMouseLeave()}
+            >
                 <div className={cx('tape__img')} onClick={this.onHover}>
                     <img src={img} alt="" />
                 </div>
