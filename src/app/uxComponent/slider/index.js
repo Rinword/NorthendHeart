@@ -17,7 +17,7 @@ class CustomSlider extends React.PureComponent {
 
         this.state = {
             activeSlide: 1,
-            legendHidden: props.legendHidden || false,
+            legendHidden: props.legendHidden || true,
             hasSlick: false,
         };
 
