@@ -17,11 +17,12 @@ import './style.css';
 
 const defaultStyle = {
     top: '25%',
-    left: 'calc(50% - 175px)',
+    left: 'calc(50% - 168px)',
     bottom: 'auto',
     padding: '0',
-    width: '350px',
+    width: '320px',
     height: 'auto',
+    zIndex: '200',
 };
 
 const defaultOverlay = {

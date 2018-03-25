@@ -57,6 +57,12 @@ $main-blue: #307db4;
   }
 }
 
+@media screen and (max-width: 1188px) {
+  .contacts__banner {
+    display: none;
+  }
+}
+
 @media screen and (max-device-width: 1220px) {
   .icons-legal {
     display: none;
@@ -165,9 +171,9 @@ $main-blue: #307db4;
     letter-spacing: 1px;
   }
   &__address {
-    font-size: 2.2em;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    font-size: 1.9em;
+    margin-top: 5px;
+    margin-bottom: 25px;
     font-weight: 200;
     text-align: left;
   }
@@ -182,6 +188,13 @@ $main-blue: #307db4;
     border-radius: 2px;
     background-color: rgba(42, 119, 145, 0.4);
     box-shadow: 0 0 14px 2px rgba(42, 119, 145, 0.6);
+  }
+
+  &__banner {
+    position: absolute;
+    right: -40px;
+    bottom: -90px;
+    transform: scale(0.9);
   }
 
   &__social-data {
@@ -270,7 +283,7 @@ $main-blue: #307db4;
       }
     }
     &__address {
-      font-size: 2.1em;
+      font-size: 1.9em;
     }
   }
 }

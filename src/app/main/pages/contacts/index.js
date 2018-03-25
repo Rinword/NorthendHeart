@@ -1,13 +1,16 @@
 import React from 'react';
 import cx from 'classnames';
 import Cookies from 'js-cookie';
-import { Row, Column } from '../../../uxComponent/UxBox';
+import { Row, Column, Btn, Modal } from '../../../uxComponent/UxBox';
 
 import BackForm from '../home/components/contactForm';
 import Footer from './components/footer';
 import axios from 'axios';
+import { Desktop, Mobile } from '../../../uxComponent/Responsive';
+import ContactForm from '../home/components/contactForm';
 
 import { contacts } from '../../../../content';
+import banner from '../../../../static/img/banner.png';
 
 import './style.css';
 
@@ -17,6 +20,7 @@ class Contacts extends React.PureComponent {
 
         this.state = {
             formDraft: {},
+            isOpen: false,
         };
 
         this.getMapRef = ref => {
@@ -28,6 +32,14 @@ class Contacts extends React.PureComponent {
                 .post('api/v1/send-bid', this.state.formDraft)
                 .then(res => alert('Заявка успешно отправлена'))
                 .catch(err => console.warn(err));
+        };
+
+        this.showContactModal = () => {
+            this.setState({ contactModalIsOpen: true });
+        };
+
+        this.hideContactModal = () => {
+            this.setState({ contactModalIsOpen: false });
         };
 
         this.onFormChange = draft => {
@@ -68,17 +80,18 @@ class Contacts extends React.PureComponent {
                 {/*<div className="contacts__back_2" />*/}
                 <div className="contacts__title">{this.props.title}</div>
                 <Row cls="contacts__content" jc="space-around" overflow="visible">
-                    <Row jc="center" cls="contacts__back-form-wrap">
-                        <BackForm
-                            className="contacts__back-form"
-                            draft={this.state.formDraft}
-                            title={contacts.formTitle}
-                            btnAlt={true}
-                            onSubmit={this.onFormSubmit}
-                            onChange={this.onFormChange}
-                        />
-                        {/*<Manager contacts={contacts.manager} />*/}
-                    </Row>
+                    <Desktop>
+                        <Row jc="center" cls="contacts__back-form-wrap">
+                            <BackForm
+                                className="contacts__back-form"
+                                draft={this.state.formDraft}
+                                title={contacts.formTitle}
+                                btnAlt={true}
+                                onSubmit={this.onFormSubmit}
+                                onChange={this.onFormChange}
+                            />
+                        </Row>
+                    </Desktop>
                     <Column cls="contacts__contacts" height="auto" jc="flex-start" ai="center" overflow="visible">
                         <Column
                             width="auto"
@@ -94,11 +107,28 @@ class Contacts extends React.PureComponent {
                             {/*<div id="YMapsID" ref={this.getMapRef} style={{ width: '100%', height: '100%' }} />*/}
                             {/*</Row>*/}
                             <p className="contacts__article">{contacts.text1}</p>
-                            {contacts.text2 && <p className="contacts__article">{contacts.text2}</p>}
+                            <img className="contacts__banner" src={banner} alt="" />
+                            {/*{contacts.text2 && <p className="contacts__article">{contacts.text2}</p>}*/}
                         </Column>
+                        <Mobile>
+                            <Btn alt={true} onClick={this.showContactModal}>
+                                {'Заказать звонок'}
+                            </Btn>
+                        </Mobile>
                     </Column>
                 </Row>
                 <Footer />
+                <Modal
+                    isOpen={this.state.contactModalIsOpen}
+                    hideCloseBtn={false}
+                    onRequestClose={this.hideContactModal}
+                >
+                    <ContactForm
+                        draft={this.state.formDraft}
+                        onSubmit={this.onFormSubmit}
+                        onChange={this.onFormChange}
+                    />
+                </Modal>
             </div>
         );
     }
