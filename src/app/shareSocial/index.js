@@ -43,9 +43,9 @@ class SocialShare extends React.PureComponent {
         //hack for iOS
         document.addEventListener(
             'scroll',
-            () => {
+            evt => {
                 const d = document.documentElement;
-                const offset = d.scrollTop + window.innerHeight;
+                const offset = Math.max(window.pageYOffset, d.scrollTop) + window.innerHeight;
                 const height = d.offsetHeight;
 
                 if (offset >= height && !this.state.alreadyShown) {
