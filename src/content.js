@@ -102,30 +102,30 @@ export const projects = [
         title: 'Sunset',
         index: 1,
         srcCls: 'projects_img_1',
-        description: '',
+        description: 'Хороший загородный домик для всей семьи',
         tabs: [
-            // {
-            //     title: 'Аккуратный стиль',
-            //     text: 'Все очень зачетно',
-            // },
-            // {
-            //     title: 'Отличная теплоизоляция',
-            //     text: 'Минимальные потери тепла',
-            // },
-            // {
-            //     title: 'Высокая модульность',
-            //     text: 'Выберите компоновку дома по своему вкусу. Мы учтем любые Ваши пожелания',
-            // },
+            {
+                title: 'Аккуратный стиль',
+                text: 'Все очень зачетно',
+            },
+            {
+                title: 'Отличная теплоизоляция',
+                text: 'Минимальные потери тепла',
+            },
+            {
+                title: 'Высокая модульность',
+                text: 'Выберите компоновку дома по своему вкусу. Мы учтем любые Ваши пожелания',
+            },
         ],
         photos: [pr1_1, pr1_2, pr1_3],
         photos_mobile: [pr1_0_mobile, pr1_1_mobile, pr1_2_mobile, pr1_3_mobile],
         photos_mini: [pr1_1_mini, pr1_2_mini, pr1_3_mini],
     },
     {
-        title: 'Silence',
+        title: 'Lone Pine',
         index: 2,
         srcCls: 'projects_img_2',
-        description: '',
+        description: 'Хороший загородный домик для всей семьи',
         tabs: [
             // {
             //     title: 'Аккуратный стиль',
@@ -145,10 +145,10 @@ export const projects = [
         photos_mini: [],
     },
     {
-        title: 'Lone Pine',
+        title: 'Icy Tamer',
         index: 3,
         srcCls: 'projects_img_3',
-        description: '',
+        description: 'Хороший загородный домик для всей семьи',
         tabs: [
             // {
             //     title: 'Аккуратный стиль',
@@ -168,10 +168,10 @@ export const projects = [
         photos_mini: [pr3_1_mini, pr3_2_mini, pr3_3_mini],
     },
     {
-        title: 'Icy Tamer',
+        title: 'Silence',
         index: 4,
         srcCls: 'projects_img_4',
-        description: '',
+        description: 'Хороший загородный домик для всей семьи',
         tabs: [
             // {
             //     title: 'Строгий и стильный',
@@ -190,7 +190,7 @@ export const projects = [
         title: 'Fury',
         index: 5,
         srcCls: 'projects_img_5',
-        description: '',
+        description: 'Хороший загородный домик для всей семьи',
         tabs: [
             // {
             //     title: 'Строгий и стильный',

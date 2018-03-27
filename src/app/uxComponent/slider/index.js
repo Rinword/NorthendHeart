@@ -22,7 +22,10 @@ class CustomSlider extends React.PureComponent {
         };
 
         this.afterChange = index => {
-            this.setState({ activeSlide: index, legendBlurred: false });
+            this.setState({ activeSlide: index, legendBlurred: false, btnMove: true });
+            setTimeout(() => {
+                this.setState({ btnMove: false });
+            }, 2000);
         };
 
         this.beforeChange = (oldIndex, newIndex) => {
@@ -53,10 +56,16 @@ class CustomSlider extends React.PureComponent {
 
     render() {
         const legendHidden = this.state.legendHidden;
+        const btnMove = this.state.btnMove;
+        const activeSlide = this.props.slides[this.state.activeSlide];
         return (
             <div className={cx('ux-slider-wrap', { 'ux-slider-wrap_legend-hidden': legendHidden })}>
                 <div
-                    className={cx('ux-slider-wrap__hide-btn', { bg_color_black_07: legendHidden })}
+                    className={cx(
+                        'ux-slider-wrap__hide-btn',
+                        { bg_color_black_07: legendHidden },
+                        { 'ux-slider-wrap__hide-btn_disturbed': legendHidden && btnMove }
+                    )}
                     onClick={this.toggleLegendViewMode}
                 >
                     <div
@@ -65,6 +74,9 @@ class CustomSlider extends React.PureComponent {
                             legendHidden ? 'icon_visibility_on' : 'icon_visibility_off'
                         )}
                     />
+                </div>
+                <div className={cx('ux-slider-legend-mini', { 'ux-slider-legend-mini_hidden': !legendHidden })}>
+                    {activeSlide.title}
                 </div>
                 <div className={cx('ux-slider-legend', { 'ux-slider-legend_hidden': legendHidden })}>
                     <div className="ux-slider-legend__slide-btns no_blur">
@@ -75,16 +87,14 @@ class CustomSlider extends React.PureComponent {
                             <div className="icon icon_next icon_bg-size_18 icon_size_24" />
                         </div>
                     </div>
-                    <div className="ux-slider-legend__title">{this.props.slides[this.state.activeSlide].title}</div>
-                    <div className="ux-slider-legend__description">
-                        {this.props.slides[this.state.activeSlide].description}
-                    </div>
+                    <div className="ux-slider-legend__title">{activeSlide.title}</div>
+                    <div className="ux-slider-legend__description">{activeSlide.description}</div>
 
-                    <TabPanel tabs={this.props.slides[this.state.activeSlide].tabs} />
+                    <TabPanel tabs={activeSlide.tabs} />
                     <PhotoSlides
                         title={this.props.photosTitle}
-                        photos={this.props.slides[this.state.activeSlide].photos || []}
-                        photos_mini={this.props.slides[this.state.activeSlide].photos_mini || []}
+                        photos={activeSlide.photos || []}
+                        photos_mini={activeSlide.photos_mini || []}
                         className="ux-slider-legend__photos"
                     />
                 </div>
