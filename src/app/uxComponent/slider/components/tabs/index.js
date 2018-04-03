@@ -15,7 +15,7 @@ class TabPanelC extends React.PureComponent {
     render() {
         return (
             <Tabs className={cx('slider__tabs tab-panel')}>
-                <TabList className="tab-panel__header">
+                <TabList className="tab-panel__header" defaultIndex={0}>
                     {this.props.tabs.map((tab, i) => (
                         <Tab key={i} className="tab-panel__title">
                             {tab.title}
@@ -25,7 +25,7 @@ class TabPanelC extends React.PureComponent {
 
                 {this.props.tabs.map((tab, i) => (
                     <TabPanel key={i} className="tab-panel__text">
-                        <p>{tab.text}</p>
+                        <p dangerouslySetInnerHTML={{ __html: tab.text }} />
                     </TabPanel>
                 ))}
             </Tabs>

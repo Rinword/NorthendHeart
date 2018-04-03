@@ -88,7 +88,10 @@ class CustomSlider extends React.PureComponent {
                         </div>
                     </div>
                     <div className="ux-slider-legend__title">{activeSlide.title}</div>
-                    <div className="ux-slider-legend__description">{activeSlide.description}</div>
+                    <div
+                        className="ux-slider-legend__description"
+                        dangerouslySetInnerHTML={{ __html: activeSlide.description }}
+                    />
 
                     <TabPanel tabs={activeSlide.tabs} />
                     <PhotoSlides
