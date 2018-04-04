@@ -8,6 +8,10 @@
 .tab-panel {
   position: relative;
 
+  &_hidden {
+    visibility: hidden;
+  }
+
   &__header {
     display: flex;
     position: relative;
@@ -62,7 +66,8 @@
     display: flex;
     text-align: left;
     font-weight: 300;
-    line-height: 1.41;
+    font-size: .82em;
+    line-height: 1.31;
     span {
       color: #1ed0e1;
     }

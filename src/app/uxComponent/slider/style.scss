@@ -200,14 +200,31 @@
     margin-bottom: 20px;
   }
 
-  &__description {
+  &__description, &__sections {
     color: white;
     font-size: 18px;
     text-align: left;
     letter-spacing: 1px;
     font-family: Roboto;
     font-weight: 300;
-    margin: 8px 0 20px;
+    margin: 0 0 10px;
+    flex: 0 0 auto;
+  }
+
+  &__sections {
+    p {
+      margin: 0 0 8px 0;
+    }
+    section {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    div {
+      border: 1px solid white;
+      padding: 5px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
   }
 
   &_blurred {

@@ -58,6 +58,8 @@ class CustomSlider extends React.PureComponent {
         const legendHidden = this.state.legendHidden;
         const btnMove = this.state.btnMove;
         const activeSlide = this.props.slides[this.state.activeSlide];
+        // !~activeSlide.sections.indexOf('?') && activeSlide.sections.push(['?']);
+
         return (
             <div className={cx('ux-slider-wrap', { 'ux-slider-wrap_legend-hidden': legendHidden })}>
                 <div
@@ -88,6 +90,10 @@ class CustomSlider extends React.PureComponent {
                         </div>
                     </div>
                     <div className="ux-slider-legend__title">{activeSlide.title}</div>
+                    <div className="ux-slider-legend__sections">
+                        <p>Проект состоит из секций:</p>
+                        <section>{activeSlide.sections.map(i => <div key={i}>{i}</div>)}</section>
+                    </div>
                     <div
                         className="ux-slider-legend__description"
                         dangerouslySetInnerHTML={{ __html: activeSlide.description }}

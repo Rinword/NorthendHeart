@@ -8,13 +8,10 @@ import 'react-tabs/style/react-tabs.css';
 import './styles.css';
 
 class TabPanelC extends React.PureComponent {
-    // constructor(props) {
-    //     super(props);
-    // }
 
     render() {
         return (
-            <Tabs className={cx('slider__tabs tab-panel')}>
+            <Tabs className={cx('slider__tabs tab-panel', { 'tab-panel_hidden': !this.props.tabs[0].title })}>
                 <TabList className="tab-panel__header" defaultIndex={0}>
                     {this.props.tabs.map((tab, i) => (
                         <Tab key={i} className="tab-panel__title">
