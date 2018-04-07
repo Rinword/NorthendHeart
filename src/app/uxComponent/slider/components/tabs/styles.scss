@@ -70,11 +70,19 @@
     line-height: 1.31;
     > p {
       margin-top: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
     b {
       font-size: 1.6em;
       font-weight: 300;
       font-family: Oswald;
+    }
+
+    a {
+      color: #7cd398;
     }
 
     span {

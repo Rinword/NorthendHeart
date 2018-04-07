@@ -19,7 +19,7 @@ class Btn extends React.Component {
         return (
             <button
                 className={cx(
-                    'ux-btn' + (this.props.cls ? this.props.cls : ''),
+                    'ux-btn ' + (this.props.cls ? this.props.cls : ''),
                     { 'ux-btn_alt': this.props.alt },
                     { 'ux-btn_disabled': this.props.disabled }
                 )}

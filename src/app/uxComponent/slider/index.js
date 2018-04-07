@@ -8,6 +8,9 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import TabPanel from './components/tabs';
 import PhotoSlides from './components/photos';
+import CompModal from './components/modal';
+
+import { Btn } from '../UxBox';
 
 import './style.css';
 
@@ -19,6 +22,8 @@ class CustomSlider extends React.PureComponent {
             activeSlide: 1,
             legendHidden: props.legendHidden || true,
             hasSlick: false,
+            compShown: false,
+            activeTab: 0,
         };
 
         this.afterChange = index => {
@@ -42,9 +47,23 @@ class CustomSlider extends React.PureComponent {
         this.prev = () => {
             this.slider.getRef().slickPrev();
         };
+
+        this.showComplectationToggle = isHidden => {
+            this.setState({ compShown: !this.state.compShown });
+        };
+
+        this.hideComplectationToggle = () => {
+            this.setState({ compShown: false });
+        };
+
+        this.onTabChange = this.onTabChange.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
+    onTabChange(idx) {
+        this.setState({ activeTab: idx });
+    }
+
+    componentWillReceiveProps(nextProps, nextState) {
         const hasSlick = this.state.hasSlick;
         if (!hasSlick && nextProps.isActive) {
             setTimeout(() => {
@@ -98,8 +117,14 @@ class CustomSlider extends React.PureComponent {
                         className="ux-slider-legend__description"
                         dangerouslySetInnerHTML={{ __html: activeSlide.description }}
                     />
-
-                    <TabPanel tabs={activeSlide.tabs} />
+                    <TabPanel tabs={activeSlide.tabs} onTabChange={this.onTabChange} />
+                    {activeSlide.tabs[this.state.activeTab].modal && (
+                        <div>
+                            <Btn cls={cx('ux-btn_alt')} onClick={this.showComplectationToggle}>
+                                Ознакомиться с комплектацией
+                            </Btn>
+                        </div>
+                    )}
                     <PhotoSlides
                         title={this.props.photosTitle}
                         photos={activeSlide.photos || []}
@@ -112,6 +137,11 @@ class CustomSlider extends React.PureComponent {
                     afterChange={this.afterChange}
                     slides={this.props.slides}
                     ref={slider => (this.slider = slider)}
+                />
+                <CompModal
+                    isOpen={this.state.compShown}
+                    onRequestClose={this.hideComplectationToggle}
+                    modal={activeSlide.tabs[this.state.activeTab].modal}
                 />
             </div>
         );
