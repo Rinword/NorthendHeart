@@ -142,7 +142,7 @@ export const features = {
 
 export const projects = [
     {
-        title: 'Sunset',
+        title: 'Infuser',
         index: 1,
         srcCls: 'projects_img_1',
         description: '',
@@ -198,7 +198,7 @@ export const projects = [
         photos_mini: [pr2_1_mini, pr2_2_mini, pr2_3_mini, pr2_4_mini, pr2_5_mini, pr2_6_mini],
     },
     {
-        title: 'Icy Tamer',
+        title: 'Hyperion',
         index: 3,
         srcCls: 'projects_img_3',
         description: '',
@@ -323,7 +323,7 @@ export const projects = [
         photos_mini: [pr4_1_mini, pr4_2_mini, pr4_3_mini],
     },
     {
-        title: 'Fury',
+        title: 'Frost Rider',
         index: 5,
         srcCls: 'projects_img_5',
         description:

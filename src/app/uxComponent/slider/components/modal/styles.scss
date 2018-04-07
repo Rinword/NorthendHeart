@@ -1,0 +1,21 @@
+.ReactModal__Overlay {
+  &--after-open {
+    opacity: 1;
+    transition: .2s all;
+  }
+  &--before-close {
+    opacity: 0;
+  }
+}
+
+.ReactModal__Content {
+    transition: .2s all;
+    opacity: 0;
+    &--after-open {
+      opacity: 1;
+      transition: .2s all;
+    }
+    &--before-close {
+      opacity: 0;
+    }
+}

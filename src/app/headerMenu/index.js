@@ -37,7 +37,7 @@ class HeaderMenu extends React.PureComponent {
 
     render() {
         const activePage = this.props.activePage;
-        const date = `build#128 (${this.date.getDate()}.${
+        const date = `build#129 (${this.date.getDate()}.${
             this.date.getMonth() + 1 < 10 ? '0' + (this.date.getMonth() + 1).toString() : this.date.getMonth() + 1
         }.${this.date.getFullYear()})`;
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Modal from 'react-modal';
 
-// import './style.scss';
+import './styles.css';
 
 class CompModal extends React.PureComponent {
     constructor(props) {
@@ -31,7 +31,7 @@ class CompModal extends React.PureComponent {
                     content: {
                         zIndex: 20,
                         bottom: 'auto',
-                        backgroundColor: 'rgba(0,0,0, 0.8)',
+                        backgroundColor: 'rgba(0,0,0, 0.9)',
                         borderRadius: 'none',
                     },
                     overlay: { zIndex: 20, backgroundColor: 'rgba(0,0,0, 0.5)' },
