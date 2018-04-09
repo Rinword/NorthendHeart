@@ -145,7 +145,7 @@ export const projects = [
         title: 'Infuser',
         index: 1,
         srcCls: 'projects_img_1',
-        description: '',
+        text: '',
         sections: ['#1', '#2S', '#2M', '#3', '#5', '#терраса', '#панель – 3 шт.'],
         tabs: [
             {

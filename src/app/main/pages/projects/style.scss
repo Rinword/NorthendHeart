@@ -7,6 +7,13 @@
   background: linear-gradient(to bottom, #06121c, black);
   font-size: 22px;
 
+  &__mobile-desc {
+    font-size: 0.8em;
+    font-weight: 300;
+    text-align: left;
+    padding: 10px;
+  }
+
   &_img {
     &_1 {
       background-image: url('../../../../static/img/projects/house1.jpg');
@@ -37,7 +44,7 @@
       font-family: Oswald;
     }
 
-    p {
+    > p {
       margin: 0 10px 10px 20px;
       text-align: left;
       font-weight: 300;

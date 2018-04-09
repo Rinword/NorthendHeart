@@ -32,7 +32,7 @@ class Projects extends React.PureComponent {
 const MobileProject = ({ title, description, photos_mobile }) => (
     <Column height="auto" cls={cx('projects__project')}>
         <h3>{title}</h3>
-        <p>{description}</p>
+        <div className={cx('projects__mobile-desc')} dangerouslySetInnerHTML={{ __html: description }} />
         <Column height="auto" ai="center">
             {photos_mobile.map((img, i) => (
                 <img key={title + i} className={cx('projects__mobile-img')} src={img} alt="" />
