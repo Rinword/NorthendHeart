@@ -369,7 +369,7 @@ export const contacts = {
     formTitle: 'Обратная связь',
     office: {
         email: 'info@plusmodul.com',
-        phone: '+7 (499) 350-12-86',
+        phone: '+7 (999) 815-17-45',
         address: 'Москва, Автомоторная 5Бс3',
     },
     text1:
