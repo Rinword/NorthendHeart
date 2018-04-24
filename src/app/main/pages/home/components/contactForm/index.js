@@ -76,6 +76,7 @@ class ContactForm extends React.PureComponent {
                             title="Телефон"
                             required
                             value={draft.phone || ''}
+                            placeholder="+7 (___) ___-__-__"
                             mask="phone"
                             guide={true}
                             validations={{ minDigitsLength: 11 }}

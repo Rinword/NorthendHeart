@@ -112,8 +112,9 @@ class Home extends React.Component {
                             <div className="home__tagline home__tagline_mobile">{home.title}</div>
                             <div className="home__sub-tagline home__sub-tagline_mobile">{home.subTitle}</div>
                         </Column>
-                        <div className="home__background home__background_mobile" />
+
                     </Column>
+                    <div className="home__background home__background_mobile" />
                 </Mobile>
             </div>
         );

@@ -47,6 +47,9 @@
     &_mobile {
       position: relative;
       min-height: 250px;
+      background: url('../../../../static/img/slide1_mobile.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
   &__tagline-container {

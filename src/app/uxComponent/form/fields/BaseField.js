@@ -27,6 +27,7 @@ class Field extends React.Component {
     }
 
     render() {
+        const { name, type = 'text', mask, guide, placeholder, getValue } = this.props;
         const showError = this.state.isBlured && this.props.showError();
         const className = `ux-field ${this.props.className || ''} ${
             this.props.showRequired() ? 'ux-field_required' : ''
@@ -41,21 +42,22 @@ class Field extends React.Component {
                 {this.props.mask ? (
                     <MaskedInput
                         onChange={this.changeValue}
-                        name={this.props.name}
-                        type={this.props.type || 'text'}
-                        value={this.props.getValue() || ''}
-                        mask={masks[this.props.mask] || [/\d*/]}
-                        guide={this.props.guide}
+                        name={name}
+                        type={type}
+                        value={getValue() || '+7'}
+                        mask={masks[mask] || [/\d*/]}
+                        guide={guide}
                         onBlur={this.onBlur}
+                        placeholder={placeholder}
                     />
                 ) : (
                     <input
                         onChange={this.changeValue}
-                        name={this.props.name}
-                        type={this.props.type || 'text'}
-                        value={this.props.getValue() || ''}
+                        name={name}
+                        type={type}
+                        value={getValue() || ''}
                         onBlur={this.onBlur}
-                        placeholder={this.props.placeholder}
+                        placeholder={placeholder}
                     />
                 )}
                 <span className="ux-field__error">{showError && errorMessage}</span>
