@@ -1,8 +1,6 @@
 .ux-image-loader {
   min-width: 10px;
   min-height: 10px;
-  width: 650px;
-  height: 650px;
   position: relative;
   display: flex;
   justify-content: stretch;
@@ -36,6 +34,8 @@
     min-width: 100%;
     min-height: 100%;
     &_loaded {
+      //height: 0;
+      //transition: .3s;
       filter: blur(0px);
       opacity: 0;
     }

@@ -8,7 +8,7 @@ import loadError from './loadError.svg';
 
 import './style.css';
 
-class ImageLoader extends React.PureComponent {
+class LazyImage extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -67,7 +67,7 @@ class ImageLoader extends React.PureComponent {
     }
 }
 
-ImageLoader.propTypes = {
+LazyImage.propTypes = {
     src: PropTypes.string.isRequired,
     thumbnailSrc: PropTypes.string,
     async: PropTypes.bool,
@@ -75,11 +75,11 @@ ImageLoader.propTypes = {
     wrapperClassName: PropTypes.string,
 };
 
-ImageLoader.defaultProps = {
+LazyImage.defaultProps = {
     src: PropTypes.string.isRequired,
     async: false,
     className: '',
     wrapperClassName: '',
 };
 
-export default ImageLoader;
+export default LazyImage;
