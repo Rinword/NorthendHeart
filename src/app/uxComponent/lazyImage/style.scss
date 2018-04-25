@@ -1,0 +1,58 @@
+.ux-image-loader {
+  min-width: 10px;
+  min-height: 10px;
+  width: 650px;
+  height: 650px;
+  position: relative;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid white;
+
+  &__img, &__pre-img {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    filter: blur(10px);
+
+    transition: 1s all;
+  }
+
+  &__img {
+    opacity: 0;
+    &_loaded {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+  &__pre-img {
+    opacity: 1;
+    left: -100%;
+    min-width: 100%;
+    min-height: 100%;
+    &_loaded {
+      filter: blur(0px);
+      opacity: 0;
+    }
+  }
+
+  &__preloader {
+    width: 10%;
+    min-width: 5px;
+    height: 10%;
+    min-height: 5px;
+    position: absolute;
+    left: 45%;
+    top: 45%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
