@@ -1,10 +1,10 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { Row, Column } from '../../../uxComponent/UxBox';
 import cx from 'classnames';
-import ReactIntense from '../../../../libs/react-intense/ReactIntense';
-import { Desktop, Mobile } from '../../../uxComponent/Responsive';
-import { features } from '../../../../content';
+
+import { Row, Column } from 'app/uxComponent/UxBox';
+import ReactIntense from 'libs/react-intense/ReactIntense';
+import { Desktop, Mobile } from 'app/uxComponent/Responsive';
+import { features } from 'content';
 
 import './style.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import cx from 'classnames';
-import { Row, Column, InfoPanel } from '../../../../uxComponent/UxBox';
+
+import { Row, Column, InfoPanel } from 'app/uxComponent/UxBox';
 
 import '../style.css';
 

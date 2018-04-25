@@ -1,16 +1,15 @@
 import React from 'react';
 import cx from 'classnames';
 import Cookies from 'js-cookie';
-import { Row, Column, Btn, Modal } from '../../../uxComponent/UxBox';
+import axios from 'axios';
 
+import { Row, Column, Btn, Modal } from 'app/uxComponent/UxBox';
 import BackForm from '../home/components/contactForm';
 import Footer from './components/footer';
-import axios from 'axios';
-import { Desktop, Mobile } from '../../../uxComponent/Responsive';
+import { Desktop, Mobile } from 'app/uxComponent/Responsive';
 import ContactForm from '../home/components/contactForm';
-
-import { contacts } from '../../../../content';
-import banner from '../../../../static/img/banner.png';
+import { contacts } from 'content';
+import banner from 'static/img/banner.png';
 
 import './style.css';
 

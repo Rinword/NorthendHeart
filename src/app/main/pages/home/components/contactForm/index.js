@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Formsy from 'formsy-react';
 import ReactGA from 'react-ga';
-import { Row, Column, Btn, Field } from '../../../../../uxComponent/UxBox';
+import { Row, Column, Btn, Field } from 'app/uxComponent/UxBox';
 
 import './style.css';
 

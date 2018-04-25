@@ -1,10 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Tape from './components/tape';
-import { Desktop, Mobile } from '../../../uxComponent/Responsive';
+import { Desktop, Mobile } from 'app/uxComponent/Responsive';
 
-import { tech } from '../../../../content';
+import { tech } from 'content';
 
 import './style.css';
 

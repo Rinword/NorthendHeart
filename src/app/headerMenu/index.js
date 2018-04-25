@@ -1,10 +1,11 @@
 import React from 'react';
-import { Row, Column } from '../uxComponent/UxBox';
-// import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Responsive from 'react-responsive';
-import logo from '../../static/icons/logo.png';
-import { menu } from '../../content';
+
+import { Row, Column } from 'app/uxComponent/UxBox';
+import logo from 'static/icons/logo.png';
+import { menu } from 'content';
+
 import './style.css';
 
 const Desktop = props => <Responsive {...props} minWidth={931} />;

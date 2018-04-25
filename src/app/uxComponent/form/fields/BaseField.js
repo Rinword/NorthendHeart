@@ -1,8 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { withFormsy } from 'formsy-react';
 import MaskedInput from 'react-text-mask';
 import masks from './masks';
+
 import './style.css';
 
 class Field extends React.Component {

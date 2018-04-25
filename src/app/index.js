@@ -4,12 +4,12 @@ import Modal from 'react-modal';
 import { id } from '../gaTokens';
 import ReactGA from 'react-ga';
 
-import { Row } from './uxComponent/UxBox';
+import { Row } from 'app/uxComponent/UxBox';
 import Main from './main';
 import HeaderMenu from './headerMenu';
 import ShareSocial from './shareSocial';
 
-import validations from './uxComponent/form/validations';
+import validations from 'app/uxComponent/form/validations';
 
 import './index.css';
 

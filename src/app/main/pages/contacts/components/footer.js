@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Column } from '../../../../uxComponent/UxBox';
+import { Row, Column } from 'app/uxComponent/UxBox';
 
 const Footer = () => (
     <Row

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { toDecart } from './utils';
-// import { Desktop, Mobile } from '../../../../../uxComponent/Responsive';
 import './style.css';
 
 class RoundMenu extends React.PureComponent {

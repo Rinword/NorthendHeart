@@ -13,7 +13,7 @@ import {
     EmailIcon,
 } from 'react-share';
 
-import { Row } from '../uxComponent/UxBox';
+import { Row } from 'app/uxComponent/UxBox';
 
 import './style.css';
 

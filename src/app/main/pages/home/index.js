@@ -2,12 +2,12 @@ import React from 'react';
 import cx from 'classnames';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import { Column, Btn, Modal } from '../../../uxComponent/UxBox';
+import { Column, Btn, Modal } from 'app/uxComponent/UxBox';
 import Responsive from 'react-responsive';
 
 import RoundMenu from './components/roundMenu';
 import ContactForm from './components/contactForm';
-import { home, menu } from '../../../../content';
+import { home, menu } from 'content';
 
 import './style.css';
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 import PageSlider from '../pageSlider';
 
-import { menu } from '../../content';
+import { menu } from 'content';
 import Home from './pages/home';
 import Features from './pages/features';
 import Projects from './pages/projects';

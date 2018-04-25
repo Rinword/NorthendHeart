@@ -1,7 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+
 import './style.css';
+
 class Btn extends React.Component {
     constructor(props) {
         super(props);
