@@ -69,12 +69,7 @@ import pr5_2 from './static/img/projects/5/2.png';
 import pr5_3 from './static/img/projects/5/3.png';
 import pr5_4 from './static/img/projects/5/4.png';
 import pr5_5 from './static/img/projects/5/5.png';
-import pr5_0_mobile from './static/img/projects/house5.jpg';
-import pr5_1_mobile from './static/img/projects/5/mobile/1.png';
-import pr5_2_mobile from './static/img/projects/5/mobile/2.png';
-import pr5_3_mobile from './static/img/projects/5/mobile/3.png';
-import pr5_4_mobile from './static/img/projects/5/mobile/4.png';
-import pr5_5_mobile from './static/img/projects/5/mobile/5.png';
+
 import pr5_0_mini from './static/img/projects/5/thumbnail/0.jpg';
 import pr5_1_mini from './static/img/projects/5/thumbnail/1.png';
 import pr5_2_mini from './static/img/projects/5/thumbnail/2.png';
@@ -87,19 +82,26 @@ import light from './static/img/tech/light.png';
 import roof from './static/img/tech/roof.png';
 import msrk from './static/img/tech/msrk.png';
 
+import pr5_0_mobile from './static/img/projects/house5.jpg';
+import pr5_1_mobile from './static/img/projects/5/mobile/1.png';
+import pr5_2_mobile from './static/img/projects/5/mobile/2.png';
+import pr5_3_mobile from './static/img/projects/5/mobile/3.png';
+import pr5_4_mobile from './static/img/projects/5/mobile/4.png';
+import pr5_5_mobile from './static/img/projects/5/mobile/5.png';
+
 export const menu = [
-    // {
-    //     order: 0,
-    //     id: 'slide0',
-    //     title: 'Home',
-    //     name: 'home',
-    // },
-    // {
-    //     order: 1,
-    //     id: 'slide1',
-    //     title: 'Концепции',
-    //     name: 'features',
-    // },
+    {
+        order: 0,
+        id: 'slide0',
+        title: 'Home',
+        name: 'home',
+    },
+    {
+        order: 1,
+        id: 'slide1',
+        title: 'Концепции',
+        name: 'features',
+    },
     {
         order: 2,
         id: 'slide2',

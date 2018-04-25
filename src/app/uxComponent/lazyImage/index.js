@@ -15,9 +15,26 @@ class LazyImage extends React.PureComponent {
         this.state = {
             loaded: false,
         };
+
+        this.getRef = ref => (this.wrap = ref);
+        this.startLoading = this.startLoading.bind(this);
     }
 
     componentDidMount() {
+        const isVisible = () => {
+            const d = document.documentElement;
+            const offset = Math.max(window.pageYOffset, d.scrollTop) + window.innerHeight;
+
+            if (offset >= this.wrap.getBoundingClientRect().top) {
+                this.startLoading();
+                document.removeEventListener('scroll', isVisible);
+            }
+        };
+
+        document.addEventListener('scroll', isVisible, false);
+    }
+
+    startLoading() {
         const img = new Image();
 
         img.onload = () => {
@@ -25,7 +42,7 @@ class LazyImage extends React.PureComponent {
                 this.setState({
                     loaded: true,
                 });
-            }, 1200);
+            }, 3200);
         };
         img.onerror = () => {
             this.setState({
@@ -41,21 +58,25 @@ class LazyImage extends React.PureComponent {
         const { thumbnailSrc } = this.props;
 
         return (
-            <div className={cx('ux-image-loader', this.props.className)}>
-                <img
-                    className={cx(this.props.className, 'ux-image-loader__img', {
-                        'ux-image-loader__img_loaded': loaded,
-                    })}
-                    src={this.props.src}
-                    alt=""
-                />
-                <img
-                    className={cx(this.props.className, 'ux-image-loader__pre-img', {
-                        'ux-image-loader__pre-img_loaded': loaded,
-                    })}
-                    src={thumbnailSrc || clearGif}
-                    alt=""
-                />
+            <div className={cx('ux-image-loader', this.props.className)} ref={this.getRef}>
+                {loaded && (
+                    <img
+                        className={cx(this.props.className, 'ux-image-loader__img', {
+                            'ux-image-loader__img_loaded': loaded,
+                        })}
+                        src={this.props.src}
+                        alt=""
+                    />
+                )}
+                {!loaded && (
+                    <img
+                        className={cx(this.props.className, 'ux-image-loader__pre-img', {
+                            'ux-image-loader__pre-img_loaded': loaded,
+                        })}
+                        src={thumbnailSrc || clearGif}
+                        alt=""
+                    />
+                )}
                 {!loaded && (
                     <div className={cx('ux-image-loader__preloader')}>
                         {!error && <img src={preloader} alt="Loading..." />}
