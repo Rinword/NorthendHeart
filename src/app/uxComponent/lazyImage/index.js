@@ -14,6 +14,7 @@ class LazyImage extends React.PureComponent {
 
         this.state = {
             loaded: false,
+            unBlurred: false,
         };
 
         this.getRef = ref => (this.wrap = ref);
@@ -38,11 +39,12 @@ class LazyImage extends React.PureComponent {
         const img = new Image();
 
         img.onload = () => {
+            this.setState({ loaded: true });
             setTimeout(() => {
                 this.setState({
-                    loaded: true,
+                    unBlurred: true,
                 });
-            }, 3200);
+            }, 1000);
         };
         img.onerror = () => {
             this.setState({
@@ -54,26 +56,32 @@ class LazyImage extends React.PureComponent {
     }
 
     render() {
-        const { loaded, error } = this.state;
+        const { loaded, error, unBlurred } = this.state;
         const { thumbnailSrc } = this.props;
 
         return (
             <div className={cx('ux-image-loader', this.props.className)} ref={this.getRef}>
-                {loaded && (
+                {!unBlurred && (
                     <img
-                        className={cx(this.props.className, 'ux-image-loader__img', {
-                            'ux-image-loader__img_loaded': loaded,
-                        })}
-                        src={this.props.src}
+                        className={cx(
+                            this.props.className,
+                            'ux-image-loader__pre-img',
+                            // { 'ux-image-loader__pre-img_loaded': loaded },
+                            { 'ux-image-loader__pre-img_start-unblur': loaded }
+                        )}
+                        src={thumbnailSrc || clearGif}
                         alt=""
                     />
                 )}
-                {!loaded && (
+                {loaded && (
                     <img
-                        className={cx(this.props.className, 'ux-image-loader__pre-img', {
-                            'ux-image-loader__pre-img_loaded': loaded,
-                        })}
-                        src={thumbnailSrc || clearGif}
+                        className={cx(
+                            this.props.className,
+                            'ux-image-loader__img',
+                            // { 'ux-image-loader__img_loaded': loaded },
+                            // { 'ux-image-loader__img_start-unblur': loaded }
+                        )}
+                        src={this.props.src}
                         alt=""
                     />
                 )}

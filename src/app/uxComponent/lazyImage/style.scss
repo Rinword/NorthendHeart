@@ -15,29 +15,36 @@
     width: 100%;
     height: 100%;
 
-    filter: blur(10px);
-
     transition: 1s all;
   }
 
   &__img {
-    opacity: 0;
+    opacity: 1;
+    z-index: 1;
     &_loaded {
-      filter: blur(0px);
+
+    }
+    &_start-unblur {
       opacity: 1;
     }
   }
 
   &__pre-img {
     opacity: 1;
-    //left: -100%;
     min-width: 100%;
     min-height: 100%;
-    &_loaded {
-      //height: 0;
-      //transition: .3s;
+    z-index: 2;
+    filter: blur(10px);
+
+    //&_loaded {
+    //  z-index: 1;
+    //}
+
+    &_start-unblur {
+      //opacity: 0 !important;
       filter: blur(0px);
-      opacity: 0;
+
+      //transition: 1.5s all;
     }
   }
 
@@ -49,6 +56,7 @@
     position: absolute;
     left: 45%;
     top: 45%;
+    z-index: 3;
 
     img {
       width: 100%;
