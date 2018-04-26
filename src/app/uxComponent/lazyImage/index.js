@@ -14,7 +14,7 @@ class LazyImage extends React.PureComponent {
 
         this.state = {
             loaded: false,
-            unBlurred: false,
+            unBlur: false,
         };
 
         this.getRef = ref => (this.wrap = ref);
@@ -42,9 +42,9 @@ class LazyImage extends React.PureComponent {
             this.setState({ loaded: true });
             setTimeout(() => {
                 this.setState({
-                    unBlurred: true,
+                    unBlur: true,
                 });
-            }, 1000);
+            }, 10);
         };
         img.onerror = () => {
             this.setState({
@@ -56,31 +56,23 @@ class LazyImage extends React.PureComponent {
     }
 
     render() {
-        const { loaded, error, unBlurred } = this.state;
+        const { loaded, error, unBlur } = this.state;
         const { thumbnailSrc } = this.props;
 
         return (
             <div className={cx('ux-image-loader', this.props.className)} ref={this.getRef}>
-                {!unBlurred && (
+                {!loaded && (
                     <img
-                        className={cx(
-                            this.props.className,
-                            'ux-image-loader__pre-img',
-                            // { 'ux-image-loader__pre-img_loaded': loaded },
-                            { 'ux-image-loader__pre-img_start-unblur': loaded }
-                        )}
+                        className={cx(this.props.className, 'ux-image-loader__pre-img')}
                         src={thumbnailSrc || clearGif}
                         alt=""
                     />
                 )}
                 {loaded && (
                     <img
-                        className={cx(
-                            this.props.className,
-                            'ux-image-loader__img',
-                            // { 'ux-image-loader__img_loaded': loaded },
-                            // { 'ux-image-loader__img_start-unblur': loaded }
-                        )}
+                        className={cx(this.props.className, 'ux-image-loader__img', {
+                            'ux-image-loader__img_start-unblur': unBlur,
+                        })}
                         src={this.props.src}
                         alt=""
                     />
