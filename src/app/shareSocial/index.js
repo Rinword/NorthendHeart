@@ -29,13 +29,6 @@ class SocialShare extends React.PureComponent {
 
         this.toggleShare = () => {
             this.setState({ showShare: !this.state.showShare, showTooltip: false });
-
-            // if (this.state.showTooltip) {
-            //     setTimeout(() => {
-            //         console.log('close');
-            //         this.setState({ showTooltip: false });
-            //     }, 5000);
-            // }
         };
     }
 
@@ -49,7 +42,6 @@ class SocialShare extends React.PureComponent {
                 const height = d.offsetHeight;
 
                 if (offset >= height && !this.state.alreadyShown) {
-                    // if (offset >= height) {
                     this.setState({ showTooltip: true, alreadyShown: true });
                     setTimeout(() => {
                         this.setState({ showTooltip: false });

@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import { projects } from 'content';
-import { Column, Slider } from 'app/uxComponent/UxBox';
+import { Column, Slider, LazyImage } from 'app/uxComponent/UxBox';
 
 import './style.css';
 import 'app/uxComponent/slider/style.css';
@@ -29,13 +29,13 @@ class Projects extends React.PureComponent {
     }
 }
 
-const MobileProject = ({ title, description, photos_mobile }) => (
+const MobileProject = ({ title, description, photos_mobile, photos_mini }) => (
     <Column height="auto" cls={cx('projects__project')}>
         <h3>{title}</h3>
         <div className={cx('projects__mobile-desc')} dangerouslySetInnerHTML={{ __html: description }} />
         <Column height="auto" ai="center">
             {photos_mobile.map((img, i) => (
-                <img key={title + i} className={cx('projects__mobile-img')} src={img} alt="" />
+                <LazyImage key={title + i} className={cx('projects__mobile-img')} src={img} thumbnailSrc={photos_mini[i]} />
             ))}
         </Column>
     </Column>

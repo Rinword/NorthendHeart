@@ -10,6 +10,7 @@ import pr1_1_mobile from './static/img/projects/1/mobile/1.png';
 import pr1_2_mobile from './static/img/projects/1/mobile/2.png';
 import pr1_3_mobile from './static/img/projects/1/mobile/3.png';
 import pr1_4_mobile from './static/img/projects/1/mobile/4.png';
+import pr1_0_mini from './static/img/projects/1/thumbnail/0.jpg';
 import pr1_1_mini from './static/img/projects/1/thumbnail/1.png';
 import pr1_2_mini from './static/img/projects/1/thumbnail/2.png';
 import pr1_3_mini from './static/img/projects/1/thumbnail/3.png';
@@ -28,6 +29,7 @@ import pr2_3_mobile from './static/img/projects/2/mobile/3.png';
 import pr2_4_mobile from './static/img/projects/2/mobile/4.png';
 import pr2_5_mobile from './static/img/projects/2/mobile/5.png';
 import pr2_6_mobile from './static/img/projects/2/mobile/6.png';
+import pr2_0_mini from './static/img/projects/2/thumbnail/0.png';
 import pr2_1_mini from './static/img/projects/2/thumbnail/1.png';
 import pr2_2_mini from './static/img/projects/2/thumbnail/2.png';
 import pr2_3_mini from './static/img/projects/2/thumbnail/3.png';
@@ -44,6 +46,7 @@ import pr3_1_mobile from './static/img/projects/3/mobile/1.png';
 import pr3_2_mobile from './static/img/projects/3/mobile/2.png';
 import pr3_3_mobile from './static/img/projects/3/mobile/3.png';
 import pr3_4_mobile from './static/img/projects/3/mobile/4.png';
+import pr3_0_mini from './static/img/projects/3/thumbnail/0.jpg';
 import pr3_1_mini from './static/img/projects/3/thumbnail/1.png';
 import pr3_2_mini from './static/img/projects/3/thumbnail/2.png';
 import pr3_3_mini from './static/img/projects/3/thumbnail/3.png';
@@ -56,6 +59,7 @@ import pr4_0_mobile from './static/img/projects/house4.png';
 import pr4_1_mobile from './static/img/projects/4/mobile/1.png';
 import pr4_2_mobile from './static/img/projects/4/mobile/2.png';
 import pr4_3_mobile from './static/img/projects/4/mobile/3.png';
+import pr4_0_mini from './static/img/projects/4/thumbnail/0.png';
 import pr4_1_mini from './static/img/projects/4/thumbnail/1.png';
 import pr4_2_mini from './static/img/projects/4/thumbnail/2.png';
 import pr4_3_mini from './static/img/projects/4/thumbnail/3.png';
@@ -65,12 +69,8 @@ import pr5_2 from './static/img/projects/5/2.png';
 import pr5_3 from './static/img/projects/5/3.png';
 import pr5_4 from './static/img/projects/5/4.png';
 import pr5_5 from './static/img/projects/5/5.png';
-import pr5_0_mobile from './static/img/projects/house5.jpg';
-import pr5_1_mobile from './static/img/projects/5/mobile/1.png';
-import pr5_2_mobile from './static/img/projects/5/mobile/2.png';
-import pr5_3_mobile from './static/img/projects/5/mobile/3.png';
-import pr5_4_mobile from './static/img/projects/5/mobile/4.png';
-import pr5_5_mobile from './static/img/projects/5/mobile/5.png';
+
+import pr5_0_mini from './static/img/projects/5/thumbnail/0.jpg';
 import pr5_1_mini from './static/img/projects/5/thumbnail/1.png';
 import pr5_2_mini from './static/img/projects/5/thumbnail/2.png';
 import pr5_3_mini from './static/img/projects/5/thumbnail/3.png';
@@ -81,6 +81,13 @@ import lvl from './static/img/tech/lvl.png';
 import light from './static/img/tech/light.png';
 import roof from './static/img/tech/roof.png';
 import msrk from './static/img/tech/msrk.png';
+
+import pr5_0_mobile from './static/img/projects/house5.jpg';
+import pr5_1_mobile from './static/img/projects/5/mobile/1.png';
+import pr5_2_mobile from './static/img/projects/5/mobile/2.png';
+import pr5_3_mobile from './static/img/projects/5/mobile/3.png';
+import pr5_4_mobile from './static/img/projects/5/mobile/4.png';
+import pr5_5_mobile from './static/img/projects/5/mobile/5.png';
 
 export const menu = [
     {
@@ -119,7 +126,7 @@ export const menu = [
 export const home = {
     title: 'Сдержанность и дорогой минимализм — признаки роскоши и стиля',
     subTitle: 'Новые форматы — для жаждущих вдохновения…',
-    phone: '+7 (916)652-14-45',
+    phone: '+7 (999) 815-17-45',
     btnText: 'Заказать звонок',
 };
 
@@ -174,7 +181,7 @@ export const projects = [
         ],
         photos: [pr1_1, pr1_2, pr1_3, pr1_4],
         photos_mobile: [pr1_0_mobile, pr1_1_mobile, pr1_2_mobile, pr1_3_mobile, pr1_4_mobile],
-        photos_mini: [pr1_1_mini, pr1_2_mini, pr1_3_mini, pr1_4_mini],
+        photos_mini: [pr1_0_mini, pr1_1_mini, pr1_2_mini, pr1_3_mini, pr1_4_mini],
     },
     {
         title: 'Lone Pine',
@@ -195,7 +202,7 @@ export const projects = [
             pr2_5_mobile,
             pr2_6_mobile,
         ],
-        photos_mini: [pr2_1_mini, pr2_2_mini, pr2_3_mini, pr2_4_mini, pr2_5_mini, pr2_6_mini],
+        photos_mini: [pr2_0_mini, pr2_1_mini, pr2_2_mini, pr2_3_mini, pr2_4_mini, pr2_5_mini, pr2_6_mini],
     },
     {
         title: 'Hyperion',
@@ -296,7 +303,7 @@ export const projects = [
         ],
         photos: [pr3_1, pr3_2, pr3_3, pr3_4],
         photos_mobile: [pr3_0_mobile, pr3_1_mobile, pr3_2_mobile, pr3_3_mobile, pr3_4_mobile],
-        photos_mini: [pr3_1_mini, pr3_2_mini, pr3_3_mini, pr3_4_mini],
+        photos_mini: [pr3_0_mini, pr3_1_mini, pr3_2_mini, pr3_3_mini, pr3_4_mini],
     },
     {
         title: 'Silence',
@@ -310,7 +317,7 @@ export const projects = [
         tabs: [{}],
         photos: [pr4_1, pr4_2, pr4_3],
         photos_mobile: [pr4_0_mobile, pr4_1_mobile, pr4_2_mobile, pr4_3_mobile],
-        photos_mini: [pr4_1_mini, pr4_2_mini, pr4_3_mini],
+        photos_mini: [pr4_0_mini, pr4_1_mini, pr4_2_mini, pr4_3_mini],
     },
     {
         title: 'Frost Rider',
@@ -323,7 +330,7 @@ export const projects = [
         sections: ['#1', '#2S', '#3', '#4Х – 2 шт.', '#терраса', '#панель –2 шт.'],
         photos: [pr5_1, pr5_2, pr5_3, pr5_4, pr5_5],
         photos_mobile: [pr5_0_mobile, pr5_1_mobile, pr5_2_mobile, pr5_3_mobile, pr5_4_mobile, pr5_5_mobile],
-        photos_mini: [pr5_1_mini, pr5_2_mini, pr5_3_mini, pr5_4_mini, pr5_5_mini],
+        photos_mini: [pr5_0_mini, pr5_1_mini, pr5_2_mini, pr5_3_mini, pr5_4_mini, pr5_5_mini],
     },
 ];
 
