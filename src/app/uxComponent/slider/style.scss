@@ -274,8 +274,8 @@
 
   &__slide-btns, &__bottom-btns {
     position: absolute;
-    right: 110px;
-    top: 29px;
+    right: 120px;
+    top: 25px;
 
     display: flex;
     justify-content: flex-end;
@@ -289,8 +289,8 @@
   }
 
   &__slide-btn {
-    width: 55px;
-    height: 35px;
+    width: 120px;
+    height: 42px;
     border: 1px solid white;
     cursor: pointer;
     z-index: 12;
@@ -299,7 +299,7 @@
     justify-content: center;
     align-items: center;
 
-    opacity: 0.5;
+    opacity: 0.95;
 
     transition: .2s all;
 
@@ -324,10 +324,10 @@
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(5deg);
+    transform: rotate(5deg) ;
   }
   50% {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1.6);
   }
   75% {
     transform: rotate(-5deg);
