@@ -85,6 +85,7 @@
     display: flex;
     font-size: 28px;
     font-family: Oswald;
+    user-select: none;
 
     transition: .5s all;
   }
@@ -95,6 +96,7 @@
     transition: 0.6s all;
     opacity: 1;
     text-transform: uppercase;
+    user-select: none;
     &:hover {
       text-decoration: underline;
     }

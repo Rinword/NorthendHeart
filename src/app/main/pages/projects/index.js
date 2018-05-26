@@ -16,7 +16,7 @@ class Projects extends React.PureComponent {
         return (
             <div id={this.props.id} className={cx('projects', { slide_active: this.props.isActive })}>
                 <Desktop>
-                    <Slider slides={projects} isActive={this.props.isActive} />
+                    <Slider slides={projects} isActive={this.props.isActive} legendHidden={false} />
                 </Desktop>
                 <Mobile>
                     <div className="features__title">{this.props.title}</div>
@@ -35,7 +35,12 @@ const MobileProject = ({ title, description, photos_mobile, photos_mini }) => (
         <div className={cx('projects__mobile-desc')} dangerouslySetInnerHTML={{ __html: description }} />
         <Column height="auto" ai="center">
             {photos_mobile.map((img, i) => (
-                <LazyImage key={title + i} className={cx('projects__mobile-img')} src={img} thumbnailSrc={photos_mini[i]} />
+                <LazyImage
+                    key={title + i}
+                    className={cx('projects__mobile-img')}
+                    src={img}
+                    thumbnailSrc={photos_mini[i]}
+                />
             ))}
         </Column>
     </Column>

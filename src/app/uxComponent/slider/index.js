@@ -20,7 +20,7 @@ class CustomSlider extends React.PureComponent {
 
         this.state = {
             activeSlide: 1,
-            legendHidden: props.legendHidden || true,
+            legendHidden: props.legendHidden,
             hasSlick: false,
             compShown: false,
             activeTab: 0,
@@ -74,9 +74,9 @@ class CustomSlider extends React.PureComponent {
     }
 
     render() {
-        const legendHidden = this.state.legendHidden;
-        const btnMove = this.state.btnMove;
-        const activeSlide = this.props.slides[this.state.activeSlide];
+        const { legendHidden, btnMove } = this.state;
+        const { slides = [] } = this.props;
+        const activeSlide = slides[this.state.activeSlide];
         // !~activeSlide.sections.indexOf('?') && activeSlide.sections.push(['?']);
 
         return (
@@ -150,10 +150,12 @@ class CustomSlider extends React.PureComponent {
 
 CustomSlider.propTypes = {
     slides: PropTypes.arrayOf(PropTypes.object),
+    legendHidden: PropTypes.bool,
 };
 
 CustomSlider.defaultProps = {
     slides: [],
+    legendHidden: true,
 };
 
 export default CustomSlider;
