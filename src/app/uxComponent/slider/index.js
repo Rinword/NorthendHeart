@@ -79,7 +79,12 @@ class CustomSlider extends React.PureComponent {
         const activeSlide = slides[this.state.activeSlide];
         // !~activeSlide.sections.indexOf('?') && activeSlide.sections.push(['?']);
 
-        const delta = 40 + +((elementDimensions.width - position.x) / elementDimensions.width * 10).toFixed(0) || 70;
+        let start = 40;
+        if (elementDimensions.width > 1366) {
+            start = 25;
+        }
+
+        const delta = start + +((elementDimensions.width - position.x) / elementDimensions.width * 10).toFixed(0) || 70;
 
         return (
             <div className={cx('ux-slider-wrap', { 'ux-slider-wrap_legend-hidden': legendHidden })}>
