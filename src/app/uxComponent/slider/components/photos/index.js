@@ -72,7 +72,7 @@ class CustomSlider extends React.PureComponent {
                     ref={sl => (this.ref = sl)}
                 >
                     {this.props.photos_mini.map((slide, i) => (
-                        <div key={i} className="ux-photo-slider__slide" onClick={()=> this.onClick(i)}>
+                        <div key={i} className="ux-photo-slider__slide" onClick={() => this.onClick(i)}>
                             <img className={cx('ux-full-slider__img', [slide.srcCls])} src={slide} alt="" />
                         </div>
                     ))}
