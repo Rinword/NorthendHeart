@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import { Row, Column } from 'app/uxComponent/UxBox';
+import { Row, Column, LazyImage } from 'app/uxComponent/UxBox';
 import ReactIntense from 'libs/react-intense/ReactIntense';
 import { Desktop, Mobile } from 'app/uxComponent/Responsive';
 import { features } from 'content';
@@ -86,10 +86,15 @@ class Features extends React.PureComponent {
                                     <div className="show-panel__desc">{feature.desc}</div>
                                 </div>
                                 <div className="show-panel__img-wrap">
-                                    <img
-                                        className="show-panel__img show-panel__img_mobile img_feature img_feature_mobile"
+                                    <LazyImage
+                                        className={cx(
+                                            'show-panel__img',
+                                            'show-panel__img_mobile',
+                                            'img_feature',
+                                            'img_feature_mobile'
+                                        )}
                                         src={feature.img}
-                                        alt=""
+                                        thumbnailSrc={feature.img_mini}
                                     />
                                 </div>
                             </Column>
