@@ -326,7 +326,12 @@ export default class ReactIntense extends React.Component {
             <trigger {...triggerProps} />
         ) : (
             <a {...triggerProps}>
-                <img className={cx('ri-img', [this.props.className])} src={src} alt="" onClick={this._onClick} />
+                <img
+                    className={cx('ri-img', [this.props.className])}
+                    src={thumbnailSrc || src}
+                    alt=""
+                    onClick={this._onClick}
+                />
             </a>
         );
 
