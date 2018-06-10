@@ -75,31 +75,36 @@ class CustomSlider extends React.PureComponent {
 
     render() {
         const { legendHidden, btnMove } = this.state;
-        const { slides = [] } = this.props;
+        const { slides = [], elementDimensions, position } = this.props;
         const activeSlide = slides[this.state.activeSlide];
         // !~activeSlide.sections.indexOf('?') && activeSlide.sections.push(['?']);
 
+        const delta = 40 + +((elementDimensions.width - position.x) / elementDimensions.width * 10).toFixed(0) || 70;
+
         return (
             <div className={cx('ux-slider-wrap', { 'ux-slider-wrap_legend-hidden': legendHidden })}>
-                <div
-                    className={cx(
-                        'ux-slider-wrap__hide-btn',
-                        { bg_color_black_07: legendHidden },
-                        { 'ux-slider-wrap__hide-btn_disturbed': legendHidden && btnMove }
-                    )}
-                    onClick={this.toggleLegendViewMode}
-                >
-                    <div
-                        className={cx(
-                            'icon icon_bg-size_24 icon_size_24',
-                            legendHidden ? 'icon_visibility_on' : 'icon_visibility_off'
-                        )}
-                    />
-                </div>
                 <div className={cx('ux-slider-legend-mini', { 'ux-slider-legend-mini_hidden': !legendHidden })}>
                     {activeSlide.title}
                 </div>
-                <div className={cx('ux-slider-legend', { 'ux-slider-legend_hidden': legendHidden })}>
+                <div
+                    className={cx('ux-slider-legend', { 'ux-slider-legend_shown': !legendHidden })}
+                    style={{ right: `-${delta}%` }}
+                >
+                    <div
+                        className={cx(
+                            'ux-slider-wrap__hide-btn',
+                            { bg_color_black_07: legendHidden },
+                            { 'ux-slider-wrap__hide-btn_disturbed': legendHidden && btnMove }
+                        )}
+                        onClick={this.toggleLegendViewMode}
+                    >
+                        <div
+                            className={cx(
+                                'icon icon_bg-size_24 icon_size_24',
+                                legendHidden ? 'icon_visibility_on' : 'icon_visibility_off'
+                            )}
+                        />
+                    </div>
                     <div className="ux-slider-legend__slide-btns no_blur">
                         <div className="ux-slider-legend__slide-btn" onClick={this.prev}>
                             <div className="icon icon_prev icon_bg-size_18 icon_size_24" />
@@ -118,7 +123,7 @@ class CustomSlider extends React.PureComponent {
                         dangerouslySetInnerHTML={{ __html: activeSlide.description }}
                     />
                     <TabPanel tabs={activeSlide.tabs} onTabChange={this.onTabChange} />
-                    {activeSlide.tabs[this.state.activeTab].modal && (
+                    {(activeSlide.tabs[this.state.activeTab] || {}).modal && (
                         <div>
                             <Btn cls={cx('ux-btn_alt')} onClick={this.showComplectationToggle}>
                                 Ознакомиться с комплектацией
@@ -141,7 +146,7 @@ class CustomSlider extends React.PureComponent {
                 <CompModal
                     isOpen={this.state.compShown}
                     onRequestClose={this.hideComplectationToggle}
-                    modal={activeSlide.tabs[this.state.activeTab].modal}
+                    modal={(activeSlide.tabs[this.state.activeTab] || {}).modal}
                 />
             </div>
         );
@@ -159,3 +164,21 @@ CustomSlider.defaultProps = {
 };
 
 export default CustomSlider;
+
+/*
+                <div
+                    className={cx(
+                        'ux-slider-wrap__hide-btn',
+                        { bg_color_black_07: legendHidden },
+                        { 'ux-slider-wrap__hide-btn_disturbed': legendHidden && btnMove }
+                    )}
+                    onClick={this.toggleLegendViewMode}
+                >
+                    <div
+                        className={cx(
+                            'icon icon_bg-size_24 icon_size_24',
+                            legendHidden ? 'icon_visibility_on' : 'icon_visibility_off'
+                        )}
+                    />
+                </div>
+ */

@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ReactCursorPosition from 'react-cursor-position';
 
 import { projects } from 'content';
 import { Column, Slider, LazyImage } from 'app/uxComponent/UxBox';
@@ -16,7 +17,9 @@ class Projects extends React.PureComponent {
         return (
             <div id={this.props.id} className={cx('projects', { slide_active: this.props.isActive })}>
                 <Desktop>
-                    <Slider slides={projects} isActive={this.props.isActive} legendHidden={false} />
+                    <ReactCursorPosition>
+                        <Slider slides={projects} isActive={this.props.isActive} legendHidden={true} />
+                    </ReactCursorPosition>
                 </Desktop>
                 <Mobile>
                     <div className="features__title">{this.props.title}</div>
