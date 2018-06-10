@@ -43,7 +43,7 @@ class Features extends React.PureComponent {
                                         className="show-panel__img img_feature"
                                         src={feature.img}
                                         alt=""
-                                        thumbnailSrc={feature.img}
+                                        thumbnailSrc={feature.img_mini}
                                         vertical={true}
                                     />
                                 </div>

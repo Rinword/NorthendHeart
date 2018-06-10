@@ -1,6 +1,9 @@
 import feature1 from './static/img/feature1.jpg';
 import feature2 from './static/img/feature2.jpg';
 
+import feature1_mini from './static/img/feature1_mini.jpg';
+import feature2_mini from './static/img/feature2_mini.jpg';
+
 import pr1_1 from './static/img/projects/1/1.png';
 import pr1_2 from './static/img/projects/1/2.png';
 import pr1_3 from './static/img/projects/1/3.png';
@@ -136,11 +139,13 @@ export const features = {
             title: 'Модульная архитектура —',
             desc: 'как переосмысление этапности в строительстве',
             img: feature1,
+            img_mini: feature1_mini,
         },
         {
             title: 'Конечное число форм —',
             desc: 'бесконечное число формобразований',
             img: feature2,
+            img_mini: feature2_mini,
         },
     ],
     title: 'Мы придерживаемся концепций, свободных от предрассудков',
