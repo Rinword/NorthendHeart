@@ -13,7 +13,7 @@ import pr1_1_mobile from './static/img/projects/1/mobile/1.png';
 import pr1_2_mobile from './static/img/projects/1/mobile/2.png';
 import pr1_3_mobile from './static/img/projects/1/mobile/3.png';
 import pr1_4_mobile from './static/img/projects/1/mobile/4.png';
-import pr1_0_mini from './static/img/projects/1/thumbnail/0.jpg';
+// import pr1_0_mini from './static/img/projects/1/thumbnail/0.jpg';
 import pr1_1_mini from './static/img/projects/1/thumbnail/1.png';
 import pr1_2_mini from './static/img/projects/1/thumbnail/2.png';
 import pr1_3_mini from './static/img/projects/1/thumbnail/3.png';
@@ -32,7 +32,7 @@ import pr2_3_mobile from './static/img/projects/2/mobile/3.png';
 import pr2_4_mobile from './static/img/projects/2/mobile/4.png';
 import pr2_5_mobile from './static/img/projects/2/mobile/5.png';
 import pr2_6_mobile from './static/img/projects/2/mobile/6.png';
-import pr2_0_mini from './static/img/projects/2/thumbnail/0.png';
+// import pr2_0_mini from './static/img/projects/2/thumbnail/0.png';
 import pr2_1_mini from './static/img/projects/2/thumbnail/1.png';
 import pr2_2_mini from './static/img/projects/2/thumbnail/2.png';
 import pr2_3_mini from './static/img/projects/2/thumbnail/3.png';
@@ -49,7 +49,7 @@ import pr3_1_mobile from './static/img/projects/3/mobile/1.png';
 import pr3_2_mobile from './static/img/projects/3/mobile/2.png';
 import pr3_3_mobile from './static/img/projects/3/mobile/3.png';
 import pr3_4_mobile from './static/img/projects/3/mobile/4.png';
-import pr3_0_mini from './static/img/projects/3/thumbnail/0.jpg';
+// import pr3_0_mini from './static/img/projects/3/thumbnail/0.jpg';
 import pr3_1_mini from './static/img/projects/3/thumbnail/1.png';
 import pr3_2_mini from './static/img/projects/3/thumbnail/2.png';
 import pr3_3_mini from './static/img/projects/3/thumbnail/3.png';
@@ -62,7 +62,7 @@ import pr4_0_mobile from './static/img/projects/house4.jpg';
 import pr4_1_mobile from './static/img/projects/4/mobile/1.png';
 import pr4_2_mobile from './static/img/projects/4/mobile/2.png';
 import pr4_3_mobile from './static/img/projects/4/mobile/3.png';
-import pr4_0_mini from './static/img/projects/4/thumbnail/0.png';
+// import pr4_0_mini from './static/img/projects/4/thumbnail/0.png';
 import pr4_1_mini from './static/img/projects/4/thumbnail/1.png';
 import pr4_2_mini from './static/img/projects/4/thumbnail/2.png';
 import pr4_3_mini from './static/img/projects/4/thumbnail/3.png';
@@ -73,17 +73,12 @@ import pr5_3 from './static/img/projects/5/3.png';
 import pr5_4 from './static/img/projects/5/4.png';
 import pr5_5 from './static/img/projects/5/5.png';
 
-import pr5_0_mini from './static/img/projects/5/thumbnail/0.jpg';
+// import pr5_0_mini from './static/img/projects/5/thumbnail/0.jpg';
 import pr5_1_mini from './static/img/projects/5/thumbnail/1.png';
 import pr5_2_mini from './static/img/projects/5/thumbnail/2.png';
 import pr5_3_mini from './static/img/projects/5/thumbnail/3.png';
 import pr5_4_mini from './static/img/projects/5/thumbnail/4.png';
 import pr5_5_mini from './static/img/projects/5/thumbnail/5.png';
-
-import lvl from './static/img/tech/lvl.png';
-import light from './static/img/tech/light.png';
-import roof from './static/img/tech/roof.png';
-import msrk from './static/img/tech/msrk.png';
 
 import pr5_0_mobile from './static/img/projects/house5.jpg';
 import pr5_1_mobile from './static/img/projects/5/mobile/1.png';
@@ -91,6 +86,49 @@ import pr5_2_mobile from './static/img/projects/5/mobile/2.png';
 import pr5_3_mobile from './static/img/projects/5/mobile/3.png';
 import pr5_4_mobile from './static/img/projects/5/mobile/4.png';
 import pr5_5_mobile from './static/img/projects/5/mobile/5.png';
+
+import pr6_1 from './static/img/projects/6/m1.jpg';
+import pr6_2 from './static/img/projects/6/m1x.jpg';
+import pr6_3 from './static/img/projects/6/m2m.jpg';
+import pr6_4 from './static/img/projects/6/m2mx.jpg';
+import pr6_5 from './static/img/projects/6/m2s.jpg';
+import pr6_6 from './static/img/projects/6/m2sx.jpg';
+import pr6_7 from './static/img/projects/6/m3.jpg';
+import pr6_8 from './static/img/projects/6/m3x.jpg';
+import pr6_9 from './static/img/projects/6/m4mg.jpg';
+import pr6_10 from './static/img/projects/6/m4mn.jpg';
+import pr6_11 from './static/img/projects/6/m4sg.jpg';
+import pr6_12 from './static/img/projects/6/m4sn.jpg';
+import pr6_13 from './static/img/projects/6/m4x.jpg';
+import pr6_14 from './static/img/projects/6/m5.jpg';
+import pr6_15 from './static/img/projects/6/m5x.jpg';
+import pr6_16 from './static/img/projects/6/m6.jpg';
+import pr6_17 from './static/img/projects/6/m7.jpg';
+
+import pr6_0_mobile from './static/img/projects/house6.jpg';
+
+import pr6_1_mini from './static/img/projects/6/thumbnail/m1.jpg';
+import pr6_2_mini from './static/img/projects/6/thumbnail/m1x.jpg';
+import pr6_3_mini from './static/img/projects/6/thumbnail/m2m.jpg';
+import pr6_4_mini from './static/img/projects/6/thumbnail/m2mx.jpg';
+import pr6_5_mini from './static/img/projects/6/thumbnail/m2s.jpg';
+import pr6_6_mini from './static/img/projects/6/thumbnail/m2sx.jpg';
+import pr6_7_mini from './static/img/projects/6/thumbnail/m3.jpg';
+import pr6_8_mini from './static/img/projects/6/thumbnail/m3x.jpg';
+import pr6_9_mini from './static/img/projects/6/thumbnail/m4mg.jpg';
+import pr6_10_mini from './static/img/projects/6/thumbnail/m4mn.jpg';
+import pr6_11_mini from './static/img/projects/6/thumbnail/m4sg.jpg';
+import pr6_12_mini from './static/img/projects/6/thumbnail/m4sn.jpg';
+import pr6_13_mini from './static/img/projects/6/thumbnail/m4x.jpg';
+import pr6_14_mini from './static/img/projects/6/thumbnail/m5.jpg';
+import pr6_15_mini from './static/img/projects/6/thumbnail/m5x.jpg';
+import pr6_16_mini from './static/img/projects/6/thumbnail/m6.jpg';
+import pr6_17_mini from './static/img/projects/6/thumbnail/m7.jpg';
+
+import lvl from './static/img/tech/lvl.png';
+import light from './static/img/tech/light.png';
+import roof from './static/img/tech/roof.png';
+import msrk from './static/img/tech/msrk.png';
 
 export const menu = [
     {
@@ -336,6 +374,74 @@ export const projects = [
         photos: [pr5_1, pr5_2, pr5_3, pr5_4, pr5_5],
         photos_mobile: [pr5_0_mobile, pr5_1_mobile, pr5_2_mobile, pr5_3_mobile, pr5_4_mobile, pr5_5_mobile],
         photos_mini: [pr5_1_mini, pr5_2_mini, pr5_3_mini, pr5_4_mini, pr5_5_mini],
+    },
+    {
+        title: 'КАТАЛОГ МОДУЛЕЙ',
+        index: 6,
+        srcCls: 'projects_img_6',
+        description:
+            'Собрать дом так же просто, как, например, собрать в магазине кухню из готовых элементов. Надо только ' +
+            'выбрать подходящие вам модули и скомпоновать из них ваш дом',
+        sections: [
+            '#1S',
+            '#1M',
+            '#2S',
+            '#2M',
+            '#3',
+            '#4Sg',
+            '#4Mg',
+            '#4Sn',
+            '#4Mn',
+            '#5',
+            '#1X',
+            '#2X',
+            '#3X',
+            '#4X',
+            '#5X',
+            '#терраса',
+            '#терраса-балкон',
+            'фасадная панель',
+        ],
+        tabs: [{}],
+        photos: [
+            pr6_1,
+            pr6_2,
+            pr6_3,
+            pr6_4,
+            pr6_5,
+            pr6_6,
+            pr6_7,
+            pr6_8,
+            pr6_9,
+            pr6_10,
+            pr6_11,
+            pr6_12,
+            pr6_13,
+            pr6_14,
+            pr6_15,
+            pr6_16,
+            pr6_17,
+        ],
+        photos_mobile: [pr6_0_mobile],
+        photos_mini: [
+            pr6_1_mini,
+            pr6_2_mini,
+            pr6_3_mini,
+            pr6_4_mini,
+            pr6_5_mini,
+            pr6_6_mini,
+            pr6_7_mini,
+            pr6_8_mini,
+            pr6_9_mini,
+            pr6_10_mini,
+            pr6_11_mini,
+            pr6_12_mini,
+            pr6_13_mini,
+            pr6_14_mini,
+            pr6_15_mini,
+            pr6_16_mini,
+            pr6_17_mini,
+        ],
     },
 ];
 
