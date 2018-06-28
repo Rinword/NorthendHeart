@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import ReactGA from 'react-ga';
 
 import Slider from './slider';
 import 'slick-carousel/slick/slick.css';
@@ -39,6 +40,12 @@ class CustomSlider extends React.PureComponent {
 
         this.toggleLegendViewMode = () => {
             this.setState({ legendHidden: !this.state.legendHidden });
+            if (this.state.legendHidden) {
+                const ga = ReactGA.ga();
+                ga('send', 'event', 'interaction', 'click', 'eye');
+                window.gtag_report_eye_click && window.gtag_report_eye_click();
+                window.yaCounter47731816 && window.yaCounter47731816.reachGoal('RequestEyeClick');
+            }
         };
 
         this.next = () => {

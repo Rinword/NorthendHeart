@@ -48,19 +48,29 @@
 
         gtag('config', 'AW-952293510');
 
-        window.gtag_report_conversion = function(url) {
-            var callback = function () {
-                if (typeof(url) != 'undefined') {
-                    window.location = url;
-                }
-            };
+        const callback = url => {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
 
+        window.gtag_report_conversion = function(url) {
             gtag('event', 'conversion', {
                 'send_to': 'AW-952293510/8NeuCK6F4X4QhrGLxgM',
-                'event_callback': callback
+                'event_callback': () => callback(url)
             });
+
             return false;
         }
+
+//        window.gtag_report_eye_click = function(url) {
+//            gtag('event', 'conversion', {
+//                'send_to': 'AW-952293510/8NeuCK6F4X4QhrGLxgM',
+//                'event_callback': () => callback(url)
+//            });
+
+//            return false;
+//        }
     </script>
   </head>
   <body>
@@ -69,6 +79,6 @@
       <img height="1" width="1"
            src="https://www.facebook.com/tr?id=161036017931016&ev=PageView&noscript=1"/>
     </noscript>
-    <div id="root"/>
+    <div id="root" />
   </body>
 </html>
