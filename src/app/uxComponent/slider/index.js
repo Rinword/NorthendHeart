@@ -44,6 +44,8 @@ class CustomSlider extends React.PureComponent {
                 const ga = ReactGA.ga();
                 ga('send', 'event', 'interaction', 'click', 'eye');
                 window.gtag_report_eye_click && window.gtag_report_eye_click();
+                window.fbq && window.fbq('track', 'InitiateCheckout');
+
                 window.yaCounter47731816 && window.yaCounter47731816.reachGoal('RequestEyeClick');
             }
         };
