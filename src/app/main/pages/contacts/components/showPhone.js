@@ -6,7 +6,6 @@ import { Btn, Row } from 'app/uxComponent/UxBox';
 const callConversion = () => {
     const ga = ReactGA.ga();
     ga('send', 'event', 'interaction', 'click', 'shownPhone');
-    console.log('!!', window.fbq);
     window.fbq && window.fbq('track', 'Contact');
 
     window.yaCounter47731816 && window.yaCounter47731816.reachGoal('ClickShowPhone');
