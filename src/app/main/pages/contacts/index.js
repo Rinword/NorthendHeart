@@ -9,6 +9,8 @@ import Footer from './components/footer';
 import { Desktop, Mobile } from 'app/uxComponent/Responsive';
 import ContactForm from '../home/components/contactForm';
 import { contacts } from 'content';
+
+import { ShowPhone } from './components/showPhone';
 import banner from 'static/img/banner.png';
 
 import './style.css';
@@ -99,7 +101,7 @@ class Contacts extends React.PureComponent {
                             cls="contacts__company-data"
                             overflow="visible"
                         >
-                            <p className="contacts__phone">{contacts.office.phone}</p>
+                            <ShowPhone phone={contacts.office.phone} />
                             <p className="contacts__email">{contacts.office.email}</p>
                             <p className="contacts__address">{contacts.office.address}</p>
                             {/*<Row width="100%" height="400px">*/}

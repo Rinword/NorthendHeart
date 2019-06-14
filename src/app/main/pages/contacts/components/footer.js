@@ -12,7 +12,7 @@ const Footer = () => (
         padding="5px 10px 0"
     >
         <Row ai="center" cls="contacts__footer-site">
-            © PLUSMODUL 2018.
+            © PLUSMODUL 2019
         </Row>
 
         <Column cls="contacts__author" jc="center" ai="flex-end" padding="5px 0">

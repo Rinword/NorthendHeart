@@ -160,6 +160,11 @@ $main-blue: #307db4;
     margin: 0;
     font-size: 2.8em;
     font-weight: 200;
+    height: 54px;
+  }
+
+  &__phone-containter {
+    height: 54px !important;
   }
 
   &__email {
