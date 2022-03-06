@@ -46,7 +46,7 @@ class Layout extends React.PureComponent {
     }
 
     generateStyle(props) {
-        const { direction, jc, ai, multiStr, ac, cls, width, height, flexGrow, flex } = props;
+        const { direction, jc, ai, multiStr, ac, cls, width, height, flexGrow, flex, styles = {} } = props;
 
         let {
             backgroundColor,
@@ -98,7 +98,7 @@ class Layout extends React.PureComponent {
         if (flex) style.flex = flex;
         if (backgroundColor) style.backgroundColor = backgroundColor;
 
-        return style;
+        return { ...style, ...styles };
     }
 }
 
