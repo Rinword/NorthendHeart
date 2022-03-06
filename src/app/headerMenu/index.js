@@ -38,9 +38,9 @@ class HeaderMenu extends React.PureComponent {
 
     render() {
         const activePage = this.props.activePage;
-        const date = `build#146 (${this.date.getDate()}.${
-            this.date.getMonth() + 1 < 10 ? '0' + (this.date.getMonth() + 1).toString() : this.date.getMonth() + 1
-        }.${this.date.getFullYear()})`;
+        // const date = `build#146 (${this.date.getDate()}.${
+        //     this.date.getMonth() + 1 < 10 ? '0' + (this.date.getMonth() + 1).toString() : this.date.getMonth() + 1
+        // }.${this.date.getFullYear()})`;
 
         const isOpen = this.state.menuOpen;
 
@@ -54,7 +54,7 @@ class HeaderMenu extends React.PureComponent {
                     >
                         <img src={logo} className="header-menu__logo" alt="logo" />
                         <div className="header-menu__title">PLUS MODUL</div>
-                        <div style={{ marginLeft: '155px', flex: '0 0 200px' }}>{date}</div>
+                        {/*<div style={{ marginLeft: '155px', flex: '0 0 200px' }}>{date}</div>*/}
                         <Row
                             flexGrow="0"
                             overflow="visible"
