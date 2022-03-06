@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 
-import { id } from '../gaTokens';
+// import { id } from '../gaTokens';
 import ReactGA from 'react-ga';
 
 import { Row } from 'app/uxComponent/UxBox';
@@ -13,8 +13,8 @@ import validations from 'app/uxComponent/form/validations';
 
 import './index.css';
 
-ReactGA.initialize(id);
-ReactGA.pageview(window.location.pathname);
+// ReactGA.initialize(id);
+// ReactGA.pageview(window.location.pathname);
 
 //routing here
 class App extends Component {
