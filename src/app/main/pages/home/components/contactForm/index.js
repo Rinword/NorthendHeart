@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Formsy from 'formsy-react';
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 import { Row, Column, Btn, Field } from 'app/uxComponent/UxBox';
 
 import './style.css';
@@ -15,15 +15,15 @@ class ContactForm extends React.PureComponent {
             isValid: false,
         };
 
-        const ga = ReactGA.ga();
+        // const ga = ReactGA.ga();
 
         this.submit = data => {
-            ReactGA.event({
-                category: 'request',
-                action: 'click',
-                label: 'feedback',
-            });
-            ga('send', 'event', 'request', 'click', 'feedback');
+            // ReactGA.event({
+            //     category: 'request',
+            //     action: 'click',
+            //     label: 'feedback',
+            // });
+            // ga('send', 'event', 'request', 'click', 'feedback');
             window.fbq && window.fbq('track', 'CompleteRegistration');
             window.gtag_report_conversion && window.gtag_report_conversion();
             window.yaCounter47731816 && window.yaCounter47731816.reachGoal('RequestСallback');

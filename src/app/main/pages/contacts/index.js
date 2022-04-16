@@ -12,8 +12,11 @@ import { contacts } from 'content';
 
 import { ShowPhone } from './components/showPhone';
 import banner from 'static/img/banner.png';
+import instagramLogo from './instagram-logo.svg';
 
 import './style.css';
+import { WhatsappIcon } from 'react-share';
+
 
 class Contacts extends React.PureComponent {
     constructor(props) {
@@ -47,6 +50,14 @@ class Contacts extends React.PureComponent {
             this.setState({ formDraft: draft });
         };
     }
+    goToWhatsApp() {
+        window.open('https://wa.me/79998151745', '_blank');
+    }
+
+    goToInstagram() {
+        window.open('https://www.instagram.com/plusmodul.russia/', '_blank');
+    }
+
     componentDidMount() {
         let oldDraft = Cookies.get('nh-phoneDraft');
 
@@ -80,6 +91,16 @@ class Contacts extends React.PureComponent {
                 <div className="contacts__back_1" />
                 {/*<div className="contacts__back_2" />*/}
                 <div className="contacts__title">{this.props.title}</div>
+                <Column height="auto" ai="center" overflow="visible" margin="0 0 12px 0">
+                    <Row ai="center" jc="center" styles={{ cursor: 'pointer' }} onClick={this.goToWhatsApp}>
+                        <WhatsappIcon size={32} round />
+                        <p style={{ color: 'white', margin: '0 0 0 12px' }}>WhatsApp</p>
+                    </Row>
+                    <Row ai="center" jc="center" margin="12px 0 0 0" styles={{ cursor: 'pointer' }} onClick={this.goToInstagram}>
+                        <img src={instagramLogo} />
+                        <p style={{ color: 'white', margin: '0 0 0 12px' }}>Instagram</p>
+                    </Row>
+                </Column>
                 <Row cls="contacts__content" jc="space-around" overflow="visible">
                     <Desktop>
                         <Row jc="center" cls="contacts__back-form-wrap">

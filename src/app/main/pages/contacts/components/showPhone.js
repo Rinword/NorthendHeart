@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 
 import { Btn, Row } from 'app/uxComponent/UxBox';
 
 const callConversion = () => {
-    const ga = ReactGA.ga();
-    ga('send', 'event', 'interaction', 'click', 'shownPhone');
+    // const ga = ReactGA.ga();
+    // ga('send', 'event', 'interaction', 'click', 'shownPhone');
     window.fbq && window.fbq('track', 'Contact');
 
     window.yaCounter47731816 && window.yaCounter47731816.reachGoal('ClickShowPhone');
