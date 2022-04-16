@@ -15,7 +15,7 @@ import banner from 'static/img/banner.png';
 import instagramLogo from './instagram-logo.svg';
 
 import './style.css';
-import { WhatsappIcon } from 'react-share';
+import { WhatsappIcon, VKIcon } from 'react-share';
 
 
 class Contacts extends React.PureComponent {
@@ -55,7 +55,7 @@ class Contacts extends React.PureComponent {
     }
 
     goToInstagram() {
-        window.open('https://www.instagram.com/plusmodul.russia/', '_blank');
+        window.open('https://vk.com/plusmodul.russia', '_blank');
     }
 
     componentDidMount() {
@@ -92,14 +92,20 @@ class Contacts extends React.PureComponent {
                 {/*<div className="contacts__back_2" />*/}
                 <div className="contacts__title">{this.props.title}</div>
                 <Column height="auto" ai="center" overflow="visible" margin="0 0 12px 0">
-                    <Row ai="center" jc="center" styles={{ cursor: 'pointer' }} onClick={this.goToWhatsApp}>
-                        <WhatsappIcon size={32} round />
-                        <p style={{ color: 'white', margin: '0 0 0 12px' }}>WhatsApp</p>
-                    </Row>
-                    <Row ai="center" jc="center" margin="12px 0 0 0" styles={{ cursor: 'pointer' }} onClick={this.goToInstagram}>
-                        <img src={instagramLogo} />
-                        <p style={{ color: 'white', margin: '0 0 0 12px' }}>Instagram</p>
-                    </Row>
+                    <Column jc="flex-start" width="auto">
+                        <Row ai="center" jc="flex-start" styles={{ cursor: 'pointer' }} onClick={this.goToWhatsApp}>
+                            <WhatsappIcon size={32} round />
+                            <p style={{ color: 'white', margin: '0 0 0 12px' }}>WhatsApp</p>
+                        </Row>
+                        <Row ai="center" jc="flex-start" margin="12px 0 0 0" styles={{ cursor: 'pointer' }} onClick={this.goToInstagram}>
+                            <img src={instagramLogo} alt="" />
+                            <p style={{ color: 'white', margin: '0 0 0 12px' }}>Instagram</p>
+                        </Row>
+                        <Row ai="center" jc="flex-start" margin="12px 0 0 0" styles={{ cursor: 'pointer' }} onClick={this.goToInstagram}>
+                            <VKIcon size={32} round />
+                            <p style={{ color: 'white', margin: '0 0 0 12px' }}>ВКонтакте</p>
+                        </Row>
+                    </Column>
                 </Column>
                 <Row cls="contacts__content" jc="space-around" overflow="visible">
                     <Desktop>
